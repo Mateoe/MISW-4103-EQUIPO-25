@@ -5,4 +5,4 @@
 |Nombre|Correo|
 |---|---|
 |Mateo Espinal Londoño|m.espinall@uniandes.edu.co|
-|Julián Andrés Oliveros Forero|ja.oliverosf@uniandes.edu.co|
+|Julián Esteban Oliveros Forero|je.oliverosf@uniandes.edu.co|
