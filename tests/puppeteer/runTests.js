@@ -5,9 +5,9 @@ const testNewMember = require("./tests/newMember");
 const testNewTag = require("./tests/newTag");
 
 (async () => {
-  //await testNewTag();
-  //await testEditTag();
-  //await testDeleteTag();
+  await testNewTag();
+  await testEditTag();
+  await testDeleteTag();
   await testNewMember();
   await testDeleteMember();
 })();
