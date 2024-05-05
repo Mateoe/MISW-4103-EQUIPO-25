@@ -2,6 +2,8 @@
 const puppeteer = require("puppeteer");
 const path = require("path");
 const pathfolder = path.resolve(__dirname);
+const faker = require('faker');
+
 
 (async () => {
   try {
@@ -26,7 +28,8 @@ const pathfolder = path.resolve(__dirname);
     await page.screenshot({ path: `${pathfolder}/img/1_after-login.png` });
 
     // Entrar a sección de ajustes
-    await page.click("#ember30");
+    await page.click('[data-test-nav="settings"]');
+    
     await page.waitForSelector(
       "#admin-x-settings-scroller > div > div:nth-child(3) > div > div:nth-child(3) > section > div.block.undefined > div > div > button"
     );
@@ -46,11 +49,17 @@ const pathfolder = path.resolve(__dirname);
     // Crear descuento
     await page.click("button.cursor-pointer.bg-green");
 
+    // Generate a fake discount name
+    const discountName = faker.commerce.productAdjective();
+
+    console.log('Discount', discountName);
+    const discountCompleteName = `Descuento ${discountName}`;
+
     // llenar formulario oferta
     await page.waitForSelector('input[type="text"][placeholder="Black Friday"]');
     await page.type(
       'input[type="text"][placeholder="Black Friday"]',
-      "c1",
+      discountCompleteName,
       { delay: 100 }
     );
     await page.type('input[type="number"]', "5");

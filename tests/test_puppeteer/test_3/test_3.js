@@ -1,9 +1,9 @@
-// Test relacionado con crear una membresía premium en ghost
+// Test relacionado con Crear un Post
 const puppeteer = require("puppeteer");
 const path = require("path");
 const pathfolder = path.resolve(__dirname);
 
-const faker = require('faker');
+const faker = require("faker");
 
 (async () => {
   try {
@@ -14,7 +14,7 @@ const faker = require('faker');
 
     const page = await browser.newPage();
 
-    console.log("Iniciando test crear una membresía premium en ghost");
+    console.log("Iniciando test Crear un Post");
 
     // Login
     await page.goto("https://ghost-5ehz.onrender.com/ghost/#/signin");
@@ -27,34 +27,31 @@ const faker = require('faker');
     );
     await page.screenshot({ path: `${pathfolder}/img/1_after-login.png` });
 
-
     // Entrar a posts y crear un post
     await page.click('[data-test-nav="new-story"]');
 
-
-    const faketitle = faker.name.title()
-    console.log('Fake Name:', faketitle);
-    await page.type('[data-test-editor-title-input]',faketitle, { delay: 200 });
-
-
+    const faketitle = faker.name.title();
+    console.log("Fake Name:", faketitle);
+    await page.type("[data-test-editor-title-input]", faketitle, {
+      delay: 200,
+    });
 
     await new Promise((r) => setTimeout(r, 2000));
 
     await page.screenshot({ path: `${pathfolder}/img/2_create-post.png` });
 
-
     await page.waitForSelector('button[data-test-button="publish-flow"]');
     await page.click('button[data-test-button="publish-flow"]');
-
 
     await page.waitForSelector('button[data-test-button="continue"]');
     await page.click('button[data-test-button="continue"]');
 
-
     await page.waitForSelector('button[data-test-button="confirm-publish"]');
     await page.click('button[data-test-button="confirm-publish"]');
-    
-    await page.waitForSelector('button[data-test-button="back-to-editor"]',{ timeout: 30000 });
+
+    await page.waitForSelector('button[data-test-button="back-to-editor"]', {
+      timeout: 30000,
+    });
     await page.screenshot({ path: `${pathfolder}/img/3_publish.png` });
 
     await page.goBack();
