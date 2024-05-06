@@ -23,9 +23,10 @@ Para la creación de las pruebas se usó un ambiente con las siguientes caracter
 
 #### Pasos para ejecutar las pruebas
 1. Ingresar a la carpeta pupeteer
-2. Ingresar el comando "npm i" para instalar los modulos
-3. Ingresar el comando "node runTests.js" para correr las pruebas
+2. Ingresar el comando `npm i` para instalar los modulos
+3. Ingresar el comando `node runTests.js` para correr las pruebas
 4. Revisar los resultados en la carpeta "results"
+5. Para los tests 11-14 (test_create_pag, test_delete_pag, test_edit_pag, test_edit_perfil) se debe correr individualmente node `node tests/test_create_pag.js`
 
 ### Ejecución de los tests en kraken
 Para la creación de las pruebas se usó un ambiente con las siguientes características
@@ -35,9 +36,9 @@ Para la creación de las pruebas se usó un ambiente con las siguientes caracter
 
 #### Pasos para ejecutar las pruebas
 1. Ingresar a la carpeta kraken
-2. Ingresar el comando "npm i" para instalar los modulos
-3. Dentro de la ruta "./features/web/tests" se encuentran las pruebas elaboradas con extensión .feature"
-4. Para ejecutar una prueba arrastrarla a la carpeta "./features" y ejecutar el comando "npx kraken-node run"
+2. Ingresar el comando `npm i` para instalar los modulos
+3. Dentro de la ruta `./features/web/tests` se encuentran las pruebas elaboradas con extensión .feature"
+4. Para ejecutar una prueba arrastrarla a la carpeta "./features" y ejecutar el comando `npx kraken-node run`
 
 **Por ejemplo**: Copiar el archivo de la ruta "kraken\features\web\tests\crear_miembro.feature" y pegarlo en la carpeta "kraken\features" y luego ejecutar el comando "npx kraken-node run", repitiendo lo mismo en cada caso, teniendo presente que en "kraken\features" solo debe haber un archivo ".feature" a la vez.
 
