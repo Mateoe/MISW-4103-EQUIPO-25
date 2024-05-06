@@ -26,7 +26,7 @@ Para la creación de las pruebas se usó un ambiente con las siguientes caracter
 2. Ingresar el comando `npm i` para instalar los modulos
 3. Ingresar el comando `node runTests.js` para correr las pruebas
 4. Revisar los resultados en la carpeta "results"
-5. Para los tests 11-14 (test_create_pag, test_delete_pag, test_edit_pag, test_edit_perfil) se debe correr individualmente node `node tests/test_create_pag.js`
+5. Para los tests 11-14 (test_create_pag, test_delete_pag, test_edit_pag, test_edit_perfil, test_edit_perfil) se debe correr individualmente node `node tests/test_create_pag.js`
 
 ### Ejecución de los tests en kraken
 Para la creación de las pruebas se usó un ambiente con las siguientes características
