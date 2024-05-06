@@ -1,8 +1,9 @@
-node_modules
-.vscode
+**node_modules
+**.vscode
 *results
 julian.txt
-
-
+**.kraken
+**reports
+**package-lock.json
 ejemplo/
 

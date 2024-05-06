@@ -34,22 +34,31 @@ async function testNewMember() {
         await membersPage.newMember("test-name", "test@email.com")
         await logStep("Llenado de formulario creacion de miembro", path.join(screenshotsDir, "06_fillNewMemberForm.png"));
         // And
+        await adminPage.logOut()
+        await logStep("Se cierra sesión", path.join(screenshotsDir, "07_logOut.png"));
+
+        await loginPage.login("test@test.com", "Test@test25");
+        await logStep("Iniciando sesión", path.join(screenshotsDir, "08_login.png"));
+
+        await page.waitForSelector('a[data-test-nav="members"]');
+        await logStep("Inicio de sesión exitoso", path.join(screenshotsDir, "09_loginSuccess.png"));
+
         await adminPage.openMembers()
-        await logStep("Retornar a pagina de miembros", path.join(screenshotsDir, "07_returnToMembers.png"));
+        await logStep("Ingreso a pagina de miembros", path.join(screenshotsDir, "10_openMembers.png"));
 
         //Then
         const memberNameElement = await page.waitForSelector('h3.ma0.pa0.gh-members-list-name');
         const memberName = await page.evaluate(tagNameElement => tagNameElement.textContent.trim(), memberNameElement);
         if (memberName === "test-name") {
-            await logStep("Nuevo miembro creado exitosamente", path.join(screenshotsDir, "08_newMemberSuccess.png"));
+            await logStep("Nuevo miembro creado exitosamente", path.join(screenshotsDir, "11_newMemberSuccess.png"));
         } else {
-            await logStep("No se creó el miembro", path.join(screenshotsDir, "08_newMemberError.png"));
+            await logStep("No se creó el miembro", path.join(screenshotsDir, "11_newMemberError.png"));
         }
     } catch (error) {
         await logStep(`Error inesperado:\n${error}`, path.join(screenshotsDir, "500_ERROR.png"));
     } finally {
         await adminPage.logOut()
-        await logStep("Se cierra sesión", path.join(screenshotsDir, "09_logOut.png"));
+        await logStep("Se cierra sesión", path.join(screenshotsDir, "12_logOut.png"));
         await browser.close();
     }
 }
