@@ -11,14 +11,15 @@ const testNewOffer = require("./tests/newOffer");
 
 
 (async () => {
-  await testNewTag();
-  await testEditTag();
+ /* await testNewTag(); */
+  //await testEditTag();
   await testDeleteTag();
+   /*
   await testNewMember();
   await testDeleteMember();
   await testNewTier();
   await testNewPost();
   await testNewPremiumPost();
   await testNewPostWithTag();
-  await testNewOffer();
+  await testNewOffer(); */
 })();

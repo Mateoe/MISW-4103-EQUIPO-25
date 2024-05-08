@@ -9,10 +9,10 @@ class LoginPage {
     }
 
     async login(username, password) {
-        await this.page.waitForSelector('button[data-test-button="sign-in"]');
+        await this.page.waitForSelector('button[type="submit"]');
         await this.page.type('input[name="identification"]', username);
         await this.page.type('input[name="password"]', password);
-        await this.page.click('button[data-test-button="sign-in"]');
+        await this.page.click('button[type="submit"]');
     }
 
 }

@@ -4,10 +4,10 @@ class AdminPage {
   }
 
   async openTags() {
-    await this.page.waitForSelector('a[data-test-nav="tags"]');
-    await this.page.click('a[data-test-nav="tags"]');
+    await this.page.waitForSelector('a[href="#/tags/"]');
+    await this.page.click('a[href="#/tags/"]');
     await this.page.waitForSelector(
-      "section.view-container.content-list ol.tags-list"
+      "section.view-actions"
     );
   }
 

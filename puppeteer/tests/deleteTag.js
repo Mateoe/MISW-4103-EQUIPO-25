@@ -7,7 +7,7 @@ const TagsPage = require("../pages/tags");
 async function testDeleteTag() {
 
     console.log("REALIZANDO PRUEBA E2E DE ELIMINACIÓN DE TAGS")
-    const url = "https://ghost-5ehz.onrender.com/ghost/#/signin";
+    const url = "http://localhost:2368/ghost/#/tags";
     const { page, logStep, screenshotsDir, browser } = await initialSettings("deleteTag");
     const loginPage = new LoginPage(page);
     const adminPage = new AdminPage(page)
@@ -22,7 +22,7 @@ async function testDeleteTag() {
         await loginPage.login("test@test.com", "Test@test25");
         await logStep("Iniciando sesión", path.join(screenshotsDir, "02_login.png"));
 
-        await page.waitForSelector('a[data-test-nav="tags"]');
+        await page.waitForSelector('a[href="#/tags/"]');
         await logStep("Inicio de sesión exitoso", path.join(screenshotsDir, "03_loginSuccess.png"));
 
         await adminPage.openTags()
@@ -35,12 +35,12 @@ async function testDeleteTag() {
         await tagsPage.deleteTag()
         await logStep("Eliminación de tag", path.join(screenshotsDir, "06_confirmDeleteTag.png"));
         // And
-        await page.waitForNavigation();
+        await page.waitForSelector('section.content-list');
         await logStep("Retornar a pagina de tags", path.join(screenshotsDir, "07_returnToTags.png"));
 
         // Then
         try {
-            await page.waitForSelector('a[data-test-tag-slug] span:is(:not([hidden])):has-text("edited-tag-slug")', { timeout: 1000 });
+            await page.waitForSelector('a[title="Edit tag"] span:is(:not([hidden])):has-text("edited-tag-slug")', { timeout: 1000 });
             await logStep("Error: no se pudo eliminar el tag", path.join(screenshotsDir, "08_deletedTagSlugError.png"));
         } catch (error) {
             await logStep("Tag eliminado exitosamente", path.join(screenshotsDir, "08_deletedTagSlugSuccess.png"));

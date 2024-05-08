@@ -6,7 +6,7 @@ const TagsPage = require("../pages/tags");
 
 async function testNewTag() {
     console.log("REALIZANDO PRUEBA E2E DE CREACIÓN DE TAGS")
-    const url = "https://ghost-5ehz.onrender.com/ghost/#/signin";
+    const url = "http://localhost:2368/ghost/#/signin";
     const { page, logStep, screenshotsDir, browser } = await initialSettings("newTag");
     const loginPage = new LoginPage(page);
     const adminPage = new AdminPage(page)
@@ -21,7 +21,7 @@ async function testNewTag() {
         await loginPage.login("test@test.com", "Test@test25");
         await logStep("Iniciando sesión", path.join(screenshotsDir, "02_login.png"));
 
-        await page.waitForSelector('a[data-test-nav="tags"]');
+        await page.waitForSelector('a[href="#/tags/"]');
         await logStep("Inicio de sesión exitoso", path.join(screenshotsDir, "03_loginSuccess.png"));
 
         await adminPage.openTags()
@@ -38,13 +38,22 @@ async function testNewTag() {
         await logStep("Retornar a pagina de tags", path.join(screenshotsDir, "07_returnToTags.png"));
 
         // Then
-        const tagNameElement = await page.waitForSelector('h3.gh-tag-list-name[data-test-tag-name=""]');
-        const tagName = await page.evaluate(tagNameElement => tagNameElement.textContent.trim(), tagNameElement);
-        if (tagName === "test-name") {
+        const newTagCreated = await page.evaluate(() => {
+            const elements = document.querySelectorAll('h3.gh-tag-list-name');
+            for (let i = 0; i < elements.length; i++) {
+                if (elements[i].textContent.trim() === 'test-name') {
+                    return true;
+                }
+            }
+            return false;
+        });
+        
+        if (newTagCreated) {
             await logStep("Nuevo tag creado exitosamente", path.join(screenshotsDir, "08_newTagSuccess.png"));
         } else {
             await logStep("No se creó el tag", path.join(screenshotsDir, "08_newTagError.png"));
         }
+          
     } catch (error) {
         await logStep(`Error inesperado:\n${error}`, path.join(screenshotsDir, "500_ERROR.png"));
     } finally {

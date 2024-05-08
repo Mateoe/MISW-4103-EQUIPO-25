@@ -21,7 +21,7 @@ async function testEditTag() {
         await loginPage.login("test@test.com", "Test@test25");
         await logStep("Iniciando sesión", path.join(screenshotsDir, "02_login.png"));
 
-        await page.waitForSelector('a[data-test-nav="tags"]');
+        await page.waitForSelector('a[href="#/tags/"]');
         await logStep("Inicio de sesión exitoso", path.join(screenshotsDir, "03_loginSuccess.png"));
 
         await adminPage.openTags()
@@ -35,11 +35,11 @@ async function testEditTag() {
         await logStep("Llenado de formulario creacion de tags", path.join(screenshotsDir, "06_editedTagSlug.png"));
         // And
         await adminPage.openTags()
-        await page.waitForSelector('h3[data-test-tag-name]');
+        await page.waitForSelector('h3.gh-tag-list-name');
         await logStep("Retornar a pagina de tags", path.join(screenshotsDir, "07_returnToTags.png"));
 
         // Then
-        const tagSlugElement = await page.waitForSelector('a[data-test-tag-slug] span');
+        const tagSlugElement = await page.waitForSelector('a[href="#/tags/edited-tag-slug/"] span');
         const tagSlug = await page.evaluate(tagSlugElement => tagSlugElement.textContent.trim(), tagSlugElement);
         if (tagSlug === "edited-tag-slug") {
             await logStep("El tag slug se ha editado correctamente", path.join(screenshotsDir, "08_editedTagSlugSuccess.png"));
