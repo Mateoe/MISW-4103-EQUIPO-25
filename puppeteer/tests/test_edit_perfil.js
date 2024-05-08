@@ -41,7 +41,7 @@ if (!fs.existsSync(pathfolder)) {
     // Editar el nombre del perfil
     const nuevoNombre = "test1";
     await page.click('input[type="text"]', { clickCount: 3 });
-    await page.type('input[type="text"]', nuevoNombre, { delay: 100 });
+    await page.type('input[nv ]', nuevoNombre, { delay: 100 });
     await page.screenshot({ path: `${pathfolder}/4_after-editing-profile-name.png` });
 
     // Guardar cambios
