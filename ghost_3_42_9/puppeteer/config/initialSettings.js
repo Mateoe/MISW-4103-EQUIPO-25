@@ -10,8 +10,8 @@ async function initialSettings(dirName) {
   const page = await browser.newPage();
 
   const logStep = async (step, screenshotPath) => {
-    console.log(step);
     await page.screenshot({ path: screenshotPath });
+    console.log(step);
   };
 
   const screenshotsDir = path.join(__dirname, "..", "results", dirName);

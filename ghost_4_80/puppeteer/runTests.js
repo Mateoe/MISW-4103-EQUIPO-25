@@ -22,6 +22,6 @@ const testEditProfileLocation = require("./tests/editProfileLocation");
   // await testNewPremiumPost();
   // await testNewPostWithTag();
   // await testNewOffer();
-  // await testEditProfileName();
-  await testEditProfileLocation();
+  await testEditProfileName();
+  // await testEditProfileLocation();
 })();

@@ -5,11 +5,12 @@ const AdminPage = require("../pages/admin");
 const ProfilePage = require("../pages/profile");
 const faker = require("faker");
 
-async function testEditProfileName() {
-  console.log("REALIZANDO PRUEBA E2E DE EDITAR EL NOMBRE DE PERFIL");
+async function testEditProfileLocation() {
+  console.log("REALIZANDO PRUEBA E2E DE EDITAR la ubicación de perfil");
   const url = "https://ghost-5ehz.onrender.com/ghost/#/signin";
-  const { page, logStep, screenshotsDir, browser } =
-    await initialSettings("EditProfileName");
+  const { page, logStep, screenshotsDir, browser } = await initialSettings(
+    "EditProfileLocation"
+  );
   const loginPage = new LoginPage(page);
   const adminPage = new AdminPage(page);
   const profilePage = new ProfilePage(page);
@@ -42,22 +43,24 @@ async function testEditProfileName() {
     );
 
     // And
-    random_name = faker.name.findName();
-    await profilePage.fillPorfileName(random_name);
+    const randomCity = faker.address.city();
+
+    await profilePage.fillProfileLocation(randomCity);
     await logStep(
-      "Ingreso al formulario de creacion de oferta",
+      "Ingreso al formulario de creacion de ciudad",
       path.join(screenshotsDir, "05_NewOfferInterface.png")
     );
 
     // And
     await profilePage.saveProfile();
     await logStep(
-      "Llenado de formulario creacion de oferta",
+      "Gudardar los cambios",
       path.join(screenshotsDir, "06_fillNewOfferForm.png")
     );
 
     // Then
     await profilePage.openProfileFromSetting();
+
     await logStep(
       "Ingreso al formulario",
       path.join(screenshotsDir, "07_openProfileFromSetting.png")
@@ -65,7 +68,20 @@ async function testEditProfileName() {
 
     await page.waitForSelector("h1.break-words");
 
-    const nameElement = await page.waitForSelector("h1.break-words");
+    const idValue = await page.evaluate(() => {
+      const labelElements = document.querySelectorAll("label");
+      let idValue = "";
+      labelElements.forEach((label) => {
+        if (label.innerText.trim() === "Location") {
+          idValue = label.getAttribute("for");
+        }
+      });
+      return idValue;
+    });
+
+    let selectorName = "#" + idValue.replace(/:/g, "\\:");
+
+    const nameElement = await page.$(selectorName);
 
     const htmlContent = await page.evaluate(
       (element) => element.outerHTML,
@@ -73,11 +89,11 @@ async function testEditProfileName() {
     );
 
     const NameUpdated = await page.evaluate(
-      (html, random_name) => {
-        return html.includes(random_name);
+      (html, randomCity) => {
+        return html.includes(randomCity);
       },
       htmlContent,
-      random_name
+      randomCity
     );
 
     if (NameUpdated) {
@@ -99,7 +115,12 @@ async function testEditProfileName() {
     );
 
     await adminPage.closeSettings();
-    
+    await logStep(
+      "Retornar de ajustes",
+      path.join(screenshotsDir, "08_returnToSettings.png")
+    );
+      
+      
   } catch (error) {
     await logStep(
       `Error inesperado:\n${error}`,
@@ -115,4 +136,4 @@ async function testEditProfileName() {
     await browser.close();
   }
 }
-module.exports = testEditProfileName;
+module.exports = testEditProfileLocation;
