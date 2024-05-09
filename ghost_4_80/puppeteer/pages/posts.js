@@ -7,15 +7,15 @@ class PostPage {
     this.screenshots = screenshots;
   }
 
-  async openPosts() {
+  async openPosts(text, image) {
     await this.page.waitForSelector('a[data-test-nav="posts"]');
     await this.page.click('a[data-test-nav="posts"]');
     await this.page.waitForSelector(
       "body > div.gh-app > div > main > section > section"
     );
     await this.logStep(
-      this.screenshots.text10,
-      this.path.join(this.screenshotsDir, this.screenshots.image10)
+      this.screenshots[text],
+      this.path.join(this.screenshotsDir, this.screenshots[image])
     );
   }
 
@@ -39,7 +39,7 @@ class PostPage {
     );
   }
 
-  async publishPost() {
+  async publishPost(text, image) {
     await this.page.keyboard.press("Enter");
     await new Promise((r) => setTimeout(r, 1000));
 
@@ -47,8 +47,8 @@ class PostPage {
 
     await this.page.click('button[data-test-button="publish-flow"]');
     await this.logStep(
-      this.screenshots.text7,
-      this.path.join(this.screenshotsDir, this.screenshots.image7)
+      this.screenshots[text],
+      this.path.join(this.screenshotsDir, this.screenshots[image])
     );
   }
 
@@ -58,7 +58,7 @@ class PostPage {
     await this.page.click('button[data-test-button="continue"]');
   }
 
-  async confirmPublish() {
+  async confirmPublish(text, image) {
     await new Promise((r) => setTimeout(r, 2000));
     await this.page.waitForSelector(
       'button[data-test-button="confirm-publish"]'
@@ -66,8 +66,8 @@ class PostPage {
     await this.page.click('button[data-test-button="confirm-publish"]');
 
     await this.logStep(
-      this.screenshots.text8,
-      this.path.join(this.screenshotsDir, this.screenshots.image8)
+      this.screenshots[text],
+      this.path.join(this.screenshotsDir, this.screenshots[image])
     );
   }
 
@@ -91,7 +91,7 @@ class PostPage {
     );
   }
 
-  async assignTags() {
+  async assignTags(text, image) {
     await this.page.click("button.settings-menu-toggle");
     await new Promise((r) => setTimeout(r, 1000));
     await this.page.type(
@@ -99,14 +99,19 @@ class PostPage {
       "tag-test-2"
     );
     await this.page.keyboard.press("Enter");
+
+    await this.logStep(
+      this.screenshots[text],
+      this.path.join(this.screenshotsDir, this.screenshots[image])
+    );
   }
 
-  async returnToPosts() {
+  async returnToPosts(text, image) {
     await this.page.goBack();
     await this.page.waitForSelector('a[data-test-nav="posts"]');
     await this.logStep(
-      this.screenshots.text9,
-      this.path.join(this.screenshotsDir, this.screenshots.image9)
+      this.screenshots[text],
+      this.path.join(this.screenshotsDir, this.screenshots[image])
     );
   }
 }

@@ -76,18 +76,20 @@ async function testNewPost() {
     // And
     const title = faker.name.title();
     await postPage.fillPostForm(title);
+    await page.keyboard.press("Enter");
+
 
     // And
-    await postPage.publishPost();
+    await postPage.publishPost("text7", "image7");
 
     // And
-    await postPage.confirmPublish();
+    await postPage.confirmPublish("text8", "image8");
 
     // And
-    await postPage.returnToPosts();
+    await postPage.returnToPosts("text9", "image9");
 
     // And
-    await postPage.openPosts();
+    await postPage.openPosts("text10", "image10");
 
     // Then
     const postNameElement = await page.waitForSelector(

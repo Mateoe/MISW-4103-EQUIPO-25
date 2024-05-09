@@ -78,20 +78,22 @@ async function testNewPost() {
     await postPage.fillPostForm(title);
 
     // And
-    await postPage.publishPost();
+    await postPage.publishPost("text7", "image7");
 
     // And
     await postPage.finalReview();
 
     // And
-    await postPage.confirmPublish();
+    await postPage.confirmPublish("text8", "image8");
 
     //And
     await postPage.publishedPostSusccessfully();
 
-    await postPage.returnToPosts();
+    // And
+    await postPage.returnToPosts("text9", "image9");
 
-    await postPage.openPosts();
+    // And
+    await postPage.openPosts("text10", "image10");
 
     // Then
     const postNameElement = await page.waitForSelector(

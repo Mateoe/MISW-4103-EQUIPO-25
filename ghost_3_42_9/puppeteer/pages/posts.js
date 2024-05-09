@@ -7,13 +7,13 @@ class PostPage {
     this.screenshots = screenshots;
   }
 
-  async openPosts() {
+  async openPosts(text, image) {
     await this.page.waitForSelector('a[href="#/posts/"]');
     await this.page.click('a[href="#/posts/"]');
     await this.page.waitForSelector('a[title="Edit this post"]');
     await this.logStep(
-      this.screenshots.text10,
-      this.path.join(this.screenshotsDir, this.screenshots.image10)
+      this.screenshots[text],
+      this.path.join(this.screenshotsDir, this.screenshots[image])
     );
   }
 
@@ -35,51 +35,65 @@ class PostPage {
       this.screenshots.text6,
       this.path.join(this.screenshotsDir, this.screenshots.image6)
     );
+    await this.page.keyboard.press("Enter");
+
+    await new Promise((r) => setTimeout(r, 2000));
   }
 
-  async publishPost() {
+  async assignTags(text, image) {
+    await new Promise((r) => setTimeout(r, 1000));
+
+    await this.page.click("button.post-settings");
+
+    await this.page.type(
+      ".ember-power-select-trigger-multiple-input",
+      "tag-test-2"
+    );
+    await new Promise((r) => setTimeout(r, 1000));
+
     await this.page.keyboard.press("Enter");
-    await new Promise((r) => setTimeout(r, 2000));
+
+    await this.logStep(
+      this.screenshots[text],
+      this.path.join(this.screenshotsDir, this.screenshots[image])
+    );
+    await new Promise((r) => setTimeout(r, 1000));
+
+    await this.page.click("button.close.settings-menu-header-action");
+  }
+
+  async publishPost(text, image) {
+    await new Promise((r) => setTimeout(r, 1000));
 
     await this.page.waitForSelector("div.gh-publishmenu-trigger");
 
     await this.page.click("div.gh-publishmenu-trigger");
     await this.logStep(
-      this.screenshots.text7,
-      this.path.join(this.screenshotsDir, this.screenshots.image7)
+      this.screenshots[text],
+      this.path.join(this.screenshotsDir, this.screenshots[image])
     );
   }
 
-  async confirmPublish() {
+  async confirmPublish(text, image) {
     await new Promise((r) => setTimeout(r, 2000));
     await this.page.waitForSelector("button.gh-btn-blue");
     await this.page.click("button.gh-btn-blue");
 
     await this.logStep(
-      this.screenshots.text8,
-      this.path.join(this.screenshotsDir, this.screenshots.image8)
+      this.screenshots[text],
+      this.path.join(this.screenshotsDir, this.screenshots[image])
     );
     await new Promise((r) => setTimeout(r, 1000));
     await this.page.click("button.gh-notification-close");
   }
 
-  async assignTags() {
-    await this.page.click("button.settings-menu-toggle");
-    await new Promise((r) => setTimeout(r, 1000));
-    await this.page.type(
-      ".ember-power-select-trigger-multiple-input",
-      "tag-test-2"
-    );
-    await this.page.keyboard.press("Enter");
-  }
-
-  async returnToPosts() {
+  async returnToPosts(text, image) {
     await this.page.goBack();
     await this.page.waitForSelector('a[href="#/posts/"]');
 
     await this.logStep(
-      this.screenshots.text9,
-      this.path.join(this.screenshotsDir, this.screenshots.image9)
+      this.screenshots[text],
+      this.path.join(this.screenshotsDir, this.screenshots[image])
     );
   }
 }
