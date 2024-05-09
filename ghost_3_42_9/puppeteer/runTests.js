@@ -8,12 +8,12 @@ const testEditProfileLocation = require("./tests/editProfileLocation");
 
 (async () => {
   // await testDeleteTag();
-  await testEditProfileLocation();
-  await testEditProfileName();
+  // await testEditProfileLocation();
+  // await testEditProfileName();
   // await testEditTag();
-  // await testNewPost();
+  await testNewPost();
   // await testNewPostWithTag();
   // await testNewTag();
-  // Crear página
-  // Borrar página
+  // //Crear página
+  // //Borrar página
 })();

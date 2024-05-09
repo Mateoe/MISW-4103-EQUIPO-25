@@ -74,7 +74,6 @@ async function testEditProfileLocation() {
     const randomCity = faker.address.city();
     await profilePage.fillProfileLocation(randomCity);
 
-    
     await logStep(
       screenshots.text7,
       path.join(screenshotsDir, screenshots.image7)
@@ -137,7 +136,7 @@ async function testEditProfileLocation() {
       path.join(screenshotsDir, "500_ERROR.png")
     );
   } finally {
-    await adminPage.logOut();
+    await adminPage.logOut("text10", "image10");
 
     await logStep(
       screenshots.text11,

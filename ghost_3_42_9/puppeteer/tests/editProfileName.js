@@ -117,7 +117,7 @@ async function testEditProfileName() {
       path.join(screenshotsDir, "500_ERROR.png")
     );
   } finally {
-    await adminPage.logOut();
+    await adminPage.logOut("text10", "image10");
 
     await logStep(
       screenshots.text11,

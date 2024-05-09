@@ -7,105 +7,122 @@ const faker = require("faker");
 
 async function testNewPost() {
   console.log("REALIZANDO PRUEBA E2E DE CREAR UN POST");
-  const url = "https://ghost-5ehz.onrender.com/ghost/#/signin";
+  const url = "http://localhost:2369/ghost/#/signin";
   const { page, logStep, screenshotsDir, browser } =
-    await initialSettings("newPost");
-  const loginPage = new LoginPage(page);
-  const adminPage = new AdminPage(page);
-  const postPage = new PostPage(page);
+    await initialSettings("GHOST_3_newPost");
+
+  const screenshots = {
+    text1: "Navegación a la página de inicio de sesión",
+    image1: "01_pageLogin.png",
+    text2: "Ingresar el usuario",
+    image2: "02_userName.png",
+    text3: "Ingresar el la contraseña",
+    image3: "03_password.png",
+    text4: "Inicio de sesión exitoso",
+    image4: "04_loginSuccess.png",
+    text5: "Ingreso al formulario de creacion de posts",
+    image5: "05_newPostInterface.png",
+    text6: "Se escribe el titulo del post",
+    image6: "06_fillNewPostForm.png",
+    text7: "Publicación de post",
+    image7: "07_publishPost.png",
+    text8: "Confirmación de publicación de post",
+    image8: "08_confirmPublish.png",
+    text9: "Retornar a pagina de posts",
+    image9: "09_returnToPosts.png",
+    text10: "Abrir listado de posts",
+    image10: "10_openPosts.png",
+    text11_1: "Nuevo post creado exitosamente",
+    image11_1: "11_newpostSuccess.png",
+    text11_2: "No se creó el post",
+    image11_2: "11_newpostError.png",
+    text12: "Abrix Dropdown Menu",
+    image12: "12_dropdownMenu.png",
+    text13: "Se cierra sesión",
+    image13: "13_logOut.png",
+  };
+
+  const loginPage = new LoginPage(
+    page,
+    path,
+    logStep,
+    screenshotsDir,
+    screenshots
+  );
+  const adminPage = new AdminPage(
+    page,
+    path,
+    logStep,
+    screenshotsDir,
+    screenshots
+  );
+  const postPage = new PostPage(
+    page,
+    path,
+    logStep,
+    screenshotsDir,
+    screenshots
+  );
 
   try {
     // Given
     await loginPage.open(url);
-    await logStep(
-      "Navegación a la página de inicio de sesión",
-      path.join(screenshotsDir, "01_pageLogin.png")
-    );
 
     await loginPage.login("test@test.com", "Test@test25");
-    await logStep(
-      "Iniciando sesión",
-      path.join(screenshotsDir, "02_login.png")
-    );
-
-    await page.waitForSelector('a[data-test-nav="posts"]');
-    await logStep(
-      "Inicio de sesión exitoso",
-      path.join(screenshotsDir, "03_loginSuccess.png")
-    );
-
 
     // When
     await postPage.openNewPost();
-    await logStep(
-      "Ingreso al formulario de creacion de posts",
-      path.join(screenshotsDir, "04_newPostInterface.png")
-    );
 
+    // And
     const title = faker.name.title();
-    console.log("title:", title);
     await postPage.fillPostForm(title);
-    await logStep(
-      "Llenado de formulario creacion de posts",
-      path.join(screenshotsDir, "05_fillNewPostForm.png")
-    );
+
     // And
     await postPage.publishPost();
-    await logStep(
-      "Publicación de post",
-      path.join(screenshotsDir, "06_publishPost.png")
-    );
-
-    // And
-    await postPage.finalReview();
-    await logStep(
-      "Revisión final de post",
-      path.join(screenshotsDir, "07_finalReview.png")
-    );
 
     // And
     await postPage.confirmPublish();
-    await logStep(
-      "Confirmación de publicación",
-      path.join(screenshotsDir, "08_confirmPublish.png")
-    );
 
-    //And
-    await postPage.publishedPostSusccessfully();
-    await logStep(
-      "Post creado exitosamente",
-      path.join(screenshotsDir, "09_newPostSuccess.png")
-    );
-
+    // And
     await postPage.returnToPosts();
-    await logStep(
-      "Retornar a pagina de posts",
-      path.join(screenshotsDir, "10_returnToPosts.png")
-    );
 
+    // And
     await postPage.openPosts();
 
     // Then
-    const postNameElement = await page.waitForSelector('h3.gh-content-entry-title');
-    const postName = await page.evaluate(postNameElement => postNameElement.textContent.trim(), postNameElement);
-    if (postName === title) {
-        await logStep("Nuevo post creado exitosamente", path.join(screenshotsDir, "11_newpostSuccess.png"));
-    } else {
-        await logStep("No se creó el post", path.join(screenshotsDir, "11_newpostError.png"));
-    }
+    const postNameElement = await page.waitForSelector(
+      "h3.gh-content-entry-title"
+    );
 
+    const postName = await page.evaluate(
+      (postNameElement) => postNameElement.textContent.trim(),
+      postNameElement
+    );
+
+    if (postName === title) {
+      await logStep(
+        screenshots.text11_1,
+        path.join(screenshotsDir, screenshots.image11_1)
+      );
+    } else {
+      await logStep(
+        screenshots.text11_2,
+        path.join(screenshotsDir, screenshots.image11_2)
+      );
+    }
   } catch (error) {
     await logStep(
       `Error inesperado:\n${error}`,
       path.join(screenshotsDir, "500_ERROR.png")
     );
   } finally {
-    await adminPage.logOut();
+    await adminPage.logOut("text12", "image12");
 
     await logStep(
-      "Se cierra sesión",
-      path.join(screenshotsDir, "12_logOut.png")
+      screenshots.text13,
+      path.join(screenshotsDir, screenshots.image13)
     );
+
     await browser.close();
   }
 }

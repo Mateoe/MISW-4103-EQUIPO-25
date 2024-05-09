@@ -12,16 +12,18 @@ const testEditProfileName = require("./tests/editProfileName");
 const testEditProfileLocation = require("./tests/editProfileLocation");
 
 (async () => {
-  // await testNewTag();
-  // await testEditTag();
   // await testDeleteTag();
+  // await testEditProfileLocation();
+  // await testEditProfileName();
+  // await testEditTag();
+  await testNewPost();
+  // await testNewPostWithTag();
+  // await testNewTag();
+  // //Crear página
+  // //Borrar página
   // await testNewMember();
   // await testDeleteMember();
   // await testNewTier();
-  // await testNewPost();
   // await testNewPremiumPost();
-  // await testNewPostWithTag();
   // await testNewOffer();
-  await testEditProfileName();
-  await testEditProfileLocation();
 })();

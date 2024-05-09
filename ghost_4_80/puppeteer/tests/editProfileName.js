@@ -28,7 +28,7 @@ async function testEditProfileName() {
     image6: "06_openProfileSettings.png",
     text7: "Editar nombre de perfil",
     image7: "07_editProfileName.png",
-    text_8: "Guardar cambios",
+    text8: "Guardar cambios",
     image8: "08_saveChanges.png",
     text9_1: "Nombre editado exitosamente",
     image9_1: "09_editNameSuccess.png",
@@ -124,7 +124,7 @@ async function testEditProfileName() {
       path.join(screenshotsDir, "500_ERROR.png")
     );
   } finally {
-    await adminPage.logOut();
+    await adminPage.logOut("text10", "image10");
 
     await logStep(
       screenshots.text11,

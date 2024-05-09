@@ -1,66 +1,66 @@
 class PostPage {
-  constructor(page) {
+  constructor(page, path, logStep, screenshotsDir, screenshots) {
     this.page = page;
+    this.path = path;
+    this.logStep = logStep;
+    this.screenshotsDir = screenshotsDir;
+    this.screenshots = screenshots;
   }
 
   async openPosts() {
-    await this.page.waitForSelector('a[data-test-nav="posts"]');
-    await this.page.click('a[data-test-nav="posts"]');
-    await this.page.waitForSelector(
-      "body > div.gh-app > div > main > section > section"
+    await this.page.waitForSelector('a[href="#/posts/"]');
+    await this.page.click('a[href="#/posts/"]');
+    await this.page.waitForSelector('a[title="Edit this post"]');
+    await this.logStep(
+      this.screenshots.text10,
+      this.path.join(this.screenshotsDir, this.screenshots.image10)
     );
   }
 
   async openNewPost() {
-    await this.page.waitForSelector('[data-test-nav="new-story"]');
-
-    await this.page.click('[data-test-nav="new-story"]');
+    await this.page.waitForSelector('a[href="#/editor/post/"]');
+    await this.page.click('a[href="#/editor/post/"]');
+    await this.logStep(
+      this.screenshots.text5,
+      this.path.join(this.screenshotsDir, this.screenshots.image5)
+    );
   }
 
   async fillPostForm(title) {
-    await this.page.type("[data-test-editor-title-input]", title, {
+    await this.page.type("textarea.gh-editor-title", title, {
       delay: 200,
     });
+
+    await this.logStep(
+      this.screenshots.text6,
+      this.path.join(this.screenshotsDir, this.screenshots.image6)
+    );
   }
 
   async publishPost() {
+    await this.page.keyboard.press("Enter");
     await new Promise((r) => setTimeout(r, 2000));
-    await this.page.waitForSelector('button[data-test-button="publish-flow"]');
-    await this.page.click('button[data-test-button="publish-flow"]');
-  }
 
-  async finalReview() {
-    await new Promise((r) => setTimeout(r, 2000));
-    await this.page.waitForSelector('button[data-test-button="continue"]');
-    await this.page.click('button[data-test-button="continue"]');
+    await this.page.waitForSelector("div.gh-publishmenu-trigger");
+
+    await this.page.click("div.gh-publishmenu-trigger");
+    await this.logStep(
+      this.screenshots.text7,
+      this.path.join(this.screenshotsDir, this.screenshots.image7)
+    );
   }
 
   async confirmPublish() {
     await new Promise((r) => setTimeout(r, 2000));
-    await this.page.waitForSelector(
-      'button[data-test-button="confirm-publish"]'
-    );
-    await this.page.click('button[data-test-button="confirm-publish"]');
-  }
+    await this.page.waitForSelector("button.gh-btn-blue");
+    await this.page.click("button.gh-btn-blue");
 
-  async publishedPostSusccessfully() {
-    await this.page.waitForSelector(
-      'button[data-test-button="back-to-editor"]',
-      {
-        timeout: 30000,
-      }
+    await this.logStep(
+      this.screenshots.text8,
+      this.path.join(this.screenshotsDir, this.screenshots.image8)
     );
-  }
-
-  async convertToPaid() {
-    await this.page.click("button.settings-menu-toggle");
-    await this.page.waitForSelector(
-      'select[data-test-select="post-visibility"]'
-    );
-    await this.page.select(
-      'select[data-test-select="post-visibility"]',
-      "paid"
-    );
+    await new Promise((r) => setTimeout(r, 1000));
+    await this.page.click("button.gh-notification-close");
   }
 
   async assignTags() {
@@ -75,7 +75,12 @@ class PostPage {
 
   async returnToPosts() {
     await this.page.goBack();
-    await this.page.waitForSelector('a[data-test-nav="posts"]');
+    await this.page.waitForSelector('a[href="#/posts/"]');
+
+    await this.logStep(
+      this.screenshots.text9,
+      this.path.join(this.screenshotsDir, this.screenshots.image9)
+    );
   }
 }
 
