@@ -6,4 +6,5 @@ julian.txt
 **reports
 **package-lock.json
 ejemplo/
+.DS_Store
 
