@@ -8,17 +8,22 @@ const testNewPost = require("./tests/newPost");
 const testNewPremiumPost = require("./tests/newPremiumPost");
 const testNewPostWithTag = require("./tests/newPostWithTag");
 const testNewOffer = require("./tests/newOffer");
-
+const testEditProfileName = require("./tests/editProfileName");
+const testEditProfileLocation = require("./tests/editProfileLocation");
 
 (async () => {
-  await testNewTag();
-  await testEditTag();
-  await testDeleteTag();
-  await testNewMember();
-  await testDeleteMember();
-  await testNewTier();
+  // await testDeleteTag();
+  await testEditProfileLocation();
+  await testEditProfileName();
+  // await testEditTag();
   await testNewPost();
-  await testNewPremiumPost();
   await testNewPostWithTag();
-  await testNewOffer();
+  // await testNewTag();
+  // //Crear página
+  // //Borrar página
+  // await testNewMember();
+  // await testDeleteMember();
+  // await testNewTier();
+  // await testNewPremiumPost();
+  // await testNewOffer();
 })();
