@@ -41,7 +41,7 @@ class AdminPage {
     await this.page.waitForSelector("div.gh-user-avatar");
 
     await new Promise((r) => setTimeout(r, 1000));
-    this.logStep(
+    await this.logStep(
       this.screenshots.text10,
       this.path.join(this.screenshotsDir, this.screenshots.image10)
     );

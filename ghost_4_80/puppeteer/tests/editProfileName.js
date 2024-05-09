@@ -68,14 +68,6 @@ async function testEditProfileName() {
 
     await loginPage.login("test@test.com", "Test@test25");
 
-    await page.waitForSelector('a[href="#/site/"]');
-
-    await new Promise((r) => setTimeout(r, 1000));
-    await logStep(
-      screenshots.text4,
-      path.join(screenshotsDir, screenshots.image4)
-    );
-
     // When
     await profilePage.openProfileFromMain();
 
@@ -83,7 +75,6 @@ async function testEditProfileName() {
     random_name = faker.name.findName();
     await profilePage.fillPorfileName(random_name);
 
-    await new Promise((r) => setTimeout(r, 1000));
     await logStep(
       screenshots.text7,
       path.join(screenshotsDir, screenshots.image7)
@@ -125,7 +116,6 @@ async function testEditProfileName() {
     }
 
     await profilePage.saveProfile();
-
 
     await adminPage.closeSettings();
   } catch (error) {

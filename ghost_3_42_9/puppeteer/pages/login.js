@@ -14,8 +14,7 @@ class LoginPage {
   async login(username, password) {
     await this.page.waitForSelector('button[type="submit"]');
 
-    await new Promise((r) => setTimeout(r, 1000));
-    this.logStep(
+    await this.logStep(
       this.screenshots.text1,
       this.path.join(this.screenshotsDir, this.screenshots.image1)
     );
@@ -23,21 +22,26 @@ class LoginPage {
       delay: 100,
     });
 
-    await new Promise((r) => setTimeout(r, 1000));
-    this.logStep(
+    await this.logStep(
       this.screenshots.text2,
       this.path.join(this.screenshotsDir, this.screenshots.image2)
     );
 
     await this.page.type('input[name="password"]', password, { delay: 100 });
 
-    await new Promise((r) => setTimeout(r, 1000));
-    this.logStep(
+    await this.logStep(
       this.screenshots.text3,
       this.path.join(this.screenshotsDir, this.screenshots.image3)
     );
 
     await this.page.click('button[type="submit"]');
+
+    await this.page.waitForSelector('a[href="#/site/"]');
+
+    await this.logStep(
+      this.screenshots.text4,
+      this.path.join(this.screenshotsDir, this.screenshots.image4)
+    );
   }
 }
 

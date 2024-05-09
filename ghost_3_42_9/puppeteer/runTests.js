@@ -8,7 +8,7 @@ const testEditProfileLocation = require("./tests/editProfileLocation");
 
 (async () => {
   // await testDeleteTag();
-  // await testEditProfileLocation();
+  await testEditProfileLocation();
   await testEditProfileName();
   // await testEditTag();
   // await testNewPost();

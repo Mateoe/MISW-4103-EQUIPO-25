@@ -68,14 +68,6 @@ async function testEditProfileName() {
 
     await loginPage.login("test@test.com", "Test@test25");
 
-    await page.waitForSelector('a[href="#/site/"]');
-
-    await new Promise((r) => setTimeout(r, 1000));
-    await logStep(
-      screenshots.text4,
-      path.join(screenshotsDir, screenshots.image4)
-    );
-
     // When
     await profilePage.openProfileFromMain();
 
@@ -127,7 +119,6 @@ async function testEditProfileName() {
   } finally {
     await adminPage.logOut();
 
-    
     await logStep(
       screenshots.text11,
       path.join(screenshotsDir, screenshots.image11)

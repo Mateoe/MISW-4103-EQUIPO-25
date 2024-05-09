@@ -9,62 +9,82 @@ async function testEditProfileLocation() {
   console.log("REALIZANDO PRUEBA E2E DE EDITAR la ubicación de perfil");
   const url = "https://ghost-5ehz.onrender.com/ghost/#/signin";
   const { page, logStep, screenshotsDir, browser } = await initialSettings(
-    "EditProfileLocation"
+    "GHOST_4_EditProfileLocation"
   );
-  const loginPage = new LoginPage(page);
-  const adminPage = new AdminPage(page);
-  const profilePage = new ProfilePage(page);
+
+  const screenshots = {
+    text1: "Navegación a la página de inicio de sesión",
+    image1: "01_pageLogin.png",
+    text2: "Ingresar el usuario",
+    image2: "02_userName.png",
+    text3: "Ingresar el la contraseña",
+    image3: "03_password.png",
+    text4: "Inicio de sesión exitoso",
+    image4: "04_loginSuccess.png",
+    text5: "Abrix Dropdown Menu",
+    image5: "05_dropdownMenu.png",
+    text6: "Ingreso a pagina de ajustes",
+    image6: "06_openProfileSettings.png",
+    text7: "Editar la ubicación de perfil",
+    image7: "07_editProfileLocation.png",
+    text8: "Guardar cambios",
+    image8: "08_saveChanges.png",
+    text9_1: "Ubicación editado exitosamente",
+    image9_1: "09_editLocationSuccess.png",
+    text9_2: "No se cambio la Ubicación",
+    image9_2: "09_editLocationError.png",
+    text10: "Abrix Dropdown Menu",
+    image10: "10_dropdownMenu.png",
+    text11: "Se cierra sesión",
+    image11: "11_logOut.png",
+  };
+
+  const loginPage = new LoginPage(
+    page,
+    path,
+    logStep,
+    screenshotsDir,
+    screenshots
+  );
+  const adminPage = new AdminPage(
+    page,
+    path,
+    logStep,
+    screenshotsDir,
+    screenshots
+  );
+  const profilePage = new ProfilePage(
+    page,
+    path,
+    logStep,
+    screenshotsDir,
+    screenshots
+  );
 
   try {
     // Given
     await loginPage.open(url);
-    await logStep(
-      "Navegación a la página de inicio de sesión",
-      path.join(screenshotsDir, "01_pageLogin.png")
-    );
 
     await loginPage.login("test@test.com", "Test@test25");
-    await logStep(
-      "Iniciando sesión",
-      path.join(screenshotsDir, "02_login.png")
-    );
-
-    await page.waitForSelector('a[data-test-nav="settings"]');
-    await logStep(
-      "Inicio de sesión exitoso",
-      path.join(screenshotsDir, "03_loginSuccess.png")
-    );
 
     // When
     await profilePage.openProfileFromMain();
-    await logStep(
-      "Ingreso a pagina de ajustes",
-      path.join(screenshotsDir, "04_openSettings.png")
-    );
 
     // And
     const randomCity = faker.address.city();
-
     await profilePage.fillProfileLocation(randomCity);
+
+    
     await logStep(
-      "Ingreso al formulario de creacion de ciudad",
-      path.join(screenshotsDir, "05_NewOfferInterface.png")
+      screenshots.text7,
+      path.join(screenshotsDir, screenshots.image7)
     );
 
     // And
     await profilePage.saveProfile();
-    await logStep(
-      "Gudardar los cambios",
-      path.join(screenshotsDir, "06_fillNewOfferForm.png")
-    );
 
     // Then
     await profilePage.openProfileFromSetting();
-
-    await logStep(
-      "Ingreso al formulario",
-      path.join(screenshotsDir, "07_openProfileFromSetting.png")
-    );
 
     await page.waitForSelector("h1.break-words");
 
@@ -98,29 +118,19 @@ async function testEditProfileLocation() {
 
     if (NameUpdated) {
       await logStep(
-        "Nuevo nombre creado exitosamente",
-        path.join(screenshotsDir, "07_NewOfferSuccess.png")
+        screenshots.text9_1,
+        path.join(screenshotsDir, screenshots.image9_1)
       );
     } else {
       await logStep(
-        "No se cambio el Nombre",
-        path.join(screenshotsDir, "07_NewOfferError.png")
+        screenshots.text9_2,
+        path.join(screenshotsDir, screenshots.image9_2)
       );
     }
 
     await profilePage.saveProfile();
-    await logStep(
-      "Cerrar formulario de creacion de oferta",
-      path.join(screenshotsDir, "06_fillNewOfferForm.png")
-    );
 
     await adminPage.closeSettings();
-    await logStep(
-      "Retornar de ajustes",
-      path.join(screenshotsDir, "08_returnToSettings.png")
-    );
-      
-      
   } catch (error) {
     await logStep(
       `Error inesperado:\n${error}`,
@@ -130,9 +140,10 @@ async function testEditProfileLocation() {
     await adminPage.logOut();
 
     await logStep(
-      "Se cierra sesión",
-      path.join(screenshotsDir, "09_logOut.png")
+      screenshots.text11,
+      path.join(screenshotsDir, screenshots.image11)
     );
+
     await browser.close();
   }
 }

@@ -14,7 +14,7 @@ class ProfilePage {
     await this.page.waitForSelector('a[href="#/signout/"]');
 
     await new Promise((r) => setTimeout(r, 1000));
-    this.logStep(
+    await this.logStep(
       this.screenshots.text5,
       this.path.join(this.screenshotsDir, this.screenshots.image5)
     );
@@ -24,7 +24,7 @@ class ProfilePage {
   async fillProfileLocation(location) {
     await this.page.waitForSelector("fieldset.user-details-bottom");
 
-    this.logStep(
+    await this.logStep(
       this.screenshots.text6,
       this.path.join(this.screenshotsDir, this.screenshots.image6)
     );
@@ -47,15 +47,12 @@ class ProfilePage {
     await new Promise((r) => setTimeout(r, 1000));
 
     await this.page.type(selectorName, location, { delay: 100 });
-
-    return idValue;
   }
 
   async fillPorfileName(name) {
     await this.page.waitForSelector("fieldset.user-details-bottom");
 
-    await new Promise((r) => setTimeout(r, 1000));
-    this.logStep(
+    await this.logStep(
       this.screenshots.text6,
       this.path.join(this.screenshotsDir, this.screenshots.image6)
     );
@@ -82,9 +79,8 @@ class ProfilePage {
 
   async saveProfile() {
     await this.page.click("button.gh-btn-blue");
-    
-    await new Promise((r) => setTimeout(r, 1000));
-    this.logStep(
+
+    await this.logStep(
       this.screenshots.text8,
       this.path.join(this.screenshotsDir, this.screenshots.image8)
     );

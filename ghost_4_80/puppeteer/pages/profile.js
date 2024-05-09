@@ -13,8 +13,8 @@ class ProfilePage {
 
     await this.page.waitForSelector('a[href="#/settings/staff/equipo/"]');
 
-    await new Promise((r) => setTimeout(r, 1000));
-    this.logStep(
+
+    await this.logStep(
       this.screenshots.text5,
       this.path.join(this.screenshotsDir, this.screenshots.image5)
     );
@@ -33,7 +33,8 @@ class ProfilePage {
       "h1.break-words.md\\:break-normal.text-white.md\\:text-4xl.leading-tighter"
     );
 
-    this.logStep(
+
+    await this.logStep(
       this.screenshots.text6,
       this.path.join(this.screenshotsDir, this.screenshots.image6)
     );
@@ -66,7 +67,7 @@ class ProfilePage {
     );
 
     await new Promise((r) => setTimeout(r, 1000));
-    this.logStep(
+    await this.logStep(
       this.screenshots.text6,
       this.path.join(this.screenshotsDir, this.screenshots.image6)
     );
@@ -92,10 +93,12 @@ class ProfilePage {
   }
 
   async saveProfile() {
+    await new Promise((r) => setTimeout(r, 1000));
+
     await this.page.click("button.cursor-pointer.bg-black");
 
-    await new Promise((r) => setTimeout(r, 1000));
-    this.logStep(
+
+    await this.logStep(
       this.screenshots.text8,
       this.path.join(this.screenshotsDir, this.screenshots.image8)
     );
