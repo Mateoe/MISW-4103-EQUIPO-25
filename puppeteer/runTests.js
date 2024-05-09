@@ -9,7 +9,7 @@ const testNewPremiumPost = require("./tests/newPremiumPost");
 const testNewPostWithTag = require("./tests/newPostWithTag");
 const testNewOffer = require("./tests/newOffer");
 const testEditProfileName = require("./tests/editProfileName");
-
+const testEditProfileLocation = require("./tests/editProfileLocation");
 
 (async () => {
   // await testNewTag();
@@ -22,5 +22,6 @@ const testEditProfileName = require("./tests/editProfileName");
   // await testNewPremiumPost();
   // await testNewPostWithTag();
   // await testNewOffer();
-  await testEditProfileName();
+  // await testEditProfileName();
+  await testEditProfileLocation();
 })();
