@@ -34,9 +34,9 @@ async function testEditTag() {
         text11: "Tag no editado",
         image11: "10_errorEditedTag.png",
         text12: "Abrir Dropdown Menu",
-        image12: "12_dropdownMenu.png",
+        image12: "11_dropdownMenu.png",
         text13: "Se cierra sesión",
-        image13: "13_logOut.png",
+        image13: "12_logOut.png",
     };
     const loginPage = new LoginPage(
         page,
