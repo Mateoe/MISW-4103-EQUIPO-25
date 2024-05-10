@@ -10,12 +10,16 @@ const testNewPostWithTag = require("./tests/newPostWithTag");
 const testNewOffer = require("./tests/newOffer");
 const testEditProfileName = require("./tests/editProfileName");
 const testEditProfileLocation = require("./tests/editProfileLocation");
+const testNewPage = require("./tests/newPage");
+const testDeletePage = require("./tests/deletePage");
 
 (async () => {
+  await testNewPage()
+  await testDeletePage()
   await testNewTag();
   await testEditTag();
   await testDeleteTag();
-/*   await testEditProfileLocation();
+  await testEditProfileLocation();
   await testEditProfileName();
   await testNewPost();
   await testNewPostWithTag();
@@ -23,5 +27,5 @@ const testEditProfileLocation = require("./tests/editProfileLocation");
   await testDeleteMember();
   await testNewTier();
   await testNewPremiumPost();
-  await testNewOffer(); */
+  await testNewOffer();
 })();
