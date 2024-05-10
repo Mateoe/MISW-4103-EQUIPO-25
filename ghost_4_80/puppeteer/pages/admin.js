@@ -8,13 +8,16 @@ class AdminPage {
   }
 
   async openTags() {
-    await this.page.waitForSelector('a[data-test-nav="tags"]');
-    await this.page.click('a[data-test-nav="tags"]');
+    await this.page.waitForSelector('a[href="#/tags/"]');
+    await this.page.click('a[href="#/tags/"]');
     await this.page.waitForSelector(
-      "section.view-container.content-list ol.tags-list"
+      "section.view-actions"
+    );
+    await this.logStep(
+      this.screenshots.text5,
+      this.path.join(this.screenshotsDir, this.screenshots.image5)
     );
   }
-
   async openSettings() {
     await this.page.waitForSelector('a[data-test-nav="settings"]');
     await this.page.click('a[data-test-nav="settings"]');
