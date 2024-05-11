@@ -8,7 +8,7 @@ async function testNewTag() {
     console.log("REALIZANDO PRUEBA E2E DE CREACIÓN DE TAGS")
     const url = "https://ghost-5ehz.onrender.com/ghost/#/signin";
     const { page, logStep, screenshotsDir, browser } = await initialSettings(
-        "GHOST_4_newTag"
+        "GHOST_5_newTag"
     );
     const screenshots = {
         text1: "Navegación a la página de inicio de sesión",

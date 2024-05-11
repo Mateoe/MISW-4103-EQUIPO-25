@@ -9,7 +9,7 @@ async function testNewPage() {
   console.log("REALIZANDO PRUEBA E2E DE CREAR UNA PAGINA");
   const url = "https://ghost-5ehz.onrender.com/ghost/#/signin";
   const { page, logStep, screenshotsDir, browser } =
-    await initialSettings("GHOST_4_newPage");
+    await initialSettings("GHOST_5_newPage");
 
   const screenshots = {
     text1: "Navegación a la página de inicio de sesión",

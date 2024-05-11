@@ -7,7 +7,7 @@ const faker = require("faker");
 
 async function testEditProfileLocation() {
   console.log("REALIZANDO PRUEBA E2E DE EDITAR la ubicación de perfil");
-  const url = "http://localhost:2369/ghost/#/signin";
+  const url = "https://ghost-3-42-9.onrender.com/ghost/#/signin";
   const { page, logStep, screenshotsDir, browser } = await initialSettings(
     "GHOST_3_EditProfileLocation"
   );

@@ -10,7 +10,7 @@ class PagePage {
   async openPages(text, image) {
     await this.page.waitForSelector('a[href="#/pages/"]');
     await this.page.click('a[href="#/pages/"]');
-    await this.page.waitForSelector('a[title="Edit this page"]');
+    await this.page.waitForSelector('a[href="#/pages/"]');
     await this.logStep(
       this.screenshots[text],
       this.path.join(this.screenshotsDir, this.screenshots[image])

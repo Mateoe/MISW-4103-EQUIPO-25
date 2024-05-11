@@ -7,7 +7,7 @@ const TagsPage = require("../pages/tags");
 async function testDeleteTag() {
 
     console.log("REALIZANDO PRUEBA E2E DE ELIMINACIÓN DE TAGS")
-    const url = "http://localhost:2368/ghost/#/tags";
+    const url = "https://ghost-3-42-9.onrender.com/ghost/#/signin";
     const { page, logStep, screenshotsDir, browser } = await initialSettings(
         "GHOST_3_DeleteTag"
     );

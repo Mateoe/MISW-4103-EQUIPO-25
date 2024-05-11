@@ -7,7 +7,7 @@ const PagePage = require("../pages/pages");
 async function testDeletePage() {
     console.log("REALIZANDO PRUEBA E2E DE ELIMINAR UNA PAGINA");
     const url = "https://ghost-5ehz.onrender.com/ghost/#/signin";
-    const { page, logStep, screenshotsDir, browser } = await initialSettings("GHOST_4_deletePage");
+    const { page, logStep, screenshotsDir, browser } = await initialSettings("GHOST_5_deletePage");
 
     const screenshots = {
         text1: "Navegación a la página de inicio de sesión",

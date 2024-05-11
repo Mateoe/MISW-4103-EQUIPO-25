@@ -6,7 +6,7 @@ const TagsPage = require("../pages/tags");
 
 async function testNewTag() {
     console.log("REALIZANDO PRUEBA E2E DE CREACIÓN DE TAGS")
-    const url = "http://localhost:2368/ghost/#/signin";
+    const url = "https://ghost-3-42-9.onrender.com/ghost/#/signin";
     const { page, logStep, screenshotsDir, browser } = await initialSettings(
         "GHOST_3_newTag"
     );
