@@ -53,3 +53,11 @@ Para la creación de las pruebas se usó un ambiente con las siguientes caracter
 5. eliminar_miembro.feature
 
 Esto para que existan los insumos necesarios para correr cada prueba y los escenarios se comporten adecuadamente.
+
+
+### Ejecución de los tests en Resemble
+1. Ingresar a la carpeta `cd resemble/`.
+2. Instalar dependencias `npm i`.
+3. Ejecutar el código `node runTestVRT.js`.
+4. En la carpeta de reports se crean las distintas carpetas con los html y css correspondientes a cada escenario.
+
