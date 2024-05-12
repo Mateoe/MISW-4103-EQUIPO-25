@@ -1,4 +1,4 @@
-report({
+{
   "testSuite": "BackstopJS",
   "tests": [
     {
@@ -319,4 +319,4 @@ report({
     }
   ],
   "id": "Editar tag"
-});
+}

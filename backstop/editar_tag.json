@@ -93,8 +93,8 @@
       }
     ],
     "paths": {
-      "bitmaps_reference": "backstop_data/bitmaps_reference",
-      "bitmaps_test": "backstop_data/bitmaps_test",
+      "bitmaps_reference": "backstop_data/bitmaps_reference/editar_tag",
+      "bitmaps_test": "backstop_data/bitmaps_test/editar_tag",
       "engine_scripts": "backstop_data/engine_scripts",
       "html_report": "reports/report_editar_tag",
       "ci_report": "backstop_data/ci_report"

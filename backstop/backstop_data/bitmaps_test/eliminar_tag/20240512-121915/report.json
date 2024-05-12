@@ -1,4 +1,4 @@
-report({
+{
   "testSuite": "BackstopJS",
   "tests": [
     {
@@ -317,4 +317,4 @@ report({
     }
   ],
   "id": "Eliminar tag"
-});
+}

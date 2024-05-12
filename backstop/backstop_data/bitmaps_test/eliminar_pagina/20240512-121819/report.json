@@ -1,4 +1,4 @@
-report({
+{
   "testSuite": "BackstopJS",
   "tests": [
     {
@@ -318,4 +318,4 @@ report({
     }
   ],
   "id": "Eliminar pagina"
-});
+}
