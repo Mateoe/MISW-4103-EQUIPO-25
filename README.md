@@ -78,8 +78,10 @@ Esto para que existan los insumos necesarios para correr cada prueba y los escen
 4. Iniciar el servidor en tests_results con el comando `http-server`. se debe garantizar que se expuso el puerto 8080 para el correcto funcionamiento de las pruebas, dado que las imágenes tienen el formato de `http://127.0.0.1:8080/carpeta_de_la_prueba/imagen_de_la_prueba.png`.
 5. Retornar a la carpeta principal de backstop `cd ..`.
 6. Correr cada escenario de tests, para ello se deben correr los siguientes comando, donde para el ejemplo se usa la funcionalidad de eliminar_pagina, sin embargo, basta con reemplazar el nombre del archivo `.json` por el de la prueba que desea correr.
+    
     a. `backstop reference --config eliminar_pagina.json` para establecer la imagen de referencia.
     b. `backstop test --config eliminar_pagina.json` para correr la prueba y generar el reporte.
+
 7. Observar el reporte generado por la regresión visual en la carpetar reports `cd .\reports\`.
 8. Ingresar a la carpeta del test, por ejemplo ` cd .\report_eliminar_pagina\`.
 9. Abrir el archivo `index.html` generado, donde podrá observar todos los detalles del reporte.
