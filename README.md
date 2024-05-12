@@ -11,9 +11,17 @@
 
 ### Pagina web despliegue ghost
 
+#### Versión 5.80.0
+
 https://ghost-5ehz.onrender.com/ghost/#/signin
 
 https://ghost-5ehz.onrender.com
+
+#### Versión 3.42.9
+
+https://ghost-3-42-9.onrender.com/ghost/#/signin
+
+https://ghost-3-42-9.onrender.com/
 
 ### Ejecución de los tests en puppeteer
 Para la creación de las pruebas se usó un ambiente con las siguientes características
@@ -60,4 +68,11 @@ Esto para que existan los insumos necesarios para correr cada prueba y los escen
 2. Instalar dependencias `npm i`.
 3. Ejecutar el código `node runTestVRT.js`.
 4. En la carpeta de reports se crean las distintas carpetas con los html y css correspondientes a cada escenario.
+
+
+### Ejecución de los test en backstop
+
+1. Instalar las liberías correspondientes, se sugiere que se haga de forma global para que el escenario de ejecución sea similar: `npm install -g http-server`, `npm install -g backstopjs`.
+2. Ingresar a la carpeta backstop `cd .\backstop\`.
+3. Ingresar a la carpeta tests_results `cd .\tests_results\`.
 
