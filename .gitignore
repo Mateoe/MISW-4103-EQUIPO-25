@@ -1,9 +1,8 @@
 **node_modules
 **.vscode
-*results
+results/
 julian.txt
 **.kraken
-**reports
 **package-lock.json
 ejemplo/
 .DS_Store

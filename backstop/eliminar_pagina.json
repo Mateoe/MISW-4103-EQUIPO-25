@@ -1,0 +1,112 @@
+{
+    "id": "Eliminar pagina",
+    "viewports": [
+      {
+        "name": "desktop",
+        "width": 929,
+        "height": 917
+      }
+    ],
+    "scenarios": [
+      {
+        "label": "Login",
+        "referenceUrl":  "http://127.0.0.1:8080/GHOST_5_deletePage/01_pageLogin.png",
+        "url":"http://127.0.0.1:8080/GHOST_3_deletePage/01_pageLogin.png",
+        "misMatchThreshold": 7
+      },
+      {
+        "label": "UserName",
+        "referenceUrl":  "http://127.0.0.1:8080/GHOST_5_deletePage/02_userName.png",
+          "url":"http://127.0.0.1:8080/GHOST_3_deletePage/02_userName.png",
+        "selectors": ["document"],
+        "misMatchThreshold": 7
+      },
+      {
+        "label": "Password",
+        "referenceUrl":  "http://127.0.0.1:8080/GHOST_5_deletePage/03_password.png",
+        "url":"http://127.0.0.1:8080/GHOST_3_deletePage/03_password.png",
+        "selectors": ["document"],
+        "misMatchThreshold": 7
+      },
+      {
+        "label": "LoginSuccess",
+        "referenceUrl":  "http://127.0.0.1:8080/GHOST_5_deletePage/04_loginSuccess.png",
+        "url":"http://127.0.0.1:8080/GHOST_3_deletePage/04_loginSuccess.png",
+        "selectors": ["document"],
+        "misMatchThreshold": 7
+      },
+      {
+        "label": "PagesInterface",
+        "referenceUrl":  "http://127.0.0.1:8080/GHOST_5_deletePage/05_Pages.png",
+        "url":"http://127.0.0.1:8080/GHOST_3_deletePage/05_Pages.png",
+        "selectors": ["document"],
+        "misMatchThreshold": 7
+      },
+      {
+        "label": "PageInterfaceLoading",
+        "referenceUrl":  "http://127.0.0.1:8080/GHOST_5_deletePage/06_editPage.png",
+        "url":"http://127.0.0.1:8080/GHOST_3_deletePage/06_editPage.png",
+        "selectors": ["document"],
+        "misMatchThreshold": 7
+      },
+      {
+        "label": "PageSettings",
+        "referenceUrl":  "http://127.0.0.1:8080/GHOST_5_deletePage/07_configPage.png",
+        "url":"http://127.0.0.1:8080/GHOST_3_deletePage/07_configPage.png",
+        "selectors": ["document"],
+        "misMatchThreshold": 7
+      },
+      {
+        "label": "ConfirmDelete",
+        "referenceUrl":  "http://127.0.0.1:8080/GHOST_5_deletePage/08_deletePage.png",
+        "url":"http://127.0.0.1:8080/GHOST_3_deletePage/08_deletePage.png",
+        "selectors": ["document"],
+        "misMatchThreshold": 7
+      },
+      {
+        "label": "ConfirmDeletedTag",
+        "referenceUrl":  "http://127.0.0.1:8080/GHOST_5_deletePage/09_confirmDeletePage.png",
+        "url":"http://127.0.0.1:8080/GHOST_3_deletePage/09_confirmDeletePage.png",
+        "selectors": ["document"],
+        "misMatchThreshold": 7
+      },
+      {
+        "label": "SuccessDeltedTag",
+        "referenceUrl":  "http://127.0.0.1:8080/GHOST_5_deletePage/10_successDeltePage.png",
+        "url":"http://127.0.0.1:8080/GHOST_3_deletePage/10_successDeltePage.png",
+        "selectors": ["document"],
+        "misMatchThreshold": 7
+      },
+      {
+        "label": "DropdownMenu",
+        "referenceUrl":  "http://127.0.0.1:8080/GHOST_5_deletePage/11_dropdownMenu.png",
+        "url":"http://127.0.0.1:8080/GHOST_3_deletePage/11_dropdownMenu.png",
+        "selectors": ["document"],
+        "misMatchThreshold": 7
+      },
+      {
+        "label": "LogOut",
+        "referenceUrl":  "http://127.0.0.1:8080/GHOST_5_deletePage/12_logOut.png",
+        "url":"http://127.0.0.1:8080/GHOST_3_deletePage/12_logOut.png",
+        "selectors": ["document"],
+        "misMatchThreshold": 7
+      }
+    ],
+    "paths": {
+      "bitmaps_reference": "backstop_data/bitmaps_reference",
+      "bitmaps_test": "backstop_data/bitmaps_test",
+      "engine_scripts": "backstop_data/engine_scripts",
+      "html_report": "reports/report_eliminar_pagina",
+      "ci_report": "backstop_data/ci_report"
+    },
+    "report": ["browser"],
+    "engine": "puppeteer",
+    "engineOptions": {
+      "args": ["--no-sandbox"]
+    },
+    "asyncCaptureLimit": 5,
+    "asyncCompareLimit": 50,
+    "debug": false,
+    "debugWindow": false
+  }
+  

@@ -1,0 +1,112 @@
+{
+    "id": "Add tag",
+    "viewports": [
+      {
+        "name": "desktop",
+        "width": 929,
+        "height": 917
+      }
+    ],
+    "scenarios": [
+      {
+        "label": "Login",
+        "referenceUrl":  "http://127.0.0.1:8080/GHOST_5_newTag/01_pageLogin.png",
+        "url":"http://127.0.0.1:8080/GHOST_3_newTag/01_pageLogin.png",
+        "misMatchThreshold": 7
+      },
+      {
+        "label": "UserName",
+        "referenceUrl":  "http://127.0.0.1:8080/GHOST_5_newTag/02_userName.png",
+        "url":"http://127.0.0.1:8080/GHOST_3_newTag/02_userName.png",
+        "selectors": ["document"],
+        "misMatchThreshold": 7
+      },
+      {
+        "label": "Password",
+        "referenceUrl":  "http://127.0.0.1:8080/GHOST_5_newTag/03_password.png",
+        "url":"http://127.0.0.1:8080/GHOST_3_newTag/03_password.png",
+        "selectors": ["document"],
+        "misMatchThreshold": 7
+      },
+      {
+        "label": "LoginSuccess",
+        "referenceUrl":  "http://127.0.0.1:8080/GHOST_5_newTag/04_loginSuccess.png",
+        "url":"http://127.0.0.1:8080/GHOST_3_newTag/04_loginSuccess.png",
+        "selectors": ["document"],
+        "misMatchThreshold": 7
+      },
+      {
+        "label": "TagsInterface",
+        "referenceUrl":  "http://127.0.0.1:8080/GHOST_5_newTag/05_tags_interface.png",
+        "url":"http://127.0.0.1:8080/GHOST_3_newTag/05_tags_interface.png",
+        "selectors": ["document"],
+        "misMatchThreshold": 7
+      },
+      {
+        "label": "TagsFrom",
+        "referenceUrl":  "http://127.0.0.1:8080/GHOST_5_newTag/06_openTagsForm.png",
+        "url":"http://127.0.0.1:8080/GHOST_3_newTag/06_openTagsForm.png",
+        "selectors": ["document"],
+        "misMatchThreshold": 7
+      },
+      {
+        "label": "NewTag",
+        "referenceUrl":  "http://127.0.0.1:8080/GHOST_5_newTag/07_newTag.png",
+        "url":"http://127.0.0.1:8080/GHOST_3_newTag/07_newTag.png",
+        "selectors": ["document"],
+        "misMatchThreshold": 7
+      },
+      {
+        "label": "SaveNewTag",
+        "referenceUrl":  "http://127.0.0.1:8080/GHOST_5_newTag/08_saveNewTag.png",
+        "url":"http://127.0.0.1:8080/GHOST_3_newTag/08_saveNewTag.png",
+        "selectors": ["document"],
+        "misMatchThreshold": 7
+      },
+      {
+        "label": "ConfirmnewTag",
+        "referenceUrl":  "http://127.0.0.1:8080/GHOST_5_newTag/09_confirmNewTag.png",
+        "url":"http://127.0.0.1:8080/GHOST_3_newTag/09_confirmNewTag.png",
+        "selectors": ["document"],
+        "misMatchThreshold": 7
+      },
+      {
+        "label": "SuccessEditedTag",
+        "referenceUrl":  "http://127.0.0.1:8080/GHOST_5_newTag/10_successNewTag.png",
+        "url":"http://127.0.0.1:8080/GHOST_3_newTag/10_successNewTag.png",
+        "selectors": ["document"],
+        "misMatchThreshold": 7
+      },
+      {
+        "label": "DropdownMenu",
+        "referenceUrl":  "http://127.0.0.1:8080/GHOST_5_newTag/11_dropdownMenu.png",
+        "url":"http://127.0.0.1:8080/GHOST_3_newTag/11_dropdownMenu.png",
+        "selectors": ["document"],
+        "misMatchThreshold": 7
+      },
+      {
+        "label": "LogOut",
+        "referenceUrl":  "http://127.0.0.1:8080/GHOST_5_newTag/12_logOut.png",
+        "url":"http://127.0.0.1:8080/GHOST_3_newTag/12_logOut.png",
+        "selectors": ["document"],
+        "misMatchThreshold": 7
+      }
+    ],
+    "paths": {
+      "bitmaps_reference": "backstop_data/bitmaps_reference",
+      "bitmaps_test": "backstop_data/bitmaps_test",
+      "engine_scripts": "backstop_data/engine_scripts",
+      "html_report": "reports/report_agregar_tag",
+      "ci_report": "backstop_data/ci_report"
+    },
+    "report": ["browser"],
+    "engine": "puppeteer",
+    "engineOptions": {
+      "args": ["--no-sandbox"]
+    },
+    "asyncCaptureLimit": 5,
+    "asyncCompareLimit": 50,
+    "debug": false,
+    "debugWindow": false
+  }
+  

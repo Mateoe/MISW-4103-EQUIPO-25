@@ -1,0 +1,371 @@
+{
+  "testSuite": "BackstopJS",
+  "tests": [
+    {
+      "pair": {
+        "reference": "..\\..\\backstop_data\\bitmaps_reference\\Agregarpagina_Login_0_document_0_desktop.png",
+        "test": "..\\..\\backstop_data\\bitmaps_test\\20240511-224534\\Agregarpagina_Login_0_document_0_desktop.png",
+        "selector": "document",
+        "fileName": "Agregarpagina_Login_0_document_0_desktop.png",
+        "label": "Login",
+        "requireSameDimensions": 0.1,
+        "misMatchThreshold": 7,
+        "url": "http://127.0.0.1:8080/GHOST_3_newPage/01_pageLogin.png",
+        "referenceUrl": "http://127.0.0.1:8080/GHOST_5_newPage/01_pageLogin.png",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "rawMisMatchPercentage": 6.636631595752049,
+          "misMatchPercentage": "6.64",
+          "analysisTime": 77
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "pair": {
+        "reference": "..\\..\\backstop_data\\bitmaps_reference\\Agregarpagina_UserName_0_document_0_desktop.png",
+        "test": "..\\..\\backstop_data\\bitmaps_test\\20240511-224534\\Agregarpagina_UserName_0_document_0_desktop.png",
+        "selector": "document",
+        "fileName": "Agregarpagina_UserName_0_document_0_desktop.png",
+        "label": "UserName",
+        "requireSameDimensions": 0.1,
+        "misMatchThreshold": 7,
+        "url": "http://127.0.0.1:8080/GHOST_3_newPage/02_userName.png",
+        "referenceUrl": "http://127.0.0.1:8080/GHOST_5_newPage/02_userName.png",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "rawMisMatchPercentage": 6.92446117059302,
+          "misMatchPercentage": "6.92",
+          "analysisTime": 65
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "pair": {
+        "reference": "..\\..\\backstop_data\\bitmaps_reference\\Agregarpagina_Password_0_document_0_desktop.png",
+        "test": "..\\..\\backstop_data\\bitmaps_test\\20240511-224534\\Agregarpagina_Password_0_document_0_desktop.png",
+        "selector": "document",
+        "fileName": "Agregarpagina_Password_0_document_0_desktop.png",
+        "label": "Password",
+        "requireSameDimensions": 0.1,
+        "misMatchThreshold": 7,
+        "url": "http://127.0.0.1:8080/GHOST_3_newPage/03_password.png",
+        "referenceUrl": "http://127.0.0.1:8080/GHOST_5_newPage/03_password.png",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "rawMisMatchPercentage": 6.8952321476993,
+          "misMatchPercentage": "6.90",
+          "analysisTime": 71
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "pair": {
+        "reference": "..\\..\\backstop_data\\bitmaps_reference\\Agregarpagina_LoginSuccess_0_document_0_desktop.png",
+        "test": "..\\..\\backstop_data\\bitmaps_test\\20240511-224534\\Agregarpagina_LoginSuccess_0_document_0_desktop.png",
+        "selector": "document",
+        "fileName": "Agregarpagina_LoginSuccess_0_document_0_desktop.png",
+        "label": "LoginSuccess",
+        "requireSameDimensions": 0.1,
+        "misMatchThreshold": 7,
+        "url": "http://127.0.0.1:8080/GHOST_3_newPage/04_loginSuccess.png",
+        "referenceUrl": "http://127.0.0.1:8080/GHOST_5_newPage/04_loginSuccess.png",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "rawMisMatchPercentage": 3.5047828776618664,
+          "misMatchPercentage": "3.50",
+          "analysisTime": 75
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "pair": {
+        "reference": "..\\..\\backstop_data\\bitmaps_reference\\Agregarpagina_PagesInterface_0_document_0_desktop.png",
+        "test": "..\\..\\backstop_data\\bitmaps_test\\20240511-224534\\Agregarpagina_PagesInterface_0_document_0_desktop.png",
+        "selector": "document",
+        "fileName": "Agregarpagina_PagesInterface_0_document_0_desktop.png",
+        "label": "PagesInterface",
+        "requireSameDimensions": 0.1,
+        "misMatchThreshold": 7,
+        "url": "http://127.0.0.1:8080/GHOST_3_newPage/05_newPages.png",
+        "referenceUrl": "http://127.0.0.1:8080/GHOST_5_newPage/05_newPages.png",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "rawMisMatchPercentage": 3.0205671369526454,
+          "misMatchPercentage": "3.02",
+          "analysisTime": 80
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "pair": {
+        "reference": "..\\..\\backstop_data\\bitmaps_reference\\Agregarpagina_NewPage_0_document_0_desktop.png",
+        "test": "..\\..\\backstop_data\\bitmaps_test\\20240511-224534\\Agregarpagina_NewPage_0_document_0_desktop.png",
+        "selector": "document",
+        "fileName": "Agregarpagina_NewPage_0_document_0_desktop.png",
+        "label": "NewPage",
+        "requireSameDimensions": 0.1,
+        "misMatchThreshold": 7,
+        "url": "http://127.0.0.1:8080/GHOST_3_newPage/06_newPageInterface.png",
+        "referenceUrl": "http://127.0.0.1:8080/GHOST_5_newPage/06_newPageInterface.png",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "rawMisMatchPercentage": 1.892608578776912,
+          "misMatchPercentage": "1.89",
+          "analysisTime": 51
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "pair": {
+        "reference": "..\\..\\backstop_data\\bitmaps_reference\\Agregarpagina_NewPageFillTitle_0_document_0_desktop.png",
+        "test": "..\\..\\backstop_data\\bitmaps_test\\20240511-224534\\Agregarpagina_NewPageFillTitle_0_document_0_desktop.png",
+        "selector": "document",
+        "fileName": "Agregarpagina_NewPageFillTitle_0_document_0_desktop.png",
+        "label": "NewPageFillTitle",
+        "requireSameDimensions": 0.1,
+        "misMatchThreshold": 7,
+        "url": "http://127.0.0.1:8080/GHOST_3_newPage/07_fillNewPageForm.png",
+        "referenceUrl": "http://127.0.0.1:8080/GHOST_5_newPage/07_fillNewPageForm.png",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "rawMisMatchPercentage": 2.2755205172480584,
+          "misMatchPercentage": "2.28",
+          "analysisTime": 82
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "pair": {
+        "reference": "..\\..\\backstop_data\\bitmaps_reference\\Agregarpagina_Publish_0_document_0_desktop.png",
+        "test": "..\\..\\backstop_data\\bitmaps_test\\20240511-224534\\Agregarpagina_Publish_0_document_0_desktop.png",
+        "selector": "document",
+        "fileName": "Agregarpagina_Publish_0_document_0_desktop.png",
+        "label": "Publish",
+        "requireSameDimensions": 0.1,
+        "misMatchThreshold": 7,
+        "url": "http://127.0.0.1:8080/GHOST_3_newPage/08_publishPage.png",
+        "referenceUrl": "http://127.0.0.1:8080/GHOST_5_newPage/08_publishPage.png",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "rawMisMatchPercentage": 3.356876978681595,
+          "misMatchPercentage": "3.36",
+          "analysisTime": 67
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "pair": {
+        "reference": "..\\..\\backstop_data\\bitmaps_reference\\Agregarpagina_ConfirmPublish_0_document_0_desktop.png",
+        "test": "..\\..\\backstop_data\\bitmaps_test\\20240511-224534\\Agregarpagina_ConfirmPublish_0_document_0_desktop.png",
+        "selector": "document",
+        "fileName": "Agregarpagina_ConfirmPublish_0_document_0_desktop.png",
+        "label": "ConfirmPublish",
+        "requireSameDimensions": 0.1,
+        "misMatchThreshold": 7,
+        "url": "http://127.0.0.1:8080/GHOST_3_newPage/09_confirmPublish.pngg",
+        "referenceUrl": "http://127.0.0.1:8080/GHOST_5_newPage/09_confirmPublish.png",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "rawMisMatchPercentage": 99.63246557959744,
+          "misMatchPercentage": "99.63",
+          "analysisTime": 67
+        },
+        "diffImage": "..\\..\\backstop_data\\bitmaps_test\\20240511-224534\\failed_diff_Agregarpagina_ConfirmPublish_0_document_0_desktop.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "..\\..\\backstop_data\\bitmaps_reference\\Agregarpagina_ReturnToPages_0_document_0_desktop.png",
+        "test": "..\\..\\backstop_data\\bitmaps_test\\20240511-224534\\Agregarpagina_ReturnToPages_0_document_0_desktop.png",
+        "selector": "document",
+        "fileName": "Agregarpagina_ReturnToPages_0_document_0_desktop.png",
+        "label": "ReturnToPages",
+        "requireSameDimensions": 0.1,
+        "misMatchThreshold": 7,
+        "url": "http://127.0.0.1:8080/GHOST_3_newPage/10_returnToPages.png",
+        "referenceUrl": "http://127.0.0.1:8080/GHOST_5_newPage/10_returnToPages.png",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "rawMisMatchPercentage": 4.817975966465272,
+          "misMatchPercentage": "4.82",
+          "analysisTime": 81
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "pair": {
+        "reference": "..\\..\\backstop_data\\bitmaps_reference\\Agregarpagina_OpenPages_0_document_0_desktop.png",
+        "test": "..\\..\\backstop_data\\bitmaps_test\\20240511-224534\\Agregarpagina_OpenPages_0_document_0_desktop.png",
+        "selector": "document",
+        "fileName": "Agregarpagina_OpenPages_0_document_0_desktop.png",
+        "label": "OpenPages",
+        "requireSameDimensions": 0.1,
+        "misMatchThreshold": 7,
+        "url": "http://127.0.0.1:8080/GHOST_3_newPage/11_openPages.png",
+        "referenceUrl": "http://127.0.0.1:8080/GHOST_5_newPage/11_openPages.png",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "rawMisMatchPercentage": 3.998506854734104,
+          "misMatchPercentage": "4.00",
+          "analysisTime": 72
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "pair": {
+        "reference": "..\\..\\backstop_data\\bitmaps_reference\\Agregarpagina_NewPageSuccess_0_document_0_desktop.png",
+        "test": "..\\..\\backstop_data\\bitmaps_test\\20240511-224534\\Agregarpagina_NewPageSuccess_0_document_0_desktop.png",
+        "selector": "document",
+        "fileName": "Agregarpagina_NewPageSuccess_0_document_0_desktop.png",
+        "label": "NewPageSuccess",
+        "requireSameDimensions": 0.1,
+        "misMatchThreshold": 7,
+        "url": "http://127.0.0.1:8080/GHOST_3_newPage/12_newpageSuccess.png",
+        "referenceUrl": "http://127.0.0.1:8080/GHOST_5_newPage/12_newpageSuccess.png",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "rawMisMatchPercentage": 5.834770329137579,
+          "misMatchPercentage": "5.83",
+          "analysisTime": 78
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "pair": {
+        "reference": "..\\..\\backstop_data\\bitmaps_reference\\Agregarpagina_DropdownMenu_0_document_0_desktop.png",
+        "test": "..\\..\\backstop_data\\bitmaps_test\\20240511-224534\\Agregarpagina_DropdownMenu_0_document_0_desktop.png",
+        "selector": "document",
+        "fileName": "Agregarpagina_DropdownMenu_0_document_0_desktop.png",
+        "label": "DropdownMenu",
+        "requireSameDimensions": 0.1,
+        "misMatchThreshold": 7,
+        "url": "http://127.0.0.1:8080/GHOST_3_newPage/13_dropdownMenu.png",
+        "referenceUrl": "http://127.0.0.1:8080/GHOST_5_newPage/13_dropdownMenu.png",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "rawMisMatchPercentage": 5.846978435085157,
+          "misMatchPercentage": "5.85",
+          "analysisTime": 79
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "pair": {
+        "reference": "..\\..\\backstop_data\\bitmaps_reference\\Agregarpagina_LogOut_0_document_0_desktop.png",
+        "test": "..\\..\\backstop_data\\bitmaps_test\\20240511-224534\\Agregarpagina_LogOut_0_document_0_desktop.png",
+        "selector": "document",
+        "fileName": "Agregarpagina_LogOut_0_document_0_desktop.png",
+        "label": "LogOut",
+        "requireSameDimensions": 0.1,
+        "misMatchThreshold": 7,
+        "url": "http://127.0.0.1:8080/GHOST_3_newPage/14_logOut.png",
+        "referenceUrl": "http://127.0.0.1:8080/GHOST_5_newPage/14_logOut.png",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "rawMisMatchPercentage": 0.3214018661968111,
+          "misMatchPercentage": "0.32",
+          "analysisTime": 48
+        }
+      },
+      "status": "pass"
+    }
+  ],
+  "id": "Agregar pagina"
+}
