@@ -72,6 +72,16 @@ Esto para que existan los insumos necesarios para correr cada prueba y los escen
 
 ### Ejecución de los test en backstop
 
+**Nota**: En la carpeta `reports` ya se encuentra la ultima versión de los reportes mencionados en los puntos 7, 8 y 9 de las isntrucciones de ejecución, por lo que si deseaconsultarlos antes de realizar las ejecuciones se recomienda seguir dichos puntos o acceder a los siguientes enlaces:
+
+1. [Agregar tag](https://html-preview.github.io/?url=https://github.com/Mateoe/MISW-4103-EQUIPO-25/blob/main/backstop/reports/report_agregar_tag/index.html)
+1. [Editar tag](https://html-preview.github.io/?url=https://github.com/Mateoe/MISW-4103-EQUIPO-25/blob/main/backstop/reports/report_editar_tag/index.html)
+1. [Eliminar tag](https://html-preview.github.io/?url=https://github.com/Mateoe/MISW-4103-EQUIPO-25/blob/main/backstop/reports/report_eliminar_tag/index.html)
+1. [Agregar página](https://html-preview.github.io/?url=https://github.com/Mateoe/MISW-4103-EQUIPO-25/blob/main/backstop/reports/report_agregar_pagina/index.html)
+1. [Eliminar página](https://html-preview.github.io/?url=https://github.com/Mateoe/MISW-4103-EQUIPO-25/blob/main/backstop/reports/report_eliminar_pagina/index.html)
+
+#### Instrucciones de ejecución
+
 1. Instalar las liberías correspondientes, se sugiere que se haga de forma global para que el escenario de ejecución sea similar: `npm install -g http-server`, `npm install -g backstopjs`.
 2. Ingresar a la carpeta backstop `cd .\backstop\`.
 3. Ingresar a la carpeta tests_results `cd .\tests_results\`.
@@ -87,4 +97,3 @@ Esto para que existan los insumos necesarios para correr cada prueba y los escen
 8. Ingresar a la carpeta del test, por ejemplo ` cd .\report_eliminar_pagina\`.
 9. Abrir el archivo `index.html` generado, donde podrá observar todos los detalles del reporte.
 
-**Nota**: dado que despues de la ejecución de cada prueba se vuelven a crear los archivos de referencia, se sugiere ver el correspondiente archivo html luego de correr la prueba, dado que si con una ejecución posterior se reemplazan las imágenes, estás podrían no visualizarse correctamente en la comparación.
