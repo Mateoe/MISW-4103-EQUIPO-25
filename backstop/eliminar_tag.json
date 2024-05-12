@@ -1,0 +1,111 @@
+{
+  "id": "Eliminar tag",
+  "viewports": [
+    {
+      "name": "desktop",
+      "width": 929,
+      "height": 917
+    }
+  ],
+  "scenarios": [
+    {
+      "label": "Login",
+      "referenceUrl":  "http://127.0.0.1:8080/GHOST_5_DeleteTag/01_pageLogin.png",
+      "url":"http://127.0.0.1:8080/GHOST_3_DeleteTag/01_pageLogin.png",
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "UserName",
+      "referenceUrl":  "http://127.0.0.1:8080/GHOST_5_DeleteTag/02_userName.png",
+        "url":"http://127.0.0.1:8080/GHOST_3_DeleteTag/02_userName.png",
+      "selectors": ["document"],
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "Password",
+      "referenceUrl":  "http://127.0.0.1:8080/GHOST_5_DeleteTag/03_password.png",
+      "url":"http://127.0.0.1:8080/GHOST_3_DeleteTag/03_password.png",
+      "selectors": ["document"],
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "LoginSuccess",
+      "referenceUrl":  "http://127.0.0.1:8080/GHOST_5_DeleteTag/04_loginSuccess.png",
+      "url":"http://127.0.0.1:8080/GHOST_3_DeleteTag/04_loginSuccess.png",
+      "selectors": ["document"],
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "TagsInterface",
+      "referenceUrl":  "http://127.0.0.1:8080/GHOST_5_DeleteTag/05_tags_interface.png",
+      "url":"http://127.0.0.1:8080/GHOST_3_DeleteTag/05_tags_interface.png",
+      "selectors": ["document"],
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "TagsFrom",
+      "referenceUrl":  "http://127.0.0.1:8080/GHOST_5_DeleteTag/06_openTagsForm.png",
+      "url":"http://127.0.0.1:8080/GHOST_3_DeleteTag/06_openTagsForm.png",
+      "selectors": ["document"],
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "DelteTag",
+      "referenceUrl":  "http://127.0.0.1:8080/GHOST_5_DeleteTag/07_deleteTag.png",
+      "url":"http://127.0.0.1:8080/GHOST_3_DeleteTag/07_deleteTag.png",
+      "selectors": ["document"],
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "ConfirmDelete",
+      "referenceUrl":  "http://127.0.0.1:8080/GHOST_5_DeleteTag/08_confirmDelete.png",
+      "url":"http://127.0.0.1:8080/GHOST_3_DeleteTag/08_confirmDelete.png",
+      "selectors": ["document"],
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "ConfirmDeletedTag",
+      "referenceUrl":  "http://127.0.0.1:8080/GHOST_5_DeleteTag/09_confirmDeltedTag.png",
+      "url":"http://127.0.0.1:8080/GHOST_3_DeleteTag/09_confirmDeltedTag.png",
+      "selectors": ["document"],
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "SuccessDeltedTag",
+      "referenceUrl":  "http://127.0.0.1:8080/GHOST_5_DeleteTag/10_successDeltedTag.png",
+      "url":"http://127.0.0.1:8080/GHOST_3_DeleteTag/10_successDeltedTag.png",
+      "selectors": ["document"],
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "DropdownMenu",
+      "referenceUrl":  "http://127.0.0.1:8080/GHOST_5_DeleteTag/11_dropdownMenu.png",
+      "url":"http://127.0.0.1:8080/GHOST_3_DeleteTag/11_dropdownMenu.png",
+      "selectors": ["document"],
+      "misMatchThreshold": 7
+    },
+    {
+      "label": "LogOut",
+      "referenceUrl":  "http://127.0.0.1:8080/GHOST_5_DeleteTag/12_logOut.png",
+      "url":"http://127.0.0.1:8080/GHOST_3_DeleteTag/12_logOut.png",
+      "selectors": ["document"],
+      "misMatchThreshold": 7
+    }
+  ],
+  "paths": {
+    "bitmaps_reference": "backstop_data/bitmaps_reference",
+    "bitmaps_test": "backstop_data/bitmaps_test",
+    "engine_scripts": "backstop_data/engine_scripts",
+    "html_report": "reports/report_eliminar_tag",
+    "ci_report": "backstop_data/ci_report"
+  },
+  "report": ["browser"],
+  "engine": "puppeteer",
+  "engineOptions": {
+    "args": ["--no-sandbox"]
+  },
+  "asyncCaptureLimit": 5,
+  "asyncCompareLimit": 50,
+  "debug": false,
+  "debugWindow": false
+}

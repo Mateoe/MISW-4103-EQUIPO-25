@@ -1,0 +1,126 @@
+{
+    "id": "Agregar pagina",
+    "viewports": [
+      {
+        "name": "desktop",
+        "width": 929,
+        "height": 917
+      }
+    ],
+    "scenarios": [
+      {
+        "label": "Login",
+        "referenceUrl":  "http://127.0.0.1:8080/GHOST_5_newPage/01_pageLogin.png",
+        "url":"http://127.0.0.1:8080/GHOST_3_newPage/01_pageLogin.png",
+        "misMatchThreshold": 7
+      },
+      {
+        "label": "UserName",
+        "referenceUrl":  "http://127.0.0.1:8080/GHOST_5_newPage/02_userName.png",
+          "url":"http://127.0.0.1:8080/GHOST_3_newPage/02_userName.png",
+        "selectors": ["document"],
+        "misMatchThreshold": 7
+      },
+      {
+        "label": "Password",
+        "referenceUrl":  "http://127.0.0.1:8080/GHOST_5_newPage/03_password.png",
+        "url":"http://127.0.0.1:8080/GHOST_3_newPage/03_password.png",
+        "selectors": ["document"],
+        "misMatchThreshold": 7
+      },
+      {
+        "label": "LoginSuccess",
+        "referenceUrl":  "http://127.0.0.1:8080/GHOST_5_newPage/04_loginSuccess.png",
+        "url":"http://127.0.0.1:8080/GHOST_3_newPage/04_loginSuccess.png",
+        "selectors": ["document"],
+        "misMatchThreshold": 7
+      },
+      {
+        "label": "PagesInterface",
+        "referenceUrl":  "http://127.0.0.1:8080/GHOST_5_newPage/05_newPages.png",
+        "url":"http://127.0.0.1:8080/GHOST_3_newPage/05_newPages.png",
+        "selectors": ["document"],
+        "misMatchThreshold": 7
+      },
+      {
+        "label": "NewPage",
+        "referenceUrl":  "http://127.0.0.1:8080/GHOST_5_newPage/06_newPageInterface.png",
+        "url":"http://127.0.0.1:8080/GHOST_3_newPage/06_newPageInterface.png",
+        "selectors": ["document"],
+        "misMatchThreshold": 7
+      },
+      {
+        "label": "NewPageFillTitle",
+        "referenceUrl":  "http://127.0.0.1:8080/GHOST_5_newPage/07_fillNewPageForm.png",
+        "url":"http://127.0.0.1:8080/GHOST_3_newPage/07_fillNewPageForm.png",
+        "selectors": ["document"],
+        "misMatchThreshold": 7
+      },
+      {
+        "label": "Publish",
+        "referenceUrl":  "http://127.0.0.1:8080/GHOST_5_newPage/08_publishPage.png",
+        "url":"http://127.0.0.1:8080/GHOST_3_newPage/08_publishPage.png",
+        "selectors": ["document"],
+        "misMatchThreshold": 7
+      },
+      {
+        "label": "ConfirmPublish",
+        "referenceUrl":  "http://127.0.0.1:8080/GHOST_5_newPage/09_confirmPublish.png",
+        "url":"http://127.0.0.1:8080/GHOST_3_newPage/09_confirmPublish.png",
+        "selectors": ["document"],
+        "misMatchThreshold": 7
+      },
+      {
+        "label": "ReturnToPages",
+        "referenceUrl":  "http://127.0.0.1:8080/GHOST_5_newPage/10_returnToPages.png",
+        "url":"http://127.0.0.1:8080/GHOST_3_newPage/10_returnToPages.png",
+        "selectors": ["document"],
+        "misMatchThreshold": 7
+      },
+      {
+        "label": "OpenPages",
+        "referenceUrl":  "http://127.0.0.1:8080/GHOST_5_newPage/11_openPages.png",
+        "url":"http://127.0.0.1:8080/GHOST_3_newPage/11_openPages.png",
+        "selectors": ["document"],
+        "misMatchThreshold": 7
+      },
+      {
+        "label": "NewPageSuccess",
+        "referenceUrl":  "http://127.0.0.1:8080/GHOST_5_newPage/12_newpageSuccess.png",
+        "url":"http://127.0.0.1:8080/GHOST_3_newPage/12_newpageSuccess.png",
+        "selectors": ["document"],
+        "misMatchThreshold": 7
+      },
+      {
+        "label": "DropdownMenu",
+        "referenceUrl":  "http://127.0.0.1:8080/GHOST_5_newPage/13_dropdownMenu.png",
+        "url":"http://127.0.0.1:8080/GHOST_3_newPage/13_dropdownMenu.png",
+        "selectors": ["document"],
+        "misMatchThreshold": 7
+      },
+      {
+        "label": "LogOut",
+        "referenceUrl":  "http://127.0.0.1:8080/GHOST_5_newPage/14_logOut.png",
+        "url":"http://127.0.0.1:8080/GHOST_3_newPage/14_logOut.png",
+        "selectors": ["document"],
+        "misMatchThreshold": 7
+      }
+    ],
+    "paths": {
+      "bitmaps_reference": "backstop_data/bitmaps_reference",
+      "bitmaps_test": "backstop_data/bitmaps_test",
+      "engine_scripts": "backstop_data/engine_scripts",
+      "html_report": "reports/report_agregar_pagina",
+      "ci_report": "backstop_data/ci_report"
+    },
+    "report": ["browser"],
+    "engine": "puppeteer",
+    "engineOptions": {
+      "args": ["--no-sandbox"]
+    },
+    "asyncCaptureLimit": 5,
+    "asyncCompareLimit": 50,
+    "debug": false,
+    "debugWindow": false
+  }
+  

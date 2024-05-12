@@ -1,0 +1,321 @@
+{
+  "testSuite": "BackstopJS",
+  "tests": [
+    {
+      "pair": {
+        "reference": "..\\..\\backstop_data\\bitmaps_reference\\Eliminarpagina_Login_0_document_0_desktop.png",
+        "test": "..\\..\\backstop_data\\bitmaps_test\\20240511-225540\\Eliminarpagina_Login_0_document_0_desktop.png",
+        "selector": "document",
+        "fileName": "Eliminarpagina_Login_0_document_0_desktop.png",
+        "label": "Login",
+        "requireSameDimensions": 0.1,
+        "misMatchThreshold": 7,
+        "url": "http://127.0.0.1:8080/GHOST_3_deletePage/01_pageLogin.png",
+        "referenceUrl": "http://127.0.0.1:8080/GHOST_5_deletePage/01_pageLogin.png",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "rawMisMatchPercentage": 6.636631595752049,
+          "misMatchPercentage": "6.64",
+          "analysisTime": 55
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "pair": {
+        "reference": "..\\..\\backstop_data\\bitmaps_reference\\Eliminarpagina_UserName_0_document_0_desktop.png",
+        "test": "..\\..\\backstop_data\\bitmaps_test\\20240511-225540\\Eliminarpagina_UserName_0_document_0_desktop.png",
+        "selector": "document",
+        "fileName": "Eliminarpagina_UserName_0_document_0_desktop.png",
+        "label": "UserName",
+        "requireSameDimensions": 0.1,
+        "misMatchThreshold": 7,
+        "url": "http://127.0.0.1:8080/GHOST_3_deletePage/02_userName.png",
+        "referenceUrl": "http://127.0.0.1:8080/GHOST_5_deletePage/02_userName.png",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "rawMisMatchPercentage": 6.92446117059302,
+          "misMatchPercentage": "6.92",
+          "analysisTime": 62
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "pair": {
+        "reference": "..\\..\\backstop_data\\bitmaps_reference\\Eliminarpagina_Password_0_document_0_desktop.png",
+        "test": "..\\..\\backstop_data\\bitmaps_test\\20240511-225540\\Eliminarpagina_Password_0_document_0_desktop.png",
+        "selector": "document",
+        "fileName": "Eliminarpagina_Password_0_document_0_desktop.png",
+        "label": "Password",
+        "requireSameDimensions": 0.1,
+        "misMatchThreshold": 7,
+        "url": "http://127.0.0.1:8080/GHOST_3_deletePage/03_password.png",
+        "referenceUrl": "http://127.0.0.1:8080/GHOST_5_deletePage/03_password.png",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "rawMisMatchPercentage": 6.8952321476993,
+          "misMatchPercentage": "6.90",
+          "analysisTime": 62
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "pair": {
+        "reference": "..\\..\\backstop_data\\bitmaps_reference\\Eliminarpagina_LoginSuccess_0_document_0_desktop.png",
+        "test": "..\\..\\backstop_data\\bitmaps_test\\20240511-225540\\Eliminarpagina_LoginSuccess_0_document_0_desktop.png",
+        "selector": "document",
+        "fileName": "Eliminarpagina_LoginSuccess_0_document_0_desktop.png",
+        "label": "LoginSuccess",
+        "requireSameDimensions": 0.1,
+        "misMatchThreshold": 7,
+        "url": "http://127.0.0.1:8080/GHOST_3_deletePage/04_loginSuccess.png",
+        "referenceUrl": "http://127.0.0.1:8080/GHOST_5_deletePage/04_loginSuccess.png",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "rawMisMatchPercentage": 3.5047828776618664,
+          "misMatchPercentage": "3.50",
+          "analysisTime": 57
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "pair": {
+        "reference": "..\\..\\backstop_data\\bitmaps_reference\\Eliminarpagina_PagesInterface_0_document_0_desktop.png",
+        "test": "..\\..\\backstop_data\\bitmaps_test\\20240511-225540\\Eliminarpagina_PagesInterface_0_document_0_desktop.png",
+        "selector": "document",
+        "fileName": "Eliminarpagina_PagesInterface_0_document_0_desktop.png",
+        "label": "PagesInterface",
+        "requireSameDimensions": 0.1,
+        "misMatchThreshold": 7,
+        "url": "http://127.0.0.1:8080/GHOST_3_deletePage/05_Pages.png",
+        "referenceUrl": "http://127.0.0.1:8080/GHOST_5_deletePage/05_Pages.png",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "rawMisMatchPercentage": 3.287854225824135,
+          "misMatchPercentage": "3.29",
+          "analysisTime": 58
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "pair": {
+        "reference": "..\\..\\backstop_data\\bitmaps_reference\\Eliminarpagina_PageInterfaceLoading_0_document_0_desktop.png",
+        "test": "..\\..\\backstop_data\\bitmaps_test\\20240511-225540\\Eliminarpagina_PageInterfaceLoading_0_document_0_desktop.png",
+        "selector": "document",
+        "fileName": "Eliminarpagina_PageInterfaceLoading_0_document_0_desktop.png",
+        "label": "PageInterfaceLoading",
+        "requireSameDimensions": 0.1,
+        "misMatchThreshold": 7,
+        "url": "http://127.0.0.1:8080/GHOST_3_deletePage/06_editPage.png",
+        "referenceUrl": "http://127.0.0.1:8080/GHOST_5_deletePage/06_editPage.png",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "rawMisMatchPercentage": 0.42892710704278586,
+          "misMatchPercentage": "0.43",
+          "analysisTime": 48
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "pair": {
+        "reference": "..\\..\\backstop_data\\bitmaps_reference\\Eliminarpagina_PageSettings_0_document_0_desktop.png",
+        "test": "..\\..\\backstop_data\\bitmaps_test\\20240511-225540\\Eliminarpagina_PageSettings_0_document_0_desktop.png",
+        "selector": "document",
+        "fileName": "Eliminarpagina_PageSettings_0_document_0_desktop.png",
+        "label": "PageSettings",
+        "requireSameDimensions": 0.1,
+        "misMatchThreshold": 7,
+        "url": "http://127.0.0.1:8080/GHOST_3_deletePage/07_configPage.png",
+        "referenceUrl": "http://127.0.0.1:8080/GHOST_5_deletePage/07_configPage.png",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "rawMisMatchPercentage": 6.00744459691534,
+          "misMatchPercentage": "6.01",
+          "analysisTime": 44
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "pair": {
+        "reference": "..\\..\\backstop_data\\bitmaps_reference\\Eliminarpagina_ConfirmDelete_0_document_0_desktop.png",
+        "test": "..\\..\\backstop_data\\bitmaps_test\\20240511-225540\\Eliminarpagina_ConfirmDelete_0_document_0_desktop.png",
+        "selector": "document",
+        "fileName": "Eliminarpagina_ConfirmDelete_0_document_0_desktop.png",
+        "label": "ConfirmDelete",
+        "requireSameDimensions": 0.1,
+        "misMatchThreshold": 7,
+        "url": "http://127.0.0.1:8080/GHOST_3_deletePage/08_deletePage.png",
+        "referenceUrl": "http://127.0.0.1:8080/GHOST_5_deletePage/08_deletePage.png",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "rawMisMatchPercentage": 99.51836674324123,
+          "misMatchPercentage": "99.52",
+          "analysisTime": 43
+        },
+        "diffImage": "..\\..\\backstop_data\\bitmaps_test\\20240511-225540\\failed_diff_Eliminarpagina_ConfirmDelete_0_document_0_desktop.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "..\\..\\backstop_data\\bitmaps_reference\\Eliminarpagina_ConfirmDeletedTag_0_document_0_desktop.png",
+        "test": "..\\..\\backstop_data\\bitmaps_test\\20240511-225540\\Eliminarpagina_ConfirmDeletedTag_0_document_0_desktop.png",
+        "selector": "document",
+        "fileName": "Eliminarpagina_ConfirmDeletedTag_0_document_0_desktop.png",
+        "label": "ConfirmDeletedTag",
+        "requireSameDimensions": 0.1,
+        "misMatchThreshold": 7,
+        "url": "http://127.0.0.1:8080/GHOST_3_deletePage/09_confirmDeletePage.png",
+        "referenceUrl": "http://127.0.0.1:8080/GHOST_5_deletePage/09_confirmDeletePage.png",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "rawMisMatchPercentage": 88.90846620408901,
+          "misMatchPercentage": "88.91",
+          "analysisTime": 42
+        },
+        "diffImage": "..\\..\\backstop_data\\bitmaps_test\\20240511-225540\\failed_diff_Eliminarpagina_ConfirmDeletedTag_0_document_0_desktop.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "..\\..\\backstop_data\\bitmaps_reference\\Eliminarpagina_SuccessDeltedTag_0_document_0_desktop.png",
+        "test": "..\\..\\backstop_data\\bitmaps_test\\20240511-225540\\Eliminarpagina_SuccessDeltedTag_0_document_0_desktop.png",
+        "selector": "document",
+        "fileName": "Eliminarpagina_SuccessDeltedTag_0_document_0_desktop.png",
+        "label": "SuccessDeltedTag",
+        "requireSameDimensions": 0.1,
+        "misMatchThreshold": 7,
+        "url": "http://127.0.0.1:8080/GHOST_3_deletePage/10_successDeltePage.png",
+        "referenceUrl": "http://127.0.0.1:8080/GHOST_5_deletePage/10_successDeltePage.png",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "rawMisMatchPercentage": 89.05883720138561,
+          "misMatchPercentage": "89.06",
+          "analysisTime": 44
+        },
+        "diffImage": "..\\..\\backstop_data\\bitmaps_test\\20240511-225540\\failed_diff_Eliminarpagina_SuccessDeltedTag_0_document_0_desktop.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "..\\..\\backstop_data\\bitmaps_reference\\Eliminarpagina_DropdownMenu_0_document_0_desktop.png",
+        "test": "..\\..\\backstop_data\\bitmaps_test\\20240511-225540\\Eliminarpagina_DropdownMenu_0_document_0_desktop.png",
+        "selector": "document",
+        "fileName": "Eliminarpagina_DropdownMenu_0_document_0_desktop.png",
+        "label": "DropdownMenu",
+        "requireSameDimensions": 0.1,
+        "misMatchThreshold": 7,
+        "url": "http://127.0.0.1:8080/GHOST_3_deletePage/11_dropdownMenu.png",
+        "referenceUrl": "http://127.0.0.1:8080/GHOST_5_deletePage/11_dropdownMenu.png",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "rawMisMatchPercentage": 6.141381605436363,
+          "misMatchPercentage": "6.14",
+          "analysisTime": 48
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "pair": {
+        "reference": "..\\..\\backstop_data\\bitmaps_reference\\Eliminarpagina_LogOut_0_document_0_desktop.png",
+        "test": "..\\..\\backstop_data\\bitmaps_test\\20240511-225540\\Eliminarpagina_LogOut_0_document_0_desktop.png",
+        "selector": "document",
+        "fileName": "Eliminarpagina_LogOut_0_document_0_desktop.png",
+        "label": "LogOut",
+        "requireSameDimensions": 0.1,
+        "misMatchThreshold": 7,
+        "url": "http://127.0.0.1:8080/GHOST_3_deletePage/12_logOut.png",
+        "referenceUrl": "http://127.0.0.1:8080/GHOST_5_deletePage/12_logOut.png",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "rawMisMatchPercentage": 0.32093232366036584,
+          "misMatchPercentage": "0.32",
+          "analysisTime": 32
+        }
+      },
+      "status": "pass"
+    }
+  ],
+  "id": "Eliminar pagina"
+}
