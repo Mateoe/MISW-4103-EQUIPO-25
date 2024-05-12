@@ -86,3 +86,5 @@ Esto para que existan los insumos necesarios para correr cada prueba y los escen
 7. Observar el reporte generado por la regresión visual en la carpetar reports `cd .\reports\`.
 8. Ingresar a la carpeta del test, por ejemplo ` cd .\report_eliminar_pagina\`.
 9. Abrir el archivo `index.html` generado, donde podrá observar todos los detalles del reporte.
+
+**Nota**: dado que despues de la ejecución de cada prueba se vuelven a crear los archivos de referencia, se sugiere ver el correspondiente archivo html luego de correr la prueba, dado que si con una ejecución posterior se reemplazan las imágenes, estás podrían no visualizarse correctamente en la comparación.
