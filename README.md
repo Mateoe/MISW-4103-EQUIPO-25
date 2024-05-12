@@ -80,6 +80,7 @@ Esto para que existan los insumos necesarios para correr cada prueba y los escen
 6. Correr cada escenario de tests, para ello se deben correr los siguientes comando, donde para el ejemplo se usa la funcionalidad de eliminar_pagina, sin embargo, basta con reemplazar el nombre del archivo `.json` por el de la prueba que desea correr.
     
     a. `backstop reference --config eliminar_pagina.json` para establecer la imagen de referencia.
+    
     b. `backstop test --config eliminar_pagina.json` para correr la prueba y generar el reporte.
 
 7. Observar el reporte generado por la regresión visual en la carpetar reports `cd .\reports\`.
