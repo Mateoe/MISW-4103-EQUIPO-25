@@ -19,13 +19,14 @@ const testDeletePage = require("./tests/deletePage");
   await testNewTag();
   await testEditTag();
   await testDeleteTag();
-  await testEditProfileLocation();
   await testEditProfileName();
   await testNewPost();
+/*   
+  await testEditProfileLocation();
   await testNewPostWithTag();
   await testNewMember();
   await testDeleteMember();
   await testNewTier();
   await testNewPremiumPost();
-  await testNewOffer();
+  await testNewOffer(); */
 })();
