@@ -70,6 +70,8 @@ Esto para que existan los insumos necesarios para correr cada prueba y los escen
 1. [Crear un Post](https://html-preview.github.io/?url=https://github.com/Mateoe/MISW-4103-EQUIPO-25/blob/main/resemble/reports/newPost/report.html)
 1. [Crear un post con Un tag](https://html-preview.github.io/?url=https://github.com/Mateoe/MISW-4103-EQUIPO-25/blob/main/resemble/reports/newPostWithTag/report.html)
 1. [Editar el nombre de perfil](https://html-preview.github.io/?url=https://github.com/Mateoe/MISW-4103-EQUIPO-25/blob/main/resemble/reports/EditProfileName/report.html)
+1. [Editar la locacion de perfil](https://html-preview.github.io/?url=https://github.com/Mateoe/MISW-4103-EQUIPO-25/blob/main/resemble/reports/EditProfileLocation/report.html)
+
 
 
 #### Instrucciones de ejecución
