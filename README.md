@@ -64,6 +64,15 @@ Esto para que existan los insumos necesarios para correr cada prueba y los escen
 
 
 ### Ejecución de los tests en Resemble
+
+
+**Nota**: En la carpeta `resemble/reports` ya se encuentra la ultima versión de los reportes:
+1. [Crear un Post](https://html-preview.github.io/?url=https://github.com/Mateoe/MISW-4103-EQUIPO-25/blob/main/resemble/reports/newPost/report.html)
+1. [Crear un post con Un tag](https://html-preview.github.io/?url=https://github.com/Mateoe/MISW-4103-EQUIPO-25/blob/main/resemble/reports/newPostWithTag/report.html)
+1. [Editar el nombre de perfil](https://html-preview.github.io/?url=https://github.com/Mateoe/MISW-4103-EQUIPO-25/blob/main/resemble/reports/EditProfileName/report.html)
+
+
+#### Instrucciones de ejecución
 1. Ingresar a la carpeta `cd resemble/`.
 2. Instalar dependencias `npm i`.
 3. Ejecutar el código `node runTestVRT.js`.
