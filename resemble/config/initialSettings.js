@@ -49,7 +49,7 @@ async function initialSettings(dirName, screenshots) {
       </div>
       <div class="imgcontainer">
         <span class="imgname">Ghost 5 Image</span>
-        <img class="img2" src="../results/results_ghost4/${escenario}/${imagePath}" id="ghost4Image" label="Ghost 4 Image">
+        <img class="img2" src="../results/results_ghost5/${escenario}/${imagePath}" id="ghost4Image" label="Ghost 5 Image">
       </div>
     </div>
     <div class="imgline">
