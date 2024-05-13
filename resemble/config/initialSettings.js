@@ -22,15 +22,15 @@ async function initialSettings(dirName, screenshots) {
   );
   await fs.mkdir(ghost3Dir, { recursive: true });
 
-  const ghost4Dir = path.join(
+  const ghost5Dir = path.join(
     __dirname,
     "..",
     "reports",
     "results",
-    "results_ghost4",
+    "results_ghost5",
     dirName
   );
-  await fs.mkdir(ghost4Dir, { recursive: true });
+  await fs.mkdir(ghost5Dir, { recursive: true });
 
   const reportsDir = path.join(__dirname, "..", "reports", dirName);
   await fs.mkdir(reportsDir, { recursive: true });
@@ -48,7 +48,7 @@ async function initialSettings(dirName, screenshots) {
         <img class="img2" src="../results/results_ghost3/${escenario}/${imagePath}" id="ghost3Image" label="Ghost 3 Image">
       </div>
       <div class="imgcontainer">
-        <span class="imgname">Ghost 4 Image</span>
+        <span class="imgname">Ghost 5 Image</span>
         <img class="img2" src="../results/results_ghost4/${escenario}/${imagePath}" id="ghost4Image" label="Ghost 4 Image">
       </div>
     </div>
@@ -135,7 +135,7 @@ async function initialSettings(dirName, screenshots) {
   return {
     compareDir,
     ghost3Dir,
-    ghost4Dir,
+    ghost5Dir,
     reportsDir,
     createReport,
     createCss,
