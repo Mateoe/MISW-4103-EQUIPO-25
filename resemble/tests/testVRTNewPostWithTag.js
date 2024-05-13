@@ -29,7 +29,7 @@ async function testVRTNewPostWithTag() {
   const {
     compareDir,
     ghost3Dir,
-    ghost4Dir,
+    ghost5Dir,
     reportsDir,
     createReport,
     createCss,
@@ -42,7 +42,7 @@ async function testVRTNewPostWithTag() {
       console.log(`Comparing: ${imagePath}`);
 
       const ghost3Image = path.join(ghost3Dir, imagePath);
-      const ghost4Image = path.join(ghost4Dir, imagePath);
+      const ghost4Image = path.join(ghost5Dir, imagePath);
       const compare_iamge = path.join(compareDir, "compare_" + imagePath);
 
       const data = await compareImages(
