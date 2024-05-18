@@ -14,8 +14,8 @@ class AdminPage {
       "section.view-actions"
     );
     await this.logStep(
-      this.screenshots.text5,
-      this.path.join(this.screenshotsDir, this.screenshots.image5)
+      this.screenshots.text1,
+      this.path.join(this.screenshotsDir, this.screenshots.image1)
     );
   }
   async openSettings() {

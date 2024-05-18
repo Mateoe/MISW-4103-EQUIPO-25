@@ -4,39 +4,29 @@ const initialSettings = require("../config/initialSettings");
 const AdminPage = require("../pages/admin");
 const TagsPage = require("../pages/tags");
 
-async function testNewTag() {
-    console.log("REALIZANDO PRUEBA E2E DE CREACIÓN DE TAGS")
-    const url = "https://ghost-5ehz.onrender.com/ghost/#/signin";
+async function testNewTag(testName, serviceUrl, folderName, name, slug, description) {
+    console.log(testName)
+    const url = serviceUrl;
     const { page, logStep, screenshotsDir, browser } = await initialSettings(
-        "GHOST_5_newTag"
+        folderName
     );
     const screenshots = {
-        text1: "Navegación a la página de inicio de sesión",
-        image1: "01_pageLogin.png",
-        text2: "Ingresar el usuario",
-        image2: "02_userName.png",
-        text3: "Ingresar el la contraseña",
-        image3: "03_password.png",
-        text4: "Inicio de sesión exitoso",
-        image4: "04_loginSuccess.png",
-        text5: "Ingresar a la página de tags",
-        image5: "05_tags_interface.png",
-        text6: "Ingresar al formulario de tags",
-        image6: "06_openTagsForm.png",
-        text7:  "Ingresa información al formulario de creación del tag",
-        image7: "07_newTag.png",
-        text8: "Guardar tag creado",
-        image8: "08_saveNewTag.png",
-        text9: "Confirmar tag creado",
-        image9: "09_confirmNewTag.png",
-        text10: "Tag creado exitosamente",
-        image10: "10_successNewTag.png",
-        text11: "Tag no creado",
-        image11: "10_errorNewTag.png",
-        text12: "Abrir Dropdown Menu",
-        image12: "11_dropdownMenu.png",
-        text13: "Se cierra sesión",
-        image13: "11_logOut.png",
+        text1: "Ingresar a la página de tags",
+        image1: "01_tags_interface.png",
+        text2: "Ingresar al formulario de tags",
+        image2: "02_openTagsForm.png",
+        text3:  "Ingresa nombre del tag",
+        image3: "03_inputTagName.png",
+        text4:  "Ingresa el slug del tag",
+        image4: "04_inputTagSlug.png",
+        text5:  "Ingresa la descripción del tag",
+        image5: "05_inputTagDescription.png",
+        text6: "Guardar tag creado",
+        image6: "06_saveNewTag.png",
+        text7: "Tag creado exitosamente",
+        image7: "07_successNewTag.png",
+        text8: "Tag no creado",
+        image8: "07_errorNewTag.png",
     };
     const loginPage = new LoginPage(
         page,
@@ -74,45 +64,29 @@ async function testNewTag() {
         // When
         await tagsPage.openNewTag()
         // And
-        await tagsPage.newTag("test-name", "test-slug", "test-description")
-        // And
-        await adminPage.openTags()
-        await logStep(
-            screenshots.text9,
-            path.join(screenshotsDir, screenshots.image9)
-        );
+        await tagsPage.newTag(name, slug, description)
 
         // Then
         const newTagCreated = await page.evaluate(() => {
-            const elements = document.querySelectorAll('h3.gh-tag-list-name');
-            for (let i = 0; i < elements.length; i++) {
-                if (elements[i].textContent.trim() === 'test-name') {
-                    return true;
-                }
-            }
-            return false;
+            const element = document.querySelector('[data-test-task-button-state="success"]');
+            return element !== null;
         });
         
         if (newTagCreated) {
             await logStep(
-                screenshots.text10,
-                path.join(screenshotsDir, screenshots.image10)
+                screenshots.text7,
+                path.join(screenshotsDir, screenshots.image7)
             );
         } else {
             await logStep(
-                screenshots.text11,
-                path.join(screenshotsDir, screenshots.image11)
+                screenshots.text8,
+                path.join(screenshotsDir, screenshots.image8)
             );
         }
           
     } catch (error) {
         await logStep(`Error inesperado:\n${error}`, path.join(screenshotsDir, "500_ERROR.png"));
     } finally {
-        await adminPage.logOut("text12", "image12")
-        await logStep(
-            screenshots.text13,
-            path.join(screenshotsDir, screenshots.image13)
-        );
         await browser.close();
     }
 }

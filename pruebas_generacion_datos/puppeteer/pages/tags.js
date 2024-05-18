@@ -12,8 +12,8 @@ class TagsPage {
         await this.page.waitForSelector('a[href="#/tags/new/"]');
         await this.page.click('a[href="#/tags/new/"]');
         await this.logStep(
-            this.screenshots.text6,
-            this.path.join(this.screenshotsDir, this.screenshots.image6)
+            this.screenshots.text2,
+            this.path.join(this.screenshotsDir, this.screenshots.image2)
         );
     }
 
@@ -86,22 +86,36 @@ class TagsPage {
         await this.page.waitForSelector('input[name="name"]');
         await this.page.waitForSelector('input[name="slug"]');
         await this.page.waitForSelector('textarea[name="description"]');
+        await this.page.$eval('input[name="name"]', element => {
+            element.value = '';
+        });
         await this.page.type('input[name="name"]', name);
+        await this.logStep(
+            this.screenshots.text3,
+            this.path.join(this.screenshotsDir, this.screenshots.image3)
+        );
+        await this.page.$eval('input[name="slug"', element => {
+            element.value = '';
+        });
         await this.page.type('input[name="slug"]', slug);
+        await this.logStep(
+            this.screenshots.text4,
+            this.path.join(this.screenshotsDir, this.screenshots.image4)
+        );
+        await this.page.$eval('textarea[name="description"]', element => {
+            element.value = '';
+        });
         await this.page.type('textarea[name="description"]', description);
-        await this.page.waitForSelector('section.view-actions');
         await this.logStep(
-            this.screenshots.text7,
-            this.path.join(this.screenshotsDir, this.screenshots.image7)
+            this.screenshots.text5,
+            this.path.join(this.screenshotsDir, this.screenshots.image5)
         );
-
         await this.page.click('section.view-actions');
-        await this.page.waitForNavigation();
+        await this.page.waitForSelector('[data-test-task-button-state="success"], [data-test-task-button-state="failure"]');
         await this.logStep(
-            this.screenshots.text8,
-            this.path.join(this.screenshotsDir, this.screenshots.image8)
+            this.screenshots.text6,
+            this.path.join(this.screenshotsDir, this.screenshots.image6)
         );
-
     }
 
 }
