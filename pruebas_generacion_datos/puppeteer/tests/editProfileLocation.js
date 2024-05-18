@@ -25,8 +25,8 @@ async function testEditProfileLocation(
     image3: "03_saveChanges.png",
     text4: "Ubicación editado exitosamente",
     image4: "04_editLocationSuccess.png",
-    text5: "No se cambio la Ubicación",
-    image5: "04_editLocationError.png",
+    text5: "No se cambio la Ubicación por error",
+    image5: "04_NotEditLocationSuccess.png",
   };
 
   const loginPage = new LoginPage(
@@ -76,44 +76,53 @@ async function testEditProfileLocation(
 
     await page.waitForSelector("h1.break-words");
 
-    const idValue = await page.evaluate(() => {
-      const labelElements = document.querySelectorAll("label");
-      let idValue = "";
-      labelElements.forEach((label) => {
-        if (label.innerText.trim() === "Location") {
-          idValue = label.getAttribute("for");
-        }
-      });
-      return idValue;
-    });
+    if (folderName.includes("error")) {
+      await page.waitForSelector("div.flex.items-start.gap-3");
 
-    let selectorName = "#" + idValue.replace(/:/g, "\\:");
-
-    const nameElement = await page.$(selectorName);
-
-    const htmlContent = await page.evaluate(
-      (element) => element.outerHTML,
-      nameElement
-    );
-
-    const NameUpdated = await page.evaluate(
-      (html, location) => {
-        return html.includes(location);
-      },
-      htmlContent,
-      location
-    );
-
-    if (NameUpdated) {
-      await logStep(
-        screenshots.text4,
-        path.join(screenshotsDir, screenshots.image4)
-      );
-    } else {
       await logStep(
         screenshots.text5,
         path.join(screenshotsDir, screenshots.image5)
       );
+    } else {
+      const idValue = await page.evaluate(() => {
+        const labelElements = document.querySelectorAll("label");
+        let idValue = "";
+        labelElements.forEach((label) => {
+          if (label.innerText.trim() === "Location") {
+            idValue = label.getAttribute("for");
+          }
+        });
+        return idValue;
+      });
+
+      let selectorName = "#" + idValue.replace(/:/g, "\\:");
+
+      const nameElement = await page.$(selectorName);
+
+      const htmlContent = await page.evaluate(
+        (element) => element.outerHTML,
+        nameElement
+      );
+
+      const NameUpdated = await page.evaluate(
+        (html, location) => {
+          return html.includes(location);
+        },
+        htmlContent,
+        location
+      );
+
+      if (NameUpdated) {
+        await logStep(
+          screenshots.text4,
+          path.join(screenshotsDir, screenshots.image4)
+        );
+      } else {
+        await logStep(
+          screenshots.text5,
+          path.join(screenshotsDir, screenshots.image5)
+        );
+      }
     }
   } catch (error) {
     await logStep(

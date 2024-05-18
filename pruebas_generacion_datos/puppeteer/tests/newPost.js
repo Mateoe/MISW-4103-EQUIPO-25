@@ -3,7 +3,6 @@ const LoginPage = require("../pages/login");
 const initialSettings = require("../config/initialSettings");
 const AdminPage = require("../pages/admin");
 const PostPage = require("../pages/posts");
-const faker = require("faker");
 
 async function testNewPost(testName, serviceUrl, folderName, title) {
   console.log(testName);
@@ -27,8 +26,8 @@ async function testNewPost(testName, serviceUrl, folderName, title) {
     text5: "Nuevo post creado exitosamente",
     image5: "5_newpostSuccess.png",
 
-    text6: "No se creó el post",
-    image6: "5_newpostError.png",
+    text6: "No se creó el post Por error",
+    image6: "5_NotNewpostSuccess.png",
   };
 
   const loginPage = new LoginPage(
@@ -82,6 +81,8 @@ async function testNewPost(testName, serviceUrl, folderName, title) {
     // And
     await postPage.openPosts();
 
+    await new Promise((r) => setTimeout(r, 1000));
+
     // Then
     const postNameElement = await page.waitForSelector(
       "h3.gh-content-entry-title"
@@ -106,7 +107,6 @@ async function testNewPost(testName, serviceUrl, folderName, title) {
       screenshots.text6,
       path.join(screenshotsDir, screenshots.image6)
     );
-    
   } finally {
     await browser.close();
   }

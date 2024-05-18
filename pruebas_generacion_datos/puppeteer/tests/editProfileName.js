@@ -20,8 +20,8 @@ async function testEditProfileName(testName, serviceUrl, folderName, name) {
     image3: "03_saveChanges.png",
     text4: "Nombre editado exitosamente",
     image4: "04_editNameSuccess.png",
-    text5: "No se cambio el Nombre",
-    image5: "04_editNameError.png",
+    text5: "No se cambio el Nombre por error",
+    image5: "04_NotEditNameSuccess.png",
   };
 
   const loginPage = new LoginPage(
@@ -69,33 +69,46 @@ async function testEditProfileName(testName, serviceUrl, folderName, name) {
     // Then
     await profilePage.openProfileFromSetting();
 
-    await page.waitForSelector("h1.break-words");
+    if (folderName.includes("error")) {
 
-    const nameElement = await page.waitForSelector("h1.break-words");
+      await page.waitForSelector("div.flex.items-start.gap-3");
 
-    const htmlContent = await page.evaluate(
-      (element) => element.outerHTML,
-      nameElement
-    );
 
-    const NameUpdated = await page.evaluate(
-      (html, name) => {
-        return html.includes(name);
-      },
-      htmlContent,
-      name
-    );
-
-    if (NameUpdated) {
-      await logStep(
-        screenshots.text4,
-        path.join(screenshotsDir, screenshots.image4)
-      );
+              await logStep(
+                screenshots.text5,
+                path.join(screenshotsDir, screenshots.image5)
+              );
+      
+      
     } else {
-      await logStep(
-        screenshots.text5,
-        path.join(screenshotsDir, screenshots.image5)
+      await page.waitForSelector("h1.break-words");
+
+      const nameElement = await page.waitForSelector("h1.break-words");
+
+      const htmlContent = await page.evaluate(
+        (element) => element.outerHTML,
+        nameElement
       );
+
+      const NameUpdated = await page.evaluate(
+        (html, name) => {
+          return html.includes(name);
+        },
+        htmlContent,
+        name
+      );
+
+      if (NameUpdated) {
+        await logStep(
+          screenshots.text4,
+          path.join(screenshotsDir, screenshots.image4)
+        );
+      } else {
+        await logStep(
+          screenshots.text5,
+          path.join(screenshotsDir, screenshots.image5)
+        );
+      }
     }
 
     await profilePage.saveProfile();
@@ -107,7 +120,6 @@ async function testEditProfileName(testName, serviceUrl, folderName, name) {
       path.join(screenshotsDir, "500_ERROR.png")
     );
   } finally {
-    
     await browser.close();
   }
 }

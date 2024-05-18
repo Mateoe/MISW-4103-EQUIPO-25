@@ -4,8 +4,8 @@ const testNewPost = require("./tests/newPost");
 const testNewTier = require("./tests/newTier");
 const faker = require("faker");
 
-// const url = "https://ghost-b3tr.onrender.com/ghost/#/signin";
-const url = "http://localhost:2368/ghost/#/signin";
+const url = "https://ghost-b3tr.onrender.com/ghost/#/signin";
+// const url = "http://localhost:2368/ghost/#/signin";
 
 (async () => {
   // Edit profile name tests
