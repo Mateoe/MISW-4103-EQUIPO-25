@@ -13,20 +13,18 @@ const testEditProfileLocation = require("./tests/editProfileLocation");
 const testNewPage = require("./tests/newPage");
 const testDeletePage = require("./tests/deletePage");
 
-(async () => {
-  await testNewPage()
-  await testDeletePage()
+function readJsonFile() { 
+  const filePath = './data/priori_data.json'; 
+  const fileData = fs.readFileSync(filePath, 'utf-8');
+  const jsonData = JSON.parse(fileData); 
+  const randomIndex = Math.floor(Math.random() * jsonData.length); 
+  const randomObject = jsonData[randomIndex]; 
+  return randomObject; }
+
+const randomObject = readJsonFile(); console.log(randomObject);
+
+
+/* (async () => {
   await testNewTag();
-  await testEditTag();
-  await testDeleteTag();
-  await testEditProfileName();
-  await testNewPost();
-/*   
-  await testEditProfileLocation();
-  await testNewPostWithTag();
-  await testNewMember();
-  await testDeleteMember();
-  await testNewTier();
-  await testNewPremiumPost();
-  await testNewOffer(); */
 })();
+ */
