@@ -5,38 +5,28 @@ const AdminPage = require("../pages/admin");
 const ProfilePage = require("../pages/profile");
 const faker = require("faker");
 
-async function testEditProfileLocation() {
-  console.log("REALIZANDO PRUEBA E2E DE EDITAR la ubicación de perfil");
-  const url = "https://ghost-5ehz.onrender.com/ghost/#/signin";
-  const { page, logStep, screenshotsDir, browser } = await initialSettings(
-    "GHOST_4_EditProfileLocation"
-  );
+async function testEditProfileLocation(
+  testName,
+  serviceUrl,
+  folderName,
+  location
+) {
+  console.log(testName);
+  const url = serviceUrl;
+  const { page, logStep, screenshotsDir, browser } =
+    await initialSettings(folderName);
 
   const screenshots = {
-    text1: "Navegación a la página de inicio de sesión",
-    image1: "01_pageLogin.png",
-    text2: "Ingresar el usuario",
-    image2: "02_userName.png",
-    text3: "Ingresar el la contraseña",
-    image3: "03_password.png",
-    text4: "Inicio de sesión exitoso",
-    image4: "04_loginSuccess.png",
-    text5: "Abrix Dropdown Menu",
-    image5: "05_dropdownMenu.png",
-    text6: "Ingreso a pagina de ajustes",
-    image6: "06_openProfileSettings.png",
-    text7: "Editar la ubicación de perfil",
-    image7: "07_editProfileLocation.png",
-    text8: "Guardar cambios",
-    image8: "08_saveChanges.png",
-    text9_1: "Ubicación editado exitosamente",
-    image9_1: "09_editLocationSuccess.png",
-    text9_2: "No se cambio la Ubicación",
-    image9_2: "09_editLocationError.png",
-    text10: "Abrix Dropdown Menu",
-    image10: "10_dropdownMenu.png",
-    text11: "Se cierra sesión",
-    image11: "11_logOut.png",
+    text1: "Ingreso a pagina de ajustes",
+    image1: "01_openProfileSettings.png",
+    text2: "Editar la ubicación de perfil",
+    image2: "02_editProfileLocation.png",
+    text3: "Guardar cambios",
+    image3: "03_saveChanges.png",
+    text4: "Ubicación editado exitosamente",
+    image4: "04_editLocationSuccess.png",
+    text5: "No se cambio la Ubicación",
+    image5: "04_editLocationError.png",
   };
 
   const loginPage = new LoginPage(
@@ -71,12 +61,11 @@ async function testEditProfileLocation() {
     await profilePage.openProfileFromMain();
 
     // And
-    const randomCity = faker.address.city();
-    await profilePage.fillProfileLocation(randomCity);
+    await profilePage.fillProfileLocation(location);
 
     await logStep(
-      screenshots.text7,
-      path.join(screenshotsDir, screenshots.image7)
+      screenshots.text2,
+      path.join(screenshotsDir, screenshots.image2)
     );
 
     // And
@@ -108,41 +97,30 @@ async function testEditProfileLocation() {
     );
 
     const NameUpdated = await page.evaluate(
-      (html, randomCity) => {
-        return html.includes(randomCity);
+      (html, location) => {
+        return html.includes(location);
       },
       htmlContent,
-      randomCity
+      location
     );
 
     if (NameUpdated) {
       await logStep(
-        screenshots.text9_1,
-        path.join(screenshotsDir, screenshots.image9_1)
+        screenshots.text4,
+        path.join(screenshotsDir, screenshots.image4)
       );
     } else {
       await logStep(
-        screenshots.text9_2,
-        path.join(screenshotsDir, screenshots.image9_2)
+        screenshots.text5,
+        path.join(screenshotsDir, screenshots.image5)
       );
     }
-
-    await profilePage.saveProfile();
-
-    await adminPage.closeSettings();
   } catch (error) {
     await logStep(
       `Error inesperado:\n${error}`,
       path.join(screenshotsDir, "500_ERROR.png")
     );
   } finally {
-    await adminPage.logOut("text10", "image10");
-
-    await logStep(
-      screenshots.text11,
-      path.join(screenshotsDir, screenshots.image11)
-    );
-
     await browser.close();
   }
 }

@@ -11,15 +11,17 @@ class ProfilePage {
     await this.page.waitForSelector("div.gh-user-avatar");
     await this.page.click("div.gh-user-avatar");
 
-    await this.page.waitForSelector('a[href="#/settings/staff/equipo/"]');
+    await new Promise((r) => setTimeout(r, 1000));
 
+    await this.page.waitForSelector('a[data-test-nav="user-profile"]');
+    await this.page.click('a[data-test-nav="user-profile"]');
+
+    await new Promise((r) => setTimeout(r, 1000));
 
     await this.logStep(
-      this.screenshots.text5,
-      this.path.join(this.screenshotsDir, this.screenshots.image5)
+      this.screenshots.text1,
+      this.path.join(this.screenshotsDir, this.screenshots.image1)
     );
-
-    await this.page.click('a[href="#/settings/staff/equipo/"]');
   }
 
   async openProfileFromSetting() {
@@ -31,12 +33,6 @@ class ProfilePage {
   async fillProfileLocation(location) {
     await this.page.waitForSelector(
       "h1.break-words.md\\:break-normal.text-white.md\\:text-4xl.leading-tighter"
-    );
-
-
-    await this.logStep(
-      this.screenshots.text6,
-      this.path.join(this.screenshotsDir, this.screenshots.image6)
     );
 
     const idValue = await this.page.evaluate(() => {
@@ -54,6 +50,8 @@ class ProfilePage {
 
     await this.page.click(selectorName, { clickCount: 3 });
 
+    await this.page.keyboard.press("Backspace");
+
     await new Promise((r) => setTimeout(r, 1000));
 
     await this.page.type(selectorName, location, { delay: 100 });
@@ -67,10 +65,6 @@ class ProfilePage {
     );
 
     await new Promise((r) => setTimeout(r, 1000));
-    await this.logStep(
-      this.screenshots.text6,
-      this.path.join(this.screenshotsDir, this.screenshots.image6)
-    );
 
     const idValue = await this.page.evaluate(() => {
       const labelElements = document.querySelectorAll("label");
@@ -87,6 +81,8 @@ class ProfilePage {
 
     await this.page.click(selectorName, { clickCount: 3 });
 
+    await this.page.keyboard.press("Backspace");
+
     await new Promise((r) => setTimeout(r, 1000));
 
     await this.page.type(selectorName, name, { delay: 100 });
@@ -97,10 +93,9 @@ class ProfilePage {
 
     await this.page.click("button.cursor-pointer.bg-black");
 
-
     await this.logStep(
-      this.screenshots.text8,
-      this.path.join(this.screenshotsDir, this.screenshots.image8)
+      this.screenshots.text3,
+      this.path.join(this.screenshotsDir, this.screenshots.image3)
     );
   }
 }
