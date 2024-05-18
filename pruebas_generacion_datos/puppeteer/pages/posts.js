@@ -7,15 +7,11 @@ class PostPage {
     this.screenshots = screenshots;
   }
 
-  async openPosts(text, image) {
-    await this.page.waitForSelector('a[data-test-nav="posts"]');
+  async openPosts() {
+    await new Promise((r) => setTimeout(r, 1000));
     await this.page.click('a[data-test-nav="posts"]');
     await this.page.waitForSelector(
       "body > div.gh-app > div > main > section > section"
-    );
-    await this.logStep(
-      this.screenshots[text],
-      this.path.join(this.screenshotsDir, this.screenshots[image])
     );
   }
 
@@ -23,8 +19,8 @@ class PostPage {
     await this.page.waitForSelector('a[href="#/editor/post/"]');
     await this.page.click('a[href="#/editor/post/"]');
     await this.logStep(
-      this.screenshots.text5,
-      this.path.join(this.screenshotsDir, this.screenshots.image5)
+      this.screenshots.text1,
+      this.path.join(this.screenshotsDir, this.screenshots.image1)
     );
   }
 
@@ -34,8 +30,8 @@ class PostPage {
     });
 
     await this.logStep(
-      this.screenshots.text6,
-      this.path.join(this.screenshotsDir, this.screenshots.image6)
+      this.screenshots.text2,
+      this.path.join(this.screenshotsDir, this.screenshots.image2)
     );
   }
 
@@ -106,13 +102,9 @@ class PostPage {
     );
   }
 
-  async returnToPosts(text, image) {
+  async returnToPosts() {
     await this.page.goBack();
     await this.page.waitForSelector('a[data-test-nav="posts"]');
-    await this.logStep(
-      this.screenshots[text],
-      this.path.join(this.screenshotsDir, this.screenshots[image])
-    );
   }
 }
 
