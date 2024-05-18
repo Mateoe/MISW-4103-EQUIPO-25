@@ -32,6 +32,10 @@ class AdminPage {
     await this.page.waitForSelector(
       "section.view-container.members-list-container-stretch"
     );
+    await this.logStep(
+      this.screenshots.text1,
+      this.path.join(this.screenshotsDir, this.screenshots.image1)
+    );
   }
 
   async closeSettings() {

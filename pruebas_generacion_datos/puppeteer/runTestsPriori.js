@@ -29,6 +29,14 @@ const data = readJsonFile();
 
 (async () => {
   //Tag tests
+  /* await testNewTag(
+    "\nTest de crear tag con todos los campos en blanco\n",
+    url,
+    "tag_name_success",
+    data.blank_tag,
+    data.blank_slug,
+    data.blank_description
+  );
   await testNewTag(
     "\nTest de crear tag con nombre valido y demás campos en blanco\n",
     url,
@@ -76,5 +84,16 @@ const data = readJsonFile();
     data.success_tag,
     data.success_slug,
     data.error_description
+  ); */
+
+  //Member tests
+  await testNewMember(
+    "\nTest de crear miembro con todos los campos en blanco\n",
+    url,
+    "member_name_success",
+    "data.blank_member",
+    "data.blank_email",
+    ["data.blank_labels", "asdasdasdasdasdasdasdasdasdasdasdasdafhfdgdfgsdf"],
+    "data.blank_note"
   );
 })();
