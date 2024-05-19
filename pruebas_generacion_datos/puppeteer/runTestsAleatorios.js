@@ -1,5 +1,6 @@
 const testEditProfileLocation = require("./tests/editProfileLocation");
 const testEditProfileName = require("./tests/editProfileName");
+const testNewMember = require("./tests/newMember");
 const testNewPost = require("./tests/newPost");
 const testNewTag = require("./tests/newTag");
 const testNewTier = require("./tests/newTier");
@@ -185,5 +186,97 @@ const url = "https://ghost-b3tr.onrender.com/ghost/#/signin";
     faker.random.alphaNumeric(faker.datatype.number({ min: 1, max: 191 })),
     faker.random.alphaNumeric(faker.datatype.number({ min: 1, max: 191 })),
     faker.random.alphaNumeric(faker.datatype.number({ min: 501, max: 600 })),
+  );
+
+  //Member tests
+  await testNewMember(
+    "\nTest de crear miembro con todos los campos en blanco\n",
+    url,
+    "aleatorio_member_blank",
+    ' '.repeat(faker.datatype.number({ min: 1, max: 191 })),
+    ' '.repeat(faker.datatype.number({ min: 1, max: 191 })),
+    [' '.repeat(faker.datatype.number({ min: 1, max: 191 }))],
+    ' '.repeat(faker.datatype.number({ min: 1, max: 500 }))
+  );
+  await testNewMember(
+    "\nTest de crear miembro con email valido y demás campos en blanco\n",
+    url,
+    "aleatorio_member_email_success",
+    ' '.repeat(faker.datatype.number({ min: 1, max: 191 })),
+    faker.internet.email(),
+    [' '.repeat(faker.datatype.number({ min: 1, max: 191 }))],
+    ' '.repeat(faker.datatype.number({ min: 1, max: 500 }))
+  );
+  await testNewMember(
+    "\nTest de crear miembro con email invalido y demás campos en blanco\n",
+    url,
+    "aleatorio_member_email_error",
+    ' '.repeat(faker.datatype.number({ min: 1, max: 191 })),
+    faker.random.alphaNumeric(faker.datatype.number({ min: 1, max: 191 })),
+    [' '.repeat(faker.datatype.number({ min: 1, max: 191 }))],
+    ' '.repeat(faker.datatype.number({ min: 1, max: 500 }))
+  );
+  await testNewMember(
+    "\nTest de crear miembro con email y label validos\n",
+    url,
+    "aleatorio_member_label_success",
+    ' '.repeat(faker.datatype.number({ min: 1, max: 191 })),
+    faker.internet.email(),
+    [faker.random.alphaNumeric(faker.datatype.number({ min: 1, max: 191 }))],
+    ' '.repeat(faker.datatype.number({ min: 1, max: 500 }))
+  );
+  await testNewMember(
+    "\nTest de crear miembro con email valido y label invalido\n",
+    url,
+    "aleatorio_member_label_error",
+    ' '.repeat(faker.datatype.number({ min: 1, max: 191 })),
+    faker.internet.email(),
+    [faker.random.alphaNumeric(faker.datatype.number({ min: 192, max: 200 }))],
+    ' '.repeat(faker.datatype.number({ min: 1, max: 500 }))
+  );
+  await testNewMember(
+    "\nTest de crear miembro con email, label y nombre validos\n",
+    url,
+    "aleatorio_member_name_success",
+    faker.random.alphaNumeric(faker.datatype.number({ min: 1, max: 191 })),
+    faker.internet.email(),
+    [faker.random.alphaNumeric(faker.datatype.number({ min: 1, max: 191 }))],
+    ' '.repeat(faker.datatype.number({ min: 1, max: 500 }))
+  );
+  await testNewMember(
+    "\nTest de crear miembro con email y label validos, y nombre invalido\n",
+    url,
+    "aleatorio_member_name_error",
+    faker.random.alphaNumeric(faker.datatype.number({ min: 192, max: 200 })),
+    faker.internet.email(),
+    [faker.random.alphaNumeric(faker.datatype.number({ min: 1, max: 191 }))],
+    ' '.repeat(faker.datatype.number({ min: 1, max: 500 }))
+  );
+  await testNewMember(
+    "\nTest de crear miembro con email y nombre validos, y label invalido\n",
+    url,
+    "aleatorio_member_label_issue",
+    faker.random.alphaNumeric(faker.datatype.number({ min: 1, max: 191 })),
+    faker.internet.email(),
+    [faker.random.alphaNumeric(faker.datatype.number({ min: 192, max: 200 }))],
+    ' '.repeat(faker.datatype.number({ min: 1, max: 500 }))
+  );
+  await testNewMember(
+    "\nTest de crear miembro con email, nombre, label y notas validas\n",
+    url,
+    "aleatorio_member_note_success",
+    faker.random.alphaNumeric(faker.datatype.number({ min: 1, max: 191 })),
+    faker.internet.email(),
+    [faker.random.alphaNumeric(faker.datatype.number({ min: 1, max: 191 }))],
+    faker.random.alphaNumeric(faker.datatype.number({ min: 1, max: 500 }))
+  );
+  await testNewMember(
+    "\nTest de crear miembro con email, nombre y label validos, y notas invalidas\n",
+    url,
+    "aleatorio_member_note_error",
+    faker.random.alphaNumeric(faker.datatype.number({ min: 1, max: 191 })),
+    faker.internet.email(),
+    [faker.random.alphaNumeric(faker.datatype.number({ min: 1, max: 191 }))],
+    faker.random.alphaNumeric(faker.datatype.number({ min: 500, max: 600 }))
   );
 })();
