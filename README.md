@@ -109,6 +109,8 @@ Esto para que existan los insumos necesarios para correr cada prueba y los escen
 
 ### Ejecución de los test con datos aleatorios
 
+#### Instrucciones de ejecución
+
 1. Ingresar a la carpeta donde se encuentran las pruebas aleatorias `cd .\pruebas_generacion_datos\puppeteer\`.
 2. Ejecutar las pruebas con pool de datos a priori `node .\runTestsPriori.js`
 
