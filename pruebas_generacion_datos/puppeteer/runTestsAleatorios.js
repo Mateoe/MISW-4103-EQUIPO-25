@@ -1,6 +1,7 @@
 const testEditProfileLocation = require("./tests/editProfileLocation");
 const testEditProfileName = require("./tests/editProfileName");
 const testNewPost = require("./tests/newPost");
+const testNewTag = require("./tests/newTag");
 const testNewTier = require("./tests/newTier");
 const faker = require("faker");
 
@@ -125,5 +126,64 @@ const url = "https://ghost-b3tr.onrender.com/ghost/#/signin";
     url,
     "aleatorios_new_post_title_error",
     ""
+  );
+
+  //Tag tests
+  await testNewTag(
+    "\nTest de crear tag con todos los campos en blanco\n",
+    url,
+    "aleatorio_tag_blank",
+    ' '.repeat(faker.datatype.number({ min: 1, max: 191 })),
+    ' '.repeat(faker.datatype.number({ min: 1, max: 191 })),
+    ' '.repeat(faker.datatype.number({ min: 1, max: 500 }))
+  );
+  await testNewTag(
+    "\nTest de crear tag con nombre valido y los demás campos en blanco\n",
+    url,
+    "aleatorio_tag_name_success",
+    faker.random.alphaNumeric(faker.datatype.number({ min: 1, max: 191 })),
+    ' '.repeat(faker.datatype.number({ min: 1, max: 191 })),
+    ' '.repeat(faker.datatype.number({ min: 1, max: 500 }))
+  );
+  await testNewTag(
+    "\nTest de crear tag con nombre invalido y demás campos en blanco\n",
+    url,
+    "aleatorio_tag_name_error",
+    faker.random.alphaNumeric(faker.datatype.number({ min: 192, max: 200 })),
+    ' '.repeat(faker.datatype.number({ min: 1, max: 191 })),
+    ' '.repeat(faker.datatype.number({ min: 1, max: 500 }))
+  );
+  await testNewTag(
+    "\nTest de crear tag con slug valido y decripción en blanco\n",
+    url,
+    "aleatorio_tag_slug_success",
+    faker.random.alphaNumeric(faker.datatype.number({ min: 1, max: 191 })),
+    faker.random.alphaNumeric(faker.datatype.number({ min: 1, max: 191 })),
+    ' '.repeat(faker.datatype.number({ min: 1, max: 500 }))
+  );
+  await testNewTag(
+    "\nTest de crear tag con slug erroneo y decripción en blanco\n",
+    url,
+    "aleatorio_tag_slug_error",
+    faker.random.alphaNumeric(faker.datatype.number({ min: 1, max: 191 })),
+    faker.random.alphaNumeric(faker.datatype.number({ min: 192, max: 200 })),
+    ' '.repeat(faker.datatype.number({ min: 1, max: 500 }))
+  );
+  await testNewTag(
+    "\nTest de crear tag con descripción valida\n",
+    url,
+    "aleatorio_tag_description_success",
+    faker.random.alphaNumeric(faker.datatype.number({ min: 1, max: 191 })),
+    faker.random.alphaNumeric(faker.datatype.number({ min: 1, max: 191 })),
+    faker.random.alphaNumeric(faker.datatype.number({ min: 1, max: 500 })),
+
+  );
+  await testNewTag(
+    "\nTest de crear tag con descripción erronea\n",
+    url,
+    "aleatorio_tag_description_error",
+    faker.random.alphaNumeric(faker.datatype.number({ min: 1, max: 191 })),
+    faker.random.alphaNumeric(faker.datatype.number({ min: 1, max: 191 })),
+    faker.random.alphaNumeric(faker.datatype.number({ min: 501, max: 600 })),
   );
 })();
