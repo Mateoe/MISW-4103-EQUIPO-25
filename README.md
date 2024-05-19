@@ -82,6 +82,8 @@ Para la creación de las pruebas se usó un ambiente con las siguientes caracter
 Esto para que existan los insumos necesarios para correr cada prueba y los escenarios se comporten adecuadamente.
 
 
+<hr/>
+
 ### Ejecución de los tests en Resemble
 
 
