@@ -30,7 +30,7 @@ class AdminPage {
     await this.page.waitForSelector('a[data-test-nav="members"]');
     await this.page.click('a[data-test-nav="members"]');
     await this.page.waitForSelector(
-      "section.view-container.members-list-container-stretch"
+      'a[data-test-new-member-button="true"]'
     );
     await this.logStep(
       this.screenshots.text1,

@@ -9,6 +9,11 @@ async function initialSettings(dirName) {
   });
   const page = await browser.newPage();
 
+  await page.setViewport({
+    width: 1920,
+    height:1080
+});
+
   const logStep = async (step, screenshotPath) => {
     await page.screenshot({ path: screenshotPath });
     console.log(step);

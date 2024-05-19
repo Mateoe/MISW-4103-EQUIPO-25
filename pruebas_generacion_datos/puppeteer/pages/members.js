@@ -27,7 +27,7 @@ class MembersPage {
             this.screenshots.text3,
             this.path.join(this.screenshotsDir, this.screenshots.image3)
         );
-        await this.page.type('input[data-test-input="member-email"]', name);
+        await this.page.type('input[data-test-input="member-email"]', email);
         await this.logStep(
             this.screenshots.text4,
             this.path.join(this.screenshotsDir, this.screenshots.image4)
