@@ -1,19 +1,32 @@
-
+const testEditProfileLocation = require("./tests/editProfileLocation");
+const testEditProfileName = require("./tests/editProfileName");
+const testNewPost = require("./tests/newPost");
 const testNewMember = require("./tests/newMember");
 const testNewTag = require("./tests/newTag");
-const axios = require('axios');
-
+const axios = require("axios");
+const testNewTier = require("./tests/newTier");
 
 async function getTagsMembersData() {
-  const response = await axios.get("https://my.api.mockaroo.com/tags_members.json?key=bf7d5d10")
-  return response.data
+  const response = await axios.get(
+    "https://my.api.mockaroo.com/tags_members.json?key=bf7d5d10"
+  );
+  return response.data;
+}
+
+async function getProfileTierPostsData() {
+  const response = await axios.get(
+    "https://my.api.mockaroo.com/profile_tier_posts.json?key=29d4a6a0"
+  );
+  return response.data;
 }
 
 const url = "https://ghost-b3tr.onrender.com/ghost/#/signin";
 
 (async () => {
   const dataTagsMembers = await getTagsMembersData();
-  
+
+  const dataProfileTierPosts = await getProfileTierPostsData();
+
   //Tag tests
   await testNewTag(
     "\nTest de crear tag con todos los campos en blanco\n",
@@ -99,7 +112,7 @@ const url = "https://ghost-b3tr.onrender.com/ghost/#/signin";
     dataTagsMembers.invalid_member_email,
     [dataTagsMembers.blank_member_label],
     dataTagsMembers.blank_member_note
-  ); 
+  );
   await testNewMember(
     "\nTest de crear miembro con email y label validos\n",
     url,
@@ -154,7 +167,7 @@ const url = "https://ghost-b3tr.onrender.com/ghost/#/signin";
     [dataTagsMembers.valid_member_label],
     dataTagsMembers.valid_member_note
   );
- 
+
   await testNewMember(
     "\nTest de crear miembro con email, nombre y label validos, y notas invalidas\n",
     url,
@@ -163,5 +176,120 @@ const url = "https://ghost-b3tr.onrender.com/ghost/#/signin";
     dataTagsMembers.valid_member_email,
     [dataTagsMembers.valid_member_label],
     dataTagsMembers.invalid_membeer_note
+  );
+
+  // Edit profile name tests
+  await testEditProfileName(
+    "\nTest de editar el nombre del perfil con nombre válido\n",
+    url,
+    "pseudo_aleatorio_edit_profile_name_success",
+    dataProfileTierPosts.edit_profile_name_success
+  );
+
+  await testEditProfileName(
+    "\nTest de editar el nombre del perfil con nombre con espacios vacíos\n",
+    url,
+    "pseudo_aleatorio_edit_profile_name_blank",
+    dataProfileTierPosts.edit_profile_name_blank
+  );
+
+  await testEditProfileName(
+    "\nTest de editar el nombre del perfil con nombre vacio\n",
+    url,
+    "pseudo_aleatorio_edit_profile_name_empty",
+    dataProfileTierPosts.edit_profile_name_empty
+  );
+
+  // Edit profile location tests
+  await testEditProfileLocation(
+    "\nTest de editar la ubicación del perfil con ubicación válida\n",
+    url,
+    "pseudo_aleatorio_edit_profile_location_success",
+    dataProfileTierPosts.edit_profile_location_success
+  );
+  await testEditProfileLocation(
+    "\nTest de editar la ubicación del perfil con ubicación vacía\n",
+    url,
+    "pseudo_aleatorio_edit_profile_location_empty",
+    dataProfileTierPosts.edit_profile_location_empty
+  );
+  await testEditProfileLocation(
+    "\nTest de editar la ubicación del perfil con ubicación con error de más de 150 caracteres \n",
+    url,
+    "pseudo_aleatorio_edit_profile_location_error",
+    dataProfileTierPosts.edit_profile_location_error
+  );
+
+  // New tier tests
+  await testNewTier(
+    "\nTest de crear una membresía válida\n",
+    url,
+    "pseudo_aleatorio_new_tier_success",
+    dataProfileTierPosts.new_tier_subscription_type_success,
+    dataProfileTierPosts.new_tier_price_month_success,
+    dataProfileTierPosts.new_tier_price_year_success
+  );
+  await testNewTier(
+    "\nTest de crear una membresía con nombre con espacios en blanco\n",
+    url,
+    "pseudo_aleatorio_new_tier_name_blank",
+    dataProfileTierPosts.new_tier_subscription_type_blank,
+    dataProfileTierPosts.new_tier_price_month_success,
+    dataProfileTierPosts.new_tier_price_year_success
+  );
+  await testNewTier(
+    "\nTest de crear una membresía con nombre vacío\n",
+    url,
+    "pseudo_aleatorio_new_tier_name_empty",
+    dataProfileTierPosts.new_tier_subscription_type_empty,
+    dataProfileTierPosts.new_tier_price_month_success,
+    dataProfileTierPosts.new_tier_price_year_success
+  );
+  await testNewTier(
+    "\nTest de crear una membresía con precio Mensual igual a 0\n",
+    url,
+    "pseudo_aleatorio_new_tier_price_month_error_cero",
+    dataProfileTierPosts.new_tier_subscription_type_success,
+    dataProfileTierPosts.new_tier_price_month_error_cero,
+    dataProfileTierPosts.new_tier_price_year_success
+  );
+  await testNewTier(
+    "\nTest de crear una membresía con precio Mensual mayor a 99,999,999 \n",
+    url,
+    "pseudo_aleatorio_new_tier_price_month_error_greater",
+    dataProfileTierPosts.new_tier_subscription_type_success,
+    dataProfileTierPosts.new_tier_price_month_error_greater,
+    dataProfileTierPosts.new_tier_price_year_success
+  );
+  await testNewTier(
+    "\nTest de crear una membresía con precio Anual igual a 0\n",
+    url,
+    "pseudo_aleatorio_new_tier_price_year_error_cero",
+    dataProfileTierPosts.new_tier_subscription_type_success,
+    dataProfileTierPosts.new_tier_price_month_success,
+    dataProfileTierPosts.new_tier_price_year_error_cero
+  );
+  await testNewTier(
+    "\nTest de crear una membresía con precio Anual mayor a 99,999,999 \n",
+    url,
+    "pseudo_aleatorio_new_tier_price_year_error_greater",
+    dataProfileTierPosts.new_tier_subscription_type_success,
+    dataProfileTierPosts.new_tier_price_month_success,
+    dataProfileTierPosts.new_tier_price_year_error_greater
+  );
+
+  // New post tests
+  await testNewPost(
+    "\nTest de crear un post válido\n",
+    url,
+    "pseudo_aleatorio_new_post_title_success",
+    dataProfileTierPosts.new_post_title_success
+  );
+
+  await testNewPost(
+    "\nTest de crear un post No válido\n",
+    url,
+    "pseudo_aleatorio_new_post_title_empty",
+    dataProfileTierPosts.new_post_title_empty
   );
 })();

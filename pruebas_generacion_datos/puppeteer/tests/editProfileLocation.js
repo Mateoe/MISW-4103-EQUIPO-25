@@ -3,7 +3,6 @@ const LoginPage = require("../pages/login");
 const initialSettings = require("../config/initialSettings");
 const AdminPage = require("../pages/admin");
 const ProfilePage = require("../pages/profile");
-const faker = require("faker");
 
 async function testEditProfileLocation(
   testName,
