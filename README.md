@@ -44,6 +44,10 @@ https://ghost-b3tr.onrender.com
   
 5. Los resultados de cada ejecución pueden ser consultados en la carpeta `results`, en la cual se encuentan las capturas de cada test bajo cada pool de datos.
 
+   **Nota**: si desea consultar previo a las ejecuciones, la carpeta results ya contiene capturas de las pruebas desarrolladas antes de realizar la entrega.
+
+**Anotación importante**: dado que somo 3 personas, se entiende que la calificación es sobre 90 pruebas, sin embargo, se realizaron 96 para tener un mejor margen en la busqueda de issues.
+
 <hr/>
 
 ### Ejecución de los tests en puppeteer
@@ -132,10 +136,3 @@ Esto para que existan los insumos necesarios para correr cada prueba y los escen
 7. Observar el reporte generado por la regresión visual en la carpetar reports `cd .\reports\`.
 8. Ingresar a la carpeta del test, por ejemplo ` cd .\report_eliminar_pagina\`.
 9. Abrir el archivo `index.html` generado, donde podrá observar todos los detalles del reporte.
-
-
-
-
-   **Nota**: si desea consultar previo a las ejecuciones, la carpeta results ya contiene capturas de las pruebas desarrolladas antes de realizar la entrega.
-
-**Anotación importante**: dado que somo 3 personas, se entiende que la calificación es sobre 90 pruebas, sin embargo, se realizaron 96 para tener un mejor margen en la busqueda de issues.
