@@ -7,7 +7,6 @@ const testNewTier = require("./tests/newTier");
 const faker = require("faker");
 
 const url = "https://ghost-b3tr.onrender.com/ghost/#/signin";
-// const url = "http://localhost:2368/ghost/#/signin";
 
 (async () => {
   // Edit profile name tests
@@ -26,10 +25,9 @@ const url = "https://ghost-b3tr.onrender.com/ghost/#/signin";
   await testEditProfileName(
     "\nTest de editar el nombre del perfil con nombre vacio\n",
     url,
-    "aleatorio_edit_profile_name_",
+    "aleatorio_edit_profile_name_empty",
     ""
   );
-
   // Edit profile location tests
   await testEditProfileLocation(
     "\nTest de editar la ubicación del perfil con ubicación válida\n",
@@ -134,25 +132,25 @@ const url = "https://ghost-b3tr.onrender.com/ghost/#/signin";
     "\nTest de crear tag con todos los campos en blanco\n",
     url,
     "aleatorio_tag_blank",
-    ' '.repeat(faker.datatype.number({ min: 1, max: 191 })),
-    ' '.repeat(faker.datatype.number({ min: 1, max: 191 })),
-    ' '.repeat(faker.datatype.number({ min: 1, max: 500 }))
+    " ".repeat(faker.datatype.number({ min: 1, max: 191 })),
+    " ".repeat(faker.datatype.number({ min: 1, max: 191 })),
+    " ".repeat(faker.datatype.number({ min: 1, max: 500 }))
   );
   await testNewTag(
     "\nTest de crear tag con nombre valido y los demás campos en blanco\n",
     url,
     "aleatorio_tag_name_success",
     faker.random.alphaNumeric(faker.datatype.number({ min: 1, max: 191 })),
-    ' '.repeat(faker.datatype.number({ min: 1, max: 191 })),
-    ' '.repeat(faker.datatype.number({ min: 1, max: 500 }))
+    " ".repeat(faker.datatype.number({ min: 1, max: 191 })),
+    " ".repeat(faker.datatype.number({ min: 1, max: 500 }))
   );
   await testNewTag(
     "\nTest de crear tag con nombre invalido y demás campos en blanco\n",
     url,
     "aleatorio_tag_name_error",
     faker.random.alphaNumeric(faker.datatype.number({ min: 192, max: 200 })),
-    ' '.repeat(faker.datatype.number({ min: 1, max: 191 })),
-    ' '.repeat(faker.datatype.number({ min: 1, max: 500 }))
+    " ".repeat(faker.datatype.number({ min: 1, max: 191 })),
+    " ".repeat(faker.datatype.number({ min: 1, max: 500 }))
   );
   await testNewTag(
     "\nTest de crear tag con slug valido y decripción en blanco\n",
@@ -160,7 +158,7 @@ const url = "https://ghost-b3tr.onrender.com/ghost/#/signin";
     "aleatorio_tag_slug_success",
     faker.random.alphaNumeric(faker.datatype.number({ min: 1, max: 191 })),
     faker.random.alphaNumeric(faker.datatype.number({ min: 1, max: 191 })),
-    ' '.repeat(faker.datatype.number({ min: 1, max: 500 }))
+    " ".repeat(faker.datatype.number({ min: 1, max: 500 }))
   );
   await testNewTag(
     "\nTest de crear tag con slug erroneo y decripción en blanco\n",
@@ -168,7 +166,7 @@ const url = "https://ghost-b3tr.onrender.com/ghost/#/signin";
     "aleatorio_tag_slug_error",
     faker.random.alphaNumeric(faker.datatype.number({ min: 1, max: 191 })),
     faker.random.alphaNumeric(faker.datatype.number({ min: 192, max: 200 })),
-    ' '.repeat(faker.datatype.number({ min: 1, max: 500 }))
+    " ".repeat(faker.datatype.number({ min: 1, max: 500 }))
   );
   await testNewTag(
     "\nTest de crear tag con descripción valida\n",
@@ -176,8 +174,7 @@ const url = "https://ghost-b3tr.onrender.com/ghost/#/signin";
     "aleatorio_tag_description_success",
     faker.random.alphaNumeric(faker.datatype.number({ min: 1, max: 191 })),
     faker.random.alphaNumeric(faker.datatype.number({ min: 1, max: 191 })),
-    faker.random.alphaNumeric(faker.datatype.number({ min: 1, max: 500 })),
-
+    faker.random.alphaNumeric(faker.datatype.number({ min: 1, max: 500 }))
   );
   await testNewTag(
     "\nTest de crear tag con descripción erronea\n",
@@ -185,7 +182,7 @@ const url = "https://ghost-b3tr.onrender.com/ghost/#/signin";
     "aleatorio_tag_description_error",
     faker.random.alphaNumeric(faker.datatype.number({ min: 1, max: 191 })),
     faker.random.alphaNumeric(faker.datatype.number({ min: 1, max: 191 })),
-    faker.random.alphaNumeric(faker.datatype.number({ min: 501, max: 600 })),
+    faker.random.alphaNumeric(faker.datatype.number({ min: 501, max: 600 }))
   );
 
   //Member tests
@@ -193,46 +190,46 @@ const url = "https://ghost-b3tr.onrender.com/ghost/#/signin";
     "\nTest de crear miembro con todos los campos en blanco\n",
     url,
     "aleatorio_member_blank",
-    ' '.repeat(faker.datatype.number({ min: 1, max: 191 })),
-    ' '.repeat(faker.datatype.number({ min: 1, max: 191 })),
-    [' '.repeat(faker.datatype.number({ min: 1, max: 191 }))],
-    ' '.repeat(faker.datatype.number({ min: 1, max: 500 }))
+    " ".repeat(faker.datatype.number({ min: 1, max: 191 })),
+    " ".repeat(faker.datatype.number({ min: 1, max: 191 })),
+    [" ".repeat(faker.datatype.number({ min: 1, max: 191 }))],
+    " ".repeat(faker.datatype.number({ min: 1, max: 500 }))
   );
   await testNewMember(
     "\nTest de crear miembro con email valido y demás campos en blanco\n",
     url,
     "aleatorio_member_email_success",
-    ' '.repeat(faker.datatype.number({ min: 1, max: 191 })),
+    " ".repeat(faker.datatype.number({ min: 1, max: 191 })),
     faker.internet.email(),
-    [' '.repeat(faker.datatype.number({ min: 1, max: 191 }))],
-    ' '.repeat(faker.datatype.number({ min: 1, max: 500 }))
+    [" ".repeat(faker.datatype.number({ min: 1, max: 191 }))],
+    " ".repeat(faker.datatype.number({ min: 1, max: 500 }))
   );
   await testNewMember(
     "\nTest de crear miembro con email invalido y demás campos en blanco\n",
     url,
     "aleatorio_member_email_error",
-    ' '.repeat(faker.datatype.number({ min: 1, max: 191 })),
+    " ".repeat(faker.datatype.number({ min: 1, max: 191 })),
     faker.random.alphaNumeric(faker.datatype.number({ min: 1, max: 191 })),
-    [' '.repeat(faker.datatype.number({ min: 1, max: 191 }))],
-    ' '.repeat(faker.datatype.number({ min: 1, max: 500 }))
+    [" ".repeat(faker.datatype.number({ min: 1, max: 191 }))],
+    " ".repeat(faker.datatype.number({ min: 1, max: 500 }))
   );
   await testNewMember(
     "\nTest de crear miembro con email y label validos\n",
     url,
     "aleatorio_member_label_success",
-    ' '.repeat(faker.datatype.number({ min: 1, max: 191 })),
+    " ".repeat(faker.datatype.number({ min: 1, max: 191 })),
     faker.internet.email(),
     [faker.random.alphaNumeric(faker.datatype.number({ min: 1, max: 191 }))],
-    ' '.repeat(faker.datatype.number({ min: 1, max: 500 }))
+    " ".repeat(faker.datatype.number({ min: 1, max: 500 }))
   );
   await testNewMember(
     "\nTest de crear miembro con email valido y label invalido\n",
     url,
     "aleatorio_member_label_error",
-    ' '.repeat(faker.datatype.number({ min: 1, max: 191 })),
+    " ".repeat(faker.datatype.number({ min: 1, max: 191 })),
     faker.internet.email(),
     [faker.random.alphaNumeric(faker.datatype.number({ min: 192, max: 200 }))],
-    ' '.repeat(faker.datatype.number({ min: 1, max: 500 }))
+    " ".repeat(faker.datatype.number({ min: 1, max: 500 }))
   );
   await testNewMember(
     "\nTest de crear miembro con email, label y nombre validos\n",
@@ -241,7 +238,7 @@ const url = "https://ghost-b3tr.onrender.com/ghost/#/signin";
     faker.random.alphaNumeric(faker.datatype.number({ min: 1, max: 191 })),
     faker.internet.email(),
     [faker.random.alphaNumeric(faker.datatype.number({ min: 1, max: 191 }))],
-    ' '.repeat(faker.datatype.number({ min: 1, max: 500 }))
+    " ".repeat(faker.datatype.number({ min: 1, max: 500 }))
   );
   await testNewMember(
     "\nTest de crear miembro con email y label validos, y nombre invalido\n",
@@ -250,7 +247,7 @@ const url = "https://ghost-b3tr.onrender.com/ghost/#/signin";
     faker.random.alphaNumeric(faker.datatype.number({ min: 192, max: 200 })),
     faker.internet.email(),
     [faker.random.alphaNumeric(faker.datatype.number({ min: 1, max: 191 }))],
-    ' '.repeat(faker.datatype.number({ min: 1, max: 500 }))
+    " ".repeat(faker.datatype.number({ min: 1, max: 500 }))
   );
   await testNewMember(
     "\nTest de crear miembro con email y nombre validos, y label invalido\n",
@@ -259,7 +256,7 @@ const url = "https://ghost-b3tr.onrender.com/ghost/#/signin";
     faker.random.alphaNumeric(faker.datatype.number({ min: 1, max: 191 })),
     faker.internet.email(),
     [faker.random.alphaNumeric(faker.datatype.number({ min: 192, max: 200 }))],
-    ' '.repeat(faker.datatype.number({ min: 1, max: 500 }))
+    " ".repeat(faker.datatype.number({ min: 1, max: 500 }))
   );
   await testNewMember(
     "\nTest de crear miembro con email, nombre, label y notas validas\n",
