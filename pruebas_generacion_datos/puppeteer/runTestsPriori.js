@@ -1,12 +1,16 @@
-
 const testNewMember = require("./tests/newMember");
 const testNewTag = require("./tests/newTag");
-const fs = require('fs');
+const testEditProfileName = require("./tests/editProfileName");
+const testEditProfileLocation = require("./tests/editProfileLocation");
+const testNewPost = require("./tests/newPost");
+const testNewTier = require("./tests/newTier");
+
+const fs = require("fs");
 const url = "https://ghost-b3tr.onrender.com/ghost/#/signin";
 
 function readJsonFile() {
-  const filePath = './data/priori_data.json';
-  const fileData = fs.readFileSync(filePath, 'utf-8');
+  const filePath = "./data/priori_data.json";
+  const fileData = fs.readFileSync(filePath, "utf-8");
   const jsonData = JSON.parse(fileData);
   const randomIndex = Math.floor(Math.random() * jsonData.length);
   const randomObject = jsonData[randomIndex];
@@ -101,7 +105,7 @@ const data = readJsonFile();
     data.invalid_member_email,
     [data.blank_member_label],
     data.blank_member_note
-  ); 
+  );
   await testNewMember(
     "\nTest de crear miembro con email y label validos\n",
     url,
@@ -156,7 +160,7 @@ const data = readJsonFile();
     [data.valid_member_label],
     data.valid_member_note
   );
- 
+
   await testNewMember(
     "\nTest de crear miembro con email, nombre y label validos, y notas invalidas\n",
     url,
@@ -167,5 +171,118 @@ const data = readJsonFile();
     data.invalid_membeer_note
   );
 
-  
+  // Edit profile name tests
+  await testEditProfileName(
+    "\nTest de editar el nombre del perfil con nombre válido\n",
+    url,
+    "a_priori_edit_profile_name_success",
+    data.edit_profile_name_success
+  );
+
+  await testEditProfileName(
+    "\nTest de editar el nombre del perfil con nombre con espacios vacíos\n",
+    url,
+    "a_priori_edit_profile_name_blank",
+    data.edit_profile_name_blank
+  );
+
+  await testEditProfileName(
+    "\nTest de editar el nombre del perfil con nombre vacio\n",
+    url,
+    "a_priori_edit_profile_name_empty",
+    data.edit_profile_name_empty
+  );
+
+  // Edit profile location tests
+  await testEditProfileLocation(
+    "\nTest de editar la ubicación del perfil con ubicación válida\n",
+    url,
+    "a_priori_edit_profile_location_success",
+    data.edit_profile_location_success
+  );
+  await testEditProfileLocation(
+    "\nTest de editar la ubicación del perfil con ubicación vacía\n",
+    url,
+    "a_priori_edit_profile_location_empty",
+    data.edit_profile_location_empty
+  );
+  await testEditProfileLocation(
+    "\nTest de editar la ubicación del perfil con ubicación con error de más de 150 caracteres \n",
+    url,
+    "a_priori_edit_profile_location_error",
+    data.edit_profile_location_error
+  );
+
+  // New tier tests
+  await testNewTier(
+    "\nTest de crear una membresía válida\n",
+    url,
+    "a_priori_new_tier_success",
+    data.new_tier_subscription_type_success,
+    data.new_tier_price_month_success,
+    data.new_tier_price_year_success
+  );
+  await testNewTier(
+    "\nTest de crear una membresía con nombre con espacios en blanco\n",
+    url,
+    "a_priori_new_tier_name_blank",
+    data.new_tier_subscription_type_blank,
+    data.new_tier_price_month_success,
+    data.new_tier_price_year_success
+  );
+  await testNewTier(
+    "\nTest de crear una membresía con nombre vacío\n",
+    url,
+    "a_priori_new_tier_name_empty",
+    data.new_tier_subscription_type_empty,
+    data.new_tier_price_month_success,
+    data.new_tier_price_year_success
+  );
+  await testNewTier(
+    "\nTest de crear una membresía con precio Mensual igual a 0\n",
+    url,
+    "a_priori_new_tier_price_month_error_cero",
+    data.new_tier_subscription_type_success,
+    data.new_tier_price_month_error_cero,
+    data.new_tier_price_year_success
+  );
+  await testNewTier(
+    "\nTest de crear una membresía con precio Mensual mayor a 99,999,999 \n",
+    url,
+    "a_priori_new_tier_price_month_error_greater",
+    data.new_tier_subscription_type_success,
+    data.new_tier_price_month_error_greater,
+    data.new_tier_price_year_success
+  );
+  await testNewTier(
+    "\nTest de crear una membresía con precio Anual igual a 0\n",
+    url,
+    "a_priori_new_tier_price_year_error_cero",
+    data.new_tier_subscription_type_success,
+    data.new_tier_price_month_success,
+    data.new_tier_price_year_error_cero
+  );
+  await testNewTier(
+    "\nTest de crear una membresía con precio Anual mayor a 99,999,999 \n",
+    url,
+    "a_priori_new_tier_price_year_error_greater",
+    data.new_tier_subscription_type_success,
+    data.new_tier_price_month_success,
+    data.new_tier_price_year_error_greater
+  );
+
+  // New post tests
+  await testNewPost(
+    "\nTest de crear un post válido\n",
+    url,
+    "a_priori_new_post_title_success",
+    data.new_post_title_success
+  );
+
+  await testNewPost(
+    "\nTest de crear un post No válido\n",
+    url,
+    "a_priori_new_post_title_empty",
+    data.new_post_title_empty
+  );
 })();

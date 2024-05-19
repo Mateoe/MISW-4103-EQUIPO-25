@@ -3,7 +3,6 @@ const LoginPage = require("../pages/login");
 const initialSettings = require("../config/initialSettings");
 const AdminPage = require("../pages/admin");
 const ProfilePage = require("../pages/profile");
-const faker = require("faker");
 
 async function testEditProfileName(testName, serviceUrl, folderName, name) {
   console.log(testName);
@@ -70,16 +69,12 @@ async function testEditProfileName(testName, serviceUrl, folderName, name) {
     await profilePage.openProfileFromSetting();
 
     if (folderName.includes("error")) {
-
       await page.waitForSelector("div.flex.items-start.gap-3");
 
-
-              await logStep(
-                screenshots.text5,
-                path.join(screenshotsDir, screenshots.image5)
-              );
-      
-      
+      await logStep(
+        screenshots.text5,
+        path.join(screenshotsDir, screenshots.image5)
+      );
     } else {
       await page.waitForSelector("h1.break-words");
 
