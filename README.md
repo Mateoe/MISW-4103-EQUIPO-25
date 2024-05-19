@@ -21,6 +21,26 @@ https://ghost-b3tr.onrender.com
 
 **Actualmente no disponible, se bajó luego de la ultima entrega para evitar sobrecostos**
 
+### Ejecución de los tests con las diferentes estrategias de generación de datos (A priori, pseudo aleatorio, aleatorio),
+
+#### Instrucciones de ejecución
+
+1. Ingresar a la carpeta donde se encuentran las pruebas aleatorias `cd .\pruebas_generacion_datos\puppeteer\`.
+2. Ejecutar las pruebas con pool de datos a priori `node .\runTestsPriori.js`
+
+   * El pool de datos a priori fue generado mediante la herramienta mockaroo en formato json, el cual se puede encontrar en la carpeta `.\data`
+
+3. Ejecutar las pruebas con pool de datos pseudo aleatorios `node .\runTestsPseudoAleatorios.js`
+
+   * El pool de datos pseudo aleatorios fue generado mediante el uso e invocación de apis de mockaroo, las cuales pueden ser consultadas en la definición del archivo ejecutado en este paso.
+  
+4. Ejecutar las pruebas con el pool de datos aleatorios `node .\runTestsAleatorios.js`.
+
+   * El pool de datos aleatorios fue implementado mediante invocaciones a la librería fakerjs, lo cual puede ser consultado en la definición del archivo ejecutado en este paso.
+  
+5. Los resultados de cada ejecución pueden ser consultados en la carpeta `results`, en la cual se encuentan las capturas de cada test bajo cada pool de datos.
+
+
 ### Ejecución de los tests en puppeteer
 Para la creación de las pruebas se usó un ambiente con las siguientes características
 * **SO**: Windows 11 Pro 22631.3527
@@ -107,24 +127,7 @@ Esto para que existan los insumos necesarios para correr cada prueba y los escen
 9. Abrir el archivo `index.html` generado, donde podrá observar todos los detalles del reporte.
 
 
-### Ejecución de los test con datos aleatorios
 
-#### Instrucciones de ejecución
-
-1. Ingresar a la carpeta donde se encuentran las pruebas aleatorias `cd .\pruebas_generacion_datos\puppeteer\`.
-2. Ejecutar las pruebas con pool de datos a priori `node .\runTestsPriori.js`
-
-   * El pool de datos a priori fue generado mediante la herramienta mockaroo en formato json, el cual se puede encontrar en la carpeta `.\data`
-
-3. Ejecutar las pruebas con pool de datos pseudo aleatorios `node .\runTestsPseudoAleatorios.js`
-
-   * El pool de datos pseudo aleatorios fue generado mediante el uso e invocación de apis de mockaroo, las cuales pueden ser consultadas en la definición del archivo ejecutado en este paso.
-  
-4. Ejecutar las pruebas con el pool de datos aleatorios `node .\runTestsAleatorios.js`.
-
-   * El pool de datos aleatorios fue implementado mediante invocaciones a la librería fakerjs, lo cual puede ser consultado en la definición del archivo ejecutado en este paso.
-  
-5. Los resultados de cada ejecución pueden ser consultados en la carpeta `results`, en la cual se encuentan las capturas de cada test bajo cada pool de datos.
 
    **Nota**: si desea consultar previo a las ejecuciones, la carpeta results ya contiene capturas de las pruebas desarrolladas antes de realizar la entrega.
 
