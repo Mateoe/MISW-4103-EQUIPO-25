@@ -4,10 +4,15 @@ const fs = require("fs").promises; // Utilizamos fs.promises para las funciones 
 
 async function initialSettings(dirName) {
   const browser = await puppeteer.launch({
-    headless: true,
+    headless: false,
     defaultViewport: null,
   });
   const page = await browser.newPage();
+
+  await page.setViewport({
+    width: 1920,
+    height:1080
+});
 
   const logStep = async (step, screenshotPath) => {
     await page.screenshot({ path: screenshotPath });

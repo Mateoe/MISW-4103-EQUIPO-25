@@ -21,7 +21,7 @@ async function testNewTag(testName, serviceUrl, folderName, name, slug, descript
         image4: "04_inputTagSlug.png",
         text5:  "Ingresa la descripción del tag",
         image5: "05_inputTagDescription.png",
-        text6: "Guardar tag creado",
+        text6: "Guardar tag",
         image6: "06_saveNewTag.png",
         text7: "Tag creado exitosamente",
         image7: "07_successNewTag.png",
