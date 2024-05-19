@@ -40,6 +40,7 @@ https://ghost-b3tr.onrender.com
   
 5. Los resultados de cada ejecución pueden ser consultados en la carpeta `results`, en la cual se encuentan las capturas de cada test bajo cada pool de datos.
 
+<hr/>
 
 ### Ejecución de los tests en puppeteer
 Para la creación de las pruebas se usó un ambiente con las siguientes características
