@@ -8,6 +8,7 @@
 |Julián Esteban Oliveros Forero|je.oliverosf@uniandes.edu.co|
 |Andres Esteban Silva Sanchez|ae.silva10@uniandes.edu.co|
 
+<hr/>
 
 ### Pagina web despliegue ghost
 
@@ -22,6 +23,8 @@ https://ghost-b3tr.onrender.com
 **Actualmente no disponible, se bajó luego de la ultima entrega para evitar sobrecostos**
 
 ### Ejecución de los tests con las diferentes estrategias de generación de datos (A priori, pseudo aleatorio, aleatorio),
+
+<hr/>
 
 #### Instrucciones de ejecución
 
