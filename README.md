@@ -26,7 +26,7 @@ https://ghost-b3tr.onrender.com
 
 ## Semana 8
 
-Se aclara que la estrategia de pruebas no contempla la realización de pruebas exploratorias dado que estas fueron realizadas durante la ejecución de la estrategia de pruebas anterior, por ello en esta semana no se contempla si implementación.
+Se aclara que la estrategia de pruebas no contempla la realización de pruebas exploratorias dado que estas fueron realizadas durante la ejecución de la estrategia de pruebas anterior, por ello en esta semana no se contempla su implementación.
 
 ### Ejecución de pruebas de accesibilidad
 
