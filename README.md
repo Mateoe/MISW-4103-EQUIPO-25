@@ -43,6 +43,38 @@ https://ghost-b3tr.onrender.com
 
     **Nota**: Adicional a lo anterior el pdf con el resultado de las pruebas puede ser consultado en el enlace: [reporte accesibilidad](https://html-preview.github.io/?url=https://github.com/Mateoe/MISW-4103-EQUIPO-25/blob/main/accesibilidad/pruebas.html)
 
+
+### Ejecución de pruebas bajo diferentes resoluciones
+
+Con el objetivo de observar el comportamiento de la ABP bajo diferentes tamaño de pantalla, se crearon pruebas con datos aleatorios que permitan validar bajo 3 escenarios diferentes:
+
+1. Tamaño de pantalla pequeño 850x480
+2. Tamaño de pantalla mediano 1600x900
+3. Tamaño de pantalla grande 3840x2160
+
+Se acalara que, durante esta semana se realiza la creación de las pruebas y guardado de las evidencias en formato de imagen, las cuales se espera que a futuro sean usadas para pruebas de regresión visual o análisis manual de las imagenes para validar el comportamiento esperado.
+
+#### Instrucciones de ejecución
+
+1. Ingresar a la carpeta donde se encuentran las pruebas de resolución `cd .\pruebas_resolucion\`.
+2. Ingresar el comando `npm i` para instalar los modulos
+3. Ejecutar las pruebas con resolucion 850x480 `node .\runTests850x480.js`
+
+   * Se destaca que en la ejecución de estas pruebas se observa que si bien la mayor parte de las pruebas son exitosas, al estar los elementos de la pantalla tan colapsados, se genera incomodidad visual, lo cual puede reducir la usabilidad por parte del usuario.
+
+4. Ejecutar las pruebas con resolucion 1600x900 `node .\runTests1600x900.js`
+
+   * Se desataca que este rango de pantalla es ideal, dado que todos los elementos de la pantallatienen una adecuada visualización, sin generar incomodidad o errores.
+  
+5. Ejecutar las pruebas con resolucion 3840x2160 `node .\runTests3840x2160.js`.
+
+   * Se destaca que, si bien en este rango de pantalla las pruebas se ejecutan con normalidad, la interfaz no está preparada para el uso de pantallas grandes, lo cual se aprecia porque queda mucho espacio entre las margenes y los elementos, lo cual en la mayoría de ocasiones se ve reflejado en que se desperdicia gran parte de la pantalla.
+  
+6. Los resultados de cada ejecución pueden ser consultados en la carpeta `results`, en la cual se encuentan las carpetas para cada resolucion y dentro de ellas las imagenes contenidas en su respectiva carpeta.
+
+   **Nota**: si desea consultar previo a las ejecuciones, la carpeta results ya contiene capturas de las pruebas desarrolladas antes de realizar la entrega.
+
+
 <hr/>
 
 ## Semana 7
