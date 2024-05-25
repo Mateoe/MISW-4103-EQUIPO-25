@@ -26,6 +26,8 @@ https://ghost-b3tr.onrender.com
 
 ## Semana 8
 
+Se aclara que la estrategia de pruebas no contempla la realización de pruebas exploratorias dado que estas fueron realizadas durante la ejecución de la estrategia de pruebas anterior, por ello en esta semana no se contempla si implementación.
+
 ### Ejecución de pruebas de accesibilidad
 
 1. Descargar la extensión AXE para el navegador Chrome desde el [enlace oficial](https://chromewebstore.google.com/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd).
