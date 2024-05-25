@@ -24,6 +24,24 @@ https://ghost-b3tr.onrender.com
 
 <hr/>
 
+### Ejecución de pruebas de accesibilidad
+
+1. Descargar la extensión AXE para el navegador Chrome desde el [enlace oficial](https://chromewebstore.google.com/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd).
+2. Ingresar a la instancia desplegada de ghost haciendo click en el enlace: [ghost](https://ghost-b3tr.onrender.com/ghost/#/signin)
+3. Ingresar el correo "test@test.com" y la contraseña "Test@test25" (notar que la primera T es mayuscula).
+4. Ingresar a la página que desea explorar y abrir las herramientas de desarrollador, por ejemplo para la página de miembros:
+   ![image](https://github.com/Mateoe/MISW-4103-EQUIPO-25/assets/26661339/10110d7c-6c3f-4a4f-a20f-193cda6c742e)
+5. Buscar y presionar sobre la tab de Axe DevTools:
+   ![image](https://github.com/Mateoe/MISW-4103-EQUIPO-25/assets/26661339/6c728807-234c-43a8-8bca-7ab780806ae0)
+6. Presionar sobre el botón "Scan ALL of my page":
+   ![image](https://github.com/Mateoe/MISW-4103-EQUIPO-25/assets/26661339/e7d625cd-43cf-4bb0-bdbc-043eae22f7e3)
+7. Revisar los issues encontrados:
+   ![image](https://github.com/Mateoe/MISW-4103-EQUIPO-25/assets/26661339/55469df4-7735-4d9f-87b2-88d5490200fb)
+8. Adicionalmente el archivo presente en la ruta `.\accesibilidad\pruebas.html` y `.\accesibilidad\pruebas.md` presenta el inventario de las 20 pruebas ejecutadas.
+
+
+<hr/>
+
 ### Ejecución de los tests con las diferentes estrategias de generación de datos (A priori, pseudo aleatorio, aleatorio),
 
 
