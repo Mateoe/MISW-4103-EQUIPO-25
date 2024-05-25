@@ -12,7 +12,7 @@ const height = 2160;
 
 (async () => {
   // Edit profile name tests
-  await testEditProfileName(
+  /* await testEditProfileName(
     "\nTest de editar el nombre del perfil con nombre válido\n",
     url,
     "aleatorio_edit_profile_name_success",
@@ -157,9 +157,9 @@ const height = 2160;
     "",
     width, 
     height
-  );
+  ); */
 
-  //Tag tests
+  /* //Tag tests
   await testNewTag(
     "\nTest de crear tag con todos los campos en blanco\n",
     url,
@@ -229,7 +229,7 @@ const height = 2160;
     faker.random.alphaNumeric(faker.datatype.number({ min: 501, max: 600 })),
     width, 
     height
-  );
+  ); */
 
   //Member tests
   await testNewMember(

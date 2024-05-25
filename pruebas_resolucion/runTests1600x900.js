@@ -12,7 +12,7 @@ const height = 900;
 
 (async () => {
   // Edit profile name tests
- /*  await testEditProfileName(
+  await testEditProfileName(
     "\nTest de editar el nombre del perfil con nombre válido\n",
     url,
     "aleatorio_edit_profile_name_success",
@@ -286,7 +286,7 @@ const height = 900;
     " ".repeat(faker.datatype.number({ min: 1, max: 500 })),
     width, 
     height
-  ); */
+  );
   await testNewMember(
     "\nTest de crear miembro con email, label y nombre validos\n",
     url,
@@ -309,7 +309,7 @@ const height = 900;
     width, 
     height
   );
-  /* await testNewMember(
+  await testNewMember(
     "\nTest de crear miembro con email y nombre validos, y label invalido\n",
     url,
     "aleatorio_member_label_issue",
@@ -341,5 +341,5 @@ const height = 900;
     faker.random.alphaNumeric(faker.datatype.number({ min: 500, max: 600 })),
     width, 
     height
-  );  */
+  ); 
 })();

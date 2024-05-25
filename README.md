@@ -68,7 +68,7 @@ Se acalara que, durante esta semana se realiza la creación de las pruebas y gua
   
 5. Ejecutar las pruebas con resolucion 3840x2160 `node .\runTests3840x2160.js`.
 
-   * Se destaca que, si bien en este rango de pantalla las pruebas se ejecutan con normalidad, la interfaz no está preparada para el uso de pantallas grandes, lo cual se aprecia porque queda mucho espacio entre las margenes y los elementos, lo cual en la mayoría de ocasiones se ve reflejado en que se desperdicia gran parte de la pantalla.
+   * Se observa que la interfaz no está preparada para el uso de pantallas grandes, lo cual se aprecia porque queda mucho espacio entre las margenes y los elementos, lo cual en la mayoría de ocasiones se ve reflejado en que se desperdicia gran parte de la pantalla, además, la ejecución e las pruebas de miembros exceden el limite de tiempo de ejecución debido a que por la amplitud de la pantalla los elementos no alcanzan a pintarse, lo cual evidencia un defecto respecto a las resoluciones anteriores, indicando que el aplicativo no está contemplado para este tipo de pantallas.
   
 6. Los resultados de cada ejecución pueden ser consultados en la carpeta `results`, en la cual se encuentan las carpetas para cada resolucion y dentro de ellas las imagenes contenidas en su respectiva carpeta.
 

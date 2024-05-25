@@ -4,7 +4,7 @@ const fs = require("fs").promises; // Utilizamos fs.promises para las funciones 
 
 async function initialSettings(dirName, width, height) {
   const browser = await puppeteer.launch({
-    headless: true,
+    headless: false,
     defaultViewport: null,
   });
   const page = await browser.newPage();
