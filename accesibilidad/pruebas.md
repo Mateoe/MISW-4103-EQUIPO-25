@@ -1,0 +1,557 @@
+<style>
+/* Add your custom styles here */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+ul li input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+ul li input[type="checkbox"]:checked + label {
+    text-decoration: line-through;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 20px 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.report-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.report-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.report-subtitle {
+    font-size: 24px;
+    color: #888;
+}
+
+.report-section {
+    margin-bottom: 40px;
+}
+
+.report-section-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.report-section-content {
+    margin-left: 20px;
+}
+
+</style>
+
+<div class="container">
+<div class="report-header">
+    <h1 class="report-title">Pruebas de accesibilidad</h1>
+    <h2 class="report-subtitle">Introducción</h2>
+    <p>Este reporte presenta el resumen de las pruebas de accesibilidad implementadas dutante la primera semana de la estrategia de pruebas.
+    
+    Las pruebas fueron ejecutadas bajo una instancia de ghost que se encuentra en el siguiente enlace:
+    
+<a href="https://ghost-b3tr.onrender.com/ghost/#/signin">GHOST</a>
+</p>
+</div>
+
+<!-- reporte 1 -->
+<div class="report-section">
+<h2 class="report-section-title">1. Menú principal | drop down del menú principal no cuenta con propiedades de accesibilidad</h2>
+<ol class="report-section-content">
+    <li>
+        <label>Ingresar al aplicativo GHOST.</label>
+    </li>
+    <li>
+        <label>Estando en la interfaz principal de administrador ejecutar la herramienta axe.</label>
+    </li>
+    <img src="./images/1-a.png" alt="Imagen 1-a">
+    <img src="./images/1-b.png" alt="Imagen 1-b">
+</ol>
+</div>
+
+<!-- reporte 2 -->
+<div class="report-section">
+<h2 class="report-section-title">2. Miembros | botones sin texto discernible por lectores de pantalla</h2>
+<ol class="report-section-content">
+    <li>
+        <label>Ingresar al aplicativo GHOST.</label>
+    </li>
+    <li>
+        <label>Ingresar a la interfaz de miembros.</label>
+    </li>
+    <li>
+        <label>Ejecutar la herramienta axe.</label>
+    </li>
+    <li>
+        <label>Dirigirse al resultado Buttons must have discernible text.</label>
+    </li>
+    <img src="./images/2-a.png" alt="Imagen 1-a">
+    <img src="./images/2-b.png" alt="Imagen 1-b">
+</ol>
+</div>
+
+<!-- reporte 3 -->
+<div class="report-section">
+<h2 class="report-section-title">3. Miembros | poco contraste en el mensaje cuando no hay miembros añadidos</h2>
+<ol class="report-section-content">
+    <li>
+        <label>Ingresar al aplicativo GHOST.</label>
+    </li>
+    <li>
+        <label>Ingresar a la interfaz de miembros.</label>
+    </li>
+    <li>
+        <label>Ejecutar la herramienta axe.</label>
+    </li>
+    <li>
+        <label>Dirigirse al resultado 1 de Elements must meet minimum color contrast ratio thresholds.</label>
+    </li>
+    <img src="./images/3-a.png" alt="Imagen 1-a">
+    <img src="./images/3-b.png" alt="Imagen 1-b">
+</ol>
+</div>
+
+<!-- reporte 4 -->
+<div class="report-section">
+<h2 class="report-section-title">4. Miembros | bajo contraste en el botón de añadirse a uno mismo como miembro </h2>
+<ol class="report-section-content">
+    <li>
+        <label>Ingresar al aplicativo GHOST.</label>
+    </li>
+    <li>
+        <label>Ingresar a la interfaz de miembros.</label>
+    </li>
+    <li>
+        <label>Ejecutar la herramienta axe.</label>
+    </li>
+    <li>
+        <label>Dirigirse al resultado 2 de Elements must meet minimum color contrast ratio thresholds.</label>
+    </li>
+    <img src="./images/4-a.png" alt="Imagen 1-a">
+    <img src="./images/4-b.png" alt="Imagen 1-b">
+</ol>
+</div>
+
+<!-- reporte 5 -->
+<div class="report-section">
+<h2 class="report-section-title">5. Miembros | bajo contraste en mensaje para añadir o importar miembros </h2>
+<ol class="report-section-content">
+    <li>
+        <label>Ingresar al aplicativo GHOST.</label>
+    </li>
+    <li>
+        <label>Ingresar a la interfaz de miembros.</label>
+    </li>
+    <li>
+        <label>Ejecutar la herramienta axe.</label>
+    </li>
+    <li>
+        <label>Dirigirse al resultado 3 de Elements must meet minimum color contrast ratio thresholds.</label>
+    </li>
+    <img src="./images/5-a.png" alt="Imagen 1-a">
+    <img src="./images/5-b.png" alt="Imagen 1-b">
+</ol>
+</div>
+
+<!-- reporte 6 -->
+<div class="report-section">
+<h2 class="report-section-title">6. Menú principal | botón para cambio de modo de visibilidad no cuenta con textos identificables por lectores de pantalla </h2>
+<ol class="report-section-content">
+    <li>
+        <label>Ingresar al aplicativo GHOST.</label>
+    </li>
+    <li>
+        <label>Ejecutar la herramienta axe.</label>
+    </li>
+    <li>
+        <label>Dirigirse al resultado Links must have discernible texts.</label>
+    </li>
+    <img src="./images/6-a.png" alt="Imagen 1-a">
+    <img src="./images/6-b.png" alt="Imagen 1-b">
+</ol>
+</div>
+
+<!-- reporte 7 -->
+<div class="report-section">
+<h2 class="report-section-title">7. Meta | zoom deshabilitado en dispositivo moviles </h2>
+<ol class="report-section-content">
+    <li>
+        <label>Ingresar al aplicativo GHOST.</label>
+    </li>
+    <li>
+        <label>Ejecutar la herramienta axe.</label>
+    </li>
+    <li>
+        <label>Dirigirse al resultado Zooming and scaling must not be disabled.</label>
+    </li>
+    <img src="./images/7-a.png" alt="Imagen 1-a">
+    <img src="./images/7-b.png" alt="Imagen 1-b">
+</ol>
+</div>
+
+<!-- reporte 8 -->
+<div class="report-section">
+<h2 class="report-section-title">8. las etiquetas de titulo no incrementan su tamaño en 1 </h2>
+<ol class="report-section-content">
+    <li>
+        <label>Ingresar al aplicativo GHOST.</label>
+    </li>
+    <li>
+        <label>Dirigirse al apartado de miembros.</label>
+    </li>
+    <li>
+        <label>Ejecutar la herramienta axe.</label>
+    </li>
+    <li>
+        <label>Dirigirse al resultado Heading levels should only increase by one.</label>
+    </li>
+    <img src="./images/8-a.png" alt="Imagen 1-a">
+    <img src="./images/8-b.png" alt="Imagen 1-b">
+</ol>
+</div>
+
+<!-- reporte 9 -->
+<div class="report-section">
+<h2 class="report-section-title">9. Alertas | el elemento no cuenta con una etiqueta que lo haga unico </h2>
+<ol class="report-section-content">
+    <li>
+        <label>Ingresar al aplicativo GHOST.</label>
+    </li>
+    <li>
+        <label>Ejecutar la herramienta axe.</label>
+    </li>
+    <li>
+        <label>Dirigirse al resultado Ensures landmarks are unique.</label>
+    </li>
+    <img src="./images/9-a.png" alt="Imagen 1-a">
+    <img src="./images/9-b.png" alt="Imagen 1-b">
+</ol>
+</div>
+
+<!-- reporte 10 -->
+<div class="report-section">
+<h2 class="report-section-title">10. Añadir miembro | atributo incorrecto en etiquetas de accesibilidad</h2>
+<ol class="report-section-content">
+    <li>
+        <label>Ingresar al aplicativo GHOST.</label>
+    </li>
+    <li>
+        <label>Ingresar a la interfaz de miembros.</label>
+    </li>
+    <li>
+        <label>Presionar el botón para añadir un nuevo miembro.</label>
+    </li>
+    <li>
+        <label>Ejecutar la herramienta axe.</label>
+    </li>
+    <li>
+        <label>Dirigirse al resultado ARIA attributes must conform to valid values.</label>
+    </li>
+    <img src="./images/10-a.png" alt="Imagen 1-a">
+    <img src="./images/10-b.png" alt="Imagen 1-b">
+</ol>
+</div>
+
+<!-- reporte 11 -->
+<div class="report-section">
+<h2 class="report-section-title">11. Añadir tag | enlaces no son distinguibles sin depender del color</h2>
+<ol class="report-section-content">
+    <li>
+        <label>Ingresar al aplicativo GHOST.</label>
+    </li>
+    <li>
+        <label>Ingresar a la interfaz de tags.</label>
+    </li>
+    <li>
+        <label>Presionar el botón para añadir tag.</label>
+    </li>
+    <li>
+        <label>Ejecutar la herramienta axe.</label>
+    </li>
+    <li>
+        <label>Dirigirse al resultado Links must be distinguishable without relying on color.</label>
+    </li>
+    <img src="./images/11-a.png" alt="Imagen 1-a">
+    <img src="./images/11-b.png" alt="Imagen 1-b">
+</ol>
+</div>
+
+<!-- reporte 12 -->
+<div class="report-section">
+<h2 class="report-section-title">12. Modal de abandonar pagina de añadir tags | elemento sin punto de referencia</h2>
+<ol class="report-section-content">
+    <li>
+        <label>Ingresar al aplicativo GHOST.</label>
+    </li>
+    <li>
+        <label>Ingresar a la interfaz de tags.</label>
+    </li>
+    <li>
+        <label>Ingresar a la interfaz de añadir tag.</label>
+    </li>
+    <li>
+        <label>Escribir en cualquier campo.</label>
+    </li>
+    <li>
+        <label>Presionar algún botón que permita abandonar la página.</label>
+    </li>
+    <li>
+        <label>Ejecutar la herramienta axe.</label>
+    </li>
+    <li>
+        <label>Dirigirse al resultado All page content should be contained by landmarks</label>
+    </li>
+    <img src="./images/12-a.png" alt="Imagen 1-a">
+    <img src="./images/12-b.png" alt="Imagen 1-b">
+</ol>
+</div>
+
+<!-- reporte 13 -->
+<div class="report-section">
+<h2 class="report-section-title">13. Paginas | elementos del listado no están contenidos en la etiqueta correcta.</h2>
+<ol class="report-section-content">
+    <li>
+        <label>Ingresar al aplicativo GHOST.</label>
+    </li>
+    <li>
+        <label>Ingresar a la interfaz de paginas.</label>
+    </li>
+    <li>
+        <label>Ejecutar la herramienta axe.</label>
+    </li>
+    <li>
+        <label>Dirigirse al resultado li elements must be contained in a ul or ol</label>
+    </li>
+    <img src="./images/13-a.png" alt="Imagen 1-a">
+    <img src="./images/13-b.png" alt="Imagen 1-b">
+</ol>
+</div>
+
+<!-- reporte 14 -->
+<div class="report-section">
+<h2 class="report-section-title">14. Paginas | los elementos de accesibilidad del listado no están contenidos en los roles correctos</h2>
+<ol class="report-section-content">
+    <li>
+        <label>Ingresar al aplicativo GHOST.</label>
+    </li>
+    <li>
+        <label>Ingresar a la interfaz de paginas.</label>
+    </li>
+    <li>
+        <label>Ejecutar la herramienta axe.</label>
+    </li>
+    <li>
+        <label>Dirigirse al resultado Certain ARIA roles must be contained by particular parents</label>
+    </li>
+    <img src="./images/14-a.png" alt="Imagen 1-a">
+    <img src="./images/14-b.png" alt="Imagen 1-b">
+</ol>
+</div>
+
+<!-- reporte 15 -->
+<div class="report-section">
+<h2 class="report-section-title">15. Editar páginas | los campos no tienen un nombre accesible</h2>
+<ol class="report-section-content">
+    <li>
+        <label>Ingresar al aplicativo GHOST.</label>
+    </li>
+    <li>
+        <label>Ingresar a la interfaz de paginas.</label>
+    </li>
+    <li>
+        <label>Ingresar a la interfaz de añadir o editar pagina.</label>
+    </li>
+    <li>
+        <label>Ejecutar la herramienta axe.</label>
+    </li>
+    <li>
+        <label>Dirigirse al resultado ARIA input fields must have an accessible name.</label>
+    </li>
+    <img src="./images/15-a.png" alt="Imagen 1-a">
+    <img src="./images/15-b.png" alt="Imagen 1-b">
+</ol>
+</div>
+
+<!-- reporte 16 -->
+<div class="report-section">
+<h2 class="report-section-title">16. Editar pagina | los links de ayuda no tienen texto discernible</h2>
+<ol class="report-section-content">
+    <li>
+        <label>Ingresar al aplicativo GHOST.</label>
+    </li>
+    <li>
+        <label>Ingresar a la interfaz de paginas.</label>
+    </li>
+    <li>
+        <label>Ingresar a la interfaz de añadir o editar pagina.</label>
+    </li>
+    <li>
+        <label>Ejecutar la herramienta axe.</label>
+    </li>
+    <li>
+        <label>Dirigirse al resultado Links must have discernible text.</label>
+    </li>
+    <img src="./images/16-a.png" alt="Imagen 1-a">
+    <img src="./images/16-b.png" alt="Imagen 1-b">
+</ol>
+</div>
+
+<!-- reporte 17 -->
+<div class="report-section">
+<h2 class="report-section-title">17. Configuracion de pagina | los controles interactivos de las fechas no deberían estar anidados </h2>
+<ol class="report-section-content">
+    <li>
+        <label>Ingresar al aplicativo GHOST.</label>
+    </li>
+    <li>
+        <label>Ingresar a la interfaz de paginas.</label>
+    </li>
+    <li>
+        <label>Ingresar a la interfaz de añadir o editar pagina.</label>
+    </li>
+    <li>
+        <label>Abrir la interfaz de configuración de página.</label>
+    </li>
+    <li>
+        <label>Ejecutar la herramienta axe.</label>
+    </li>
+    <li>
+        <label>Dirigirse al resultado Interactive controls must not be nested.</label>
+    </li>
+    <img src="./images/17-a.png" alt="Imagen 1-a">
+    <img src="./images/17-b.png" alt="Imagen 1-b">
+</ol>
+</div>
+
+<!-- reporte 18 -->
+<div class="report-section">
+<h2 class="report-section-title">18. Interfaz de publicación de post | elementos con poco contraste con el fondo </h2>
+<ol class="report-section-content">
+    <li>
+        <label>Ingresar al aplicativo GHOST.</label>
+    </li>
+    <li>
+        <label>Ingresar a la interfaz de posts.</label>
+    </li>
+    <li>
+        <label>Ingresar a la interfaz de añadir o editar post.</label>
+    </li>
+    <li>
+        <label>Publicar el post.</label>
+    </li>
+    <li>
+        <label>Ejecutar la herramienta axe.</label>
+    </li>
+    <li>
+        <label>Dirigirse al resultado Elements must meet minimum color contrast ratio thresholds.</label>
+    </li>
+    <img src="./images/18-a.png" alt="Imagen 1-a">
+    <img src="./images/18-b.png" alt="Imagen 1-b">
+</ol>
+</div>
+
+<!-- reporte 19 -->
+<div class="report-section">
+<h2 class="report-section-title">19. Interfaz de edición de post | elementos sin label en el formulario de configuración </h2>
+<ol class="report-section-content">
+    <li>
+        <label>Ingresar al aplicativo GHOST.</label>
+    </li>
+    <li>
+        <label>Ingresar a la interfaz de posts.</label>
+    </li>
+    <li>
+        <label>Ingresar a la interfaz de añadir o editar post.</label>
+    </li>
+    <li>
+        <label>Ingresar a la interfaz de ajustes del post.</label>
+    </li>
+    <li>
+        <label>Ejecutar la herramienta axe.</label>
+    </li>
+    <li>
+        <label>Dirigirse al resultado Form elements must have labels.</label>
+    </li>
+    <img src="./images/19-a.png" alt="Imagen 1-a">
+    <img src="./images/19-b.png" alt="Imagen 1-b">
+</ol>
+</div>
+
+<!-- reporte 20 -->
+<div class="report-section">
+<h2 class="report-section-title">20. Añadir post | componentes para adición de fechas en programación de fecha de posts no tienen labels </h2>
+<ol class="report-section-content">
+    <li>
+        <label>Ingresar al aplicativo GHOST.</label>
+    </li>
+    <li>
+        <label>Ingresar a la interfaz de posts.</label>
+    </li>
+    <li>
+        <label>Ingresar a la interfaz de añadir o editar post.</label>
+    </li>
+    <li>
+        <label>Publicar post e ingresar a la opción de programar.</label>
+    </li>
+    <li>
+        <label>Ejecutar la herramienta axe.</label>
+    </li>
+    <li>
+        <label>Dirigirse al resultado 6 de Form elements must have labels.</label>
+    </li>
+    <img src="./images/20-a.png" alt="Imagen 1-a">
+    <img src="./images/20-b.png" alt="Imagen 1-b">
+</ol>
+</div>
+
+</div>
