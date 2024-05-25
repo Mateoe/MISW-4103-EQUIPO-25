@@ -64,7 +64,7 @@ Se acalara que, durante esta semana se realiza la creación de las pruebas y gua
 
 4. Ejecutar las pruebas con resolucion 1600x900 `node .\runTests1600x900.js`
 
-   * Se desataca que este rango de pantalla es ideal, dado que todos los elementos de la pantallatienen una adecuada visualización, sin generar incomodidad o errores.
+   * Se desataca que este rango de pantalla es ideal, dado que todos los elementos de la pantalla tienen una adecuada visualización, sin generar incomodidad o errores.
   
 5. Ejecutar las pruebas con resolucion 3840x2160 `node .\runTests3840x2160.js`.
 
