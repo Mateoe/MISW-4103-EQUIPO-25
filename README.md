@@ -38,7 +38,7 @@ https://ghost-b3tr.onrender.com
 7. Revisar los issues encontrados:
    ![image](https://github.com/Mateoe/MISW-4103-EQUIPO-25/assets/26661339/55469df4-7735-4d9f-87b2-88d5490200fb)
 8. Adicionalmente el archivo presente en la ruta `.\accesibilidad\pruebas.html` y `.\accesibilidad\pruebas.md` presenta el inventario de las 20 pruebas ejecutadas.
-
+   **Nota**: Adicional a lo anterior el pdf con el resultado de las pruebas puede ser consultado en el enlace: [reporte accesibilidad](https://html-preview.github.io/?url=https://github.com/Mateoe/MISW-4103-EQUIPO-25/blob/main/accesibilidad/pruebas.html)
 
 <hr/>
 
